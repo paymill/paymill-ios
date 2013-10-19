@@ -1,0 +1,1729 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>PMManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">PayMillSDK </a></h1>
+				<a id="developerHome" href="../index.html">Paymill GmbH</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">PMManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/SDKVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ SDKVersion</option>
+	
+	<option value="//api/name/consumePreauthorizationForId:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ consumePreauthorizationForId:success:failure:</option>
+	
+	<option value="//api/name/consumeTransactionForId:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ consumeTransactionForId:success:failure:</option>
+	
+	<option value="//api/name/generateTokenWithMethod:parameters:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ generateTokenWithMethod:parameters:success:failure:</option>
+	
+	<option value="//api/name/generateTokenWithPublicKey:testMode:method:parameters:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ generateTokenWithPublicKey:testMode:method:parameters:success:failure:</option>
+	
+	<option value="//api/name/getDeviceId">&nbsp;&nbsp;&nbsp;&nbsp;+ getDeviceId</option>
+	
+	<option value="//api/name/getNewDeviceIdWithBlock:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getNewDeviceIdWithBlock:failure:</option>
+	
+	<option value="//api/name/getNonConsumedPreauthorizationsList:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getNonConsumedPreauthorizationsList:failure:</option>
+	
+	<option value="//api/name/getNonConsumedTransactionsList:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getNonConsumedTransactionsList:failure:</option>
+	
+	<option value="//api/name/getPreauthorizationsList:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getPreauthorizationsList:onFailure:</option>
+	
+	<option value="//api/name/getPreauthorzationForId:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getPreauthorzationForId:success:failure:</option>
+	
+	<option value="//api/name/getTransactionForId:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getTransactionForId:success:failure:</option>
+	
+	<option value="//api/name/getTransactionsList:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getTransactionsList:failure:</option>
+	
+	<option value="//api/name/initWithTestMode:merchantPublicKey:newDeviceId:init:">&nbsp;&nbsp;&nbsp;&nbsp;+ initWithTestMode:merchantPublicKey:newDeviceId:init:</option>
+	
+	<option value="//api/name/initWithTestMode:merchantPublicKey:newDeviceId:init:success:failure:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ initWithTestMode:merchantPublicKey:newDeviceId:init:success:failure:success:failure:</option>
+	
+	<option value="//api/name/isInit">&nbsp;&nbsp;&nbsp;&nbsp;+ isInit</option>
+	
+	<option value="//api/name/preauthorizationWithMethod:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ preauthorizationWithMethod:parameters:consumable:success:failure:</option>
+	
+	<option value="//api/name/preauthorizationWithToken:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ preauthorizationWithToken:parameters:consumable:success:failure:</option>
+	
+	<option value="//api/name/transactionWithMethod:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ transactionWithMethod:parameters:consumable:success:failure:</option>
+	
+	<option value="//api/name/transactionWithToken:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ transactionWithToken:parameters:consumable:success:failure:</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SDKVersion">SDKVersion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/consumePreauthorizationForId:success:failure:">consumePreauthorizationForId:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/consumeTransactionForId:success:failure:">consumeTransactionForId:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/generateTokenWithMethod:parameters:success:failure:">generateTokenWithMethod:parameters:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/generateTokenWithPublicKey:testMode:method:parameters:success:failure:">generateTokenWithPublicKey:testMode:method:parameters:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDeviceId">getDeviceId</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getNewDeviceIdWithBlock:failure:">getNewDeviceIdWithBlock:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getNonConsumedPreauthorizationsList:failure:">getNonConsumedPreauthorizationsList:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getNonConsumedTransactionsList:failure:">getNonConsumedTransactionsList:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getPreauthorizationsList:onFailure:">getPreauthorizationsList:onFailure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getPreauthorzationForId:success:failure:">getPreauthorzationForId:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getTransactionForId:success:failure:">getTransactionForId:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getTransactionsList:failure:">getTransactionsList:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithTestMode:merchantPublicKey:newDeviceId:init:">initWithTestMode:merchantPublicKey:newDeviceId:init:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithTestMode:merchantPublicKey:newDeviceId:init:success:failure:success:failure:">initWithTestMode:merchantPublicKey:newDeviceId:init:success:failure:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isInit">isInit</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/preauthorizationWithMethod:parameters:consumable:success:failure:">preauthorizationWithMethod:parameters:consumable:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/preauthorizationWithToken:parameters:consumable:success:failure:">preauthorizationWithToken:parameters:consumable:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/transactionWithMethod:parameters:consumable:success:failure:">transactionWithMethod:parameters:consumable:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/transactionWithToken:parameters:consumable:success:failure:">transactionWithToken:parameters:consumable:success:failure:</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="PMManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">PMManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">PMManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class is the main entry point for all SDK calls.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithTestMode:merchantPublicKey:newDeviceId:init:">+&nbsp;initWithTestMode:merchantPublicKey:newDeviceId:init:</a></code>
+		<span class="tooltip"><p>Initializes the SDK. This should always be the first call you make, when you use the SDK.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithTestMode:merchantPublicKey:newDeviceId:init:success:failure:success:failure:">+&nbsp;initWithTestMode:merchantPublicKey:newDeviceId:init:success:failure:success:failure:</a></code>
+		<span class="tooltip"><p>Initializes the SDK. This should always be the first call you make, when you use the SDK.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/preauthorizationWithMethod:parameters:consumable:success:failure:">+&nbsp;preauthorizationWithMethod:parameters:consumable:success:failure:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.<br/>
+This is a convenience method, which generates a token in the background.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/transactionWithMethod:parameters:consumable:success:failure:">+&nbsp;transactionWithMethod:parameters:consumable:success:failure:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.<br/>
+This is a convenience method, which generates a token in the background.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/preauthorizationWithToken:parameters:consumable:success:failure:">+&nbsp;preauthorizationWithToken:parameters:consumable:success:failure:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/transactionWithToken:parameters:consumable:success:failure:">+&nbsp;transactionWithToken:parameters:consumable:success:failure:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/generateTokenWithMethod:parameters:success:failure:">+&nbsp;generateTokenWithMethod:parameters:success:failure:</a></code>
+		<span class="tooltip"><p>Creates a new token.<br/>
+Learn more about tokens in the PayMill documentation(<a href="https://www.paymill.com/en-gb/documentation-3/">https://www.paymill.com/en-gb/documentation-3/).</a>.)</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/generateTokenWithPublicKey:testMode:method:parameters:success:failure:">+&nbsp;generateTokenWithPublicKey:testMode:method:parameters:success:failure:</a></code>
+		<span class="tooltip"><p>This is the preferred way to use the SDK.<br/>
+Generate a token using this method and use it in your backend to process transactions, preauthorizations or any other future available trough the PayMill API.<br/>
+Learn more about tokens in the PayMill documentation(<a href="https://www.paymill.com/en-gb/documentation-3/">https://www.paymill.com/en-gb/documentation-3/).</a>.)</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getTransactionsList:failure:">+&nbsp;getTransactionsList:failure:</a></code>
+		<span class="tooltip"><p>Lists all transactions for the configured deviceId.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getTransactionForId:success:failure:">+&nbsp;getTransactionForId:success:failure:</a></code>
+		<span class="tooltip"><p>Get a specific <a href="../Classes/PMTransaction.html">PMTransaction</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getPreauthorizationsList:onFailure:">+&nbsp;getPreauthorizationsList:onFailure:</a></code>
+		<span class="tooltip"><p>Lists all preauthorizations for the configured deviceId.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getPreauthorzationForId:success:failure:">+&nbsp;getPreauthorzationForId:success:failure:</a></code>
+		<span class="tooltip"><p>Get a specific <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getNonConsumedTransactionsList:failure:">+&nbsp;getNonConsumedTransactionsList:failure:</a></code>
+		<span class="tooltip"><p>Lists all not consumed <a href="../Classes/PMTransaction.html">PMTransaction</a> objects for the configured deviceId.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getNonConsumedPreauthorizationsList:failure:">+&nbsp;getNonConsumedPreauthorizationsList:failure:</a></code>
+		<span class="tooltip"><p>Lists all not consumed <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a> objects for the configured deviceId.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/consumeTransactionForId:success:failure:">+&nbsp;consumeTransactionForId:success:failure:</a></code>
+		<span class="tooltip"><p>Consume the given transaction. After successful consumption, the transaction will no longer appear in the list of not consumed.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/consumePreauthorizationForId:success:failure:">+&nbsp;consumePreauthorizationForId:success:failure:</a></code>
+		<span class="tooltip"><p>Consume the given preauthorization. After successful consumption, the preauthorization will no longer appear in the list of not consumed.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getNewDeviceIdWithBlock:failure:">+&nbsp;getNewDeviceIdWithBlock:failure:</a></code>
+		<span class="tooltip"><p>Creates new device id.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDeviceId">+&nbsp;getDeviceId</a></code>
+		<span class="tooltip"><p>Returns the current device id.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isInit">+&nbsp;isInit</a></code>
+		<span class="tooltip"><p>Returns YES, if the SDK was initialized, NO otherwise.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/SDKVersion">+&nbsp;SDKVersion</a></code>
+		<span class="tooltip"><p>Returns the current SDK version as string.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/SDKVersion" title="SDKVersion"></a>
+	<h3 class="subsubtitle method-title">SDKVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current SDK version as string.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)SDKVersion</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the SDK version.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current SDK version as string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/consumePreauthorizationForId:success:failure:" title="consumePreauthorizationForId:success:failure:"></a>
+	<h3 class="subsubtitle method-title">consumePreauthorizationForId:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Consume the given preauthorization. After successful consumption, the preauthorization will no longer appear in the list of not consumed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)consumePreauthorizationForId:(NSString *)<em>preauthorizationId</em> success:(OnConsumeSuccess)<em>successBlock</em> failure:(OnConsumeFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>preauthorizationId</em></dt>
+			<dd><p>the id of the preauthorization.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the preauthorization is consumed successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the preauthorization consumption failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Consume the given preauthorization. After successful consumption, the preauthorization will no longer appear in the list of not consumed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/consumeTransactionForId:success:failure:" title="consumeTransactionForId:success:failure:"></a>
+	<h3 class="subsubtitle method-title">consumeTransactionForId:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Consume the given transaction. After successful consumption, the transaction will no longer appear in the list of not consumed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)consumeTransactionForId:(NSString *)<em>transactionId</em> success:(OnConsumeSuccess)<em>successBlock</em> failure:(OnConsumeFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>transactionId</em></dt>
+			<dd><p>the id of the transaction.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the transaction is consumed successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the transaction consumption failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Consume the given transaction. After successful consumption, the transaction will no longer appear in the list of not consumed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/generateTokenWithMethod:parameters:success:failure:" title="generateTokenWithMethod:parameters:success:failure:"></a>
+	<h3 class="subsubtitle method-title">generateTokenWithMethod:parameters:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new token.<br/>
+Learn more about tokens in the PayMill documentation(<a href="https://www.paymill.com/en-gb/documentation-3/">https://www.paymill.com/en-gb/documentation-3/).</a>.)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)generateTokenWithMethod:(id&lt;PMPaymentMethod&gt;)<em>method</em> parameters:(PMPaymentParams *)<em>params</em> success:(OnTokenSuccess)<em>successBlock</em> failure:(OnTokenFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p><a href="../Protocols/PMPaymentMethod.html">PMPaymentMethod</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the token is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the token creation failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p><a href="../Classes/PMPaymentParams.html">PMPaymentParams</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new token.<br/>
+Learn more about tokens in the PayMill documentation(<a href="https://www.paymill.com/en-gb/documentation-3/">https://www.paymill.com/en-gb/documentation-3/).</a>.)</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/generateTokenWithPublicKey:testMode:method:parameters:success:failure:" title="generateTokenWithPublicKey:testMode:method:parameters:success:failure:"></a>
+	<h3 class="subsubtitle method-title">generateTokenWithPublicKey:testMode:method:parameters:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This is the preferred way to use the SDK.<br/>
+Generate a token using this method and use it in your backend to process transactions, preauthorizations or any other future available trough the PayMill API.<br/>
+Learn more about tokens in the PayMill documentation(<a href="https://www.paymill.com/en-gb/documentation-3/">https://www.paymill.com/en-gb/documentation-3/).</a>.)</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)generateTokenWithPublicKey:(NSString *)<em>merchantPublicKey</em> testMode:(BOOL)<em>testMode</em> method:(id&lt;PMPaymentMethod&gt;)<em>method</em> parameters:(PMPaymentParams *)<em>params</em> success:(OnTokenSuccess)<em>successBlock</em> failure:(OnTokenFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>merchantPublicKey</em></dt>
+			<dd><p>your PayMill public key for LIVE or TEST mode, depending on the previous parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>testMode</em></dt>
+			<dd><p>true for TEST mode, false for LIVE mode.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p><a href="../Protocols/PMPaymentMethod.html">PMPaymentMethod</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the token is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the token creation failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p><a href="../Classes/PMPaymentParams.html">PMPaymentParams</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>This is the preferred way to use the SDK.<br/>
+Generate a token using this method and use it in your backend to process transactions, preauthorizations or any other future available trough the PayMill API.<br/>
+Learn more about tokens in the PayMill documentation(<a href="https://www.paymill.com/en-gb/documentation-3/">https://www.paymill.com/en-gb/documentation-3/).</a>.)</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDeviceId" title="getDeviceId"></a>
+	<h3 class="subsubtitle method-title">getDeviceId</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current device id.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)getDeviceId</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the id or null if none is set.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the current device id.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getNewDeviceIdWithBlock:failure:" title="getNewDeviceIdWithBlock:failure:"></a>
+	<h3 class="subsubtitle method-title">getNewDeviceIdWithBlock:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates new device id.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getNewDeviceIdWithBlock:(OnDeviceIdSucces)<em>successBlock</em> failure:(OnDeviceIdFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the new device id is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the device id creation failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates new device id.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getNonConsumedPreauthorizationsList:failure:" title="getNonConsumedPreauthorizationsList:failure:"></a>
+	<h3 class="subsubtitle method-title">getNonConsumedPreauthorizationsList:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Lists all not consumed <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a> objects for the configured deviceId.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getNonConsumedPreauthorizationsList:(OnNotConsumedPreauthorizationsSuccess)<em>successBlock</em> failure:(OnNotConsumedPreauthorizationsFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the preauthorizations were listed successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the listing the preauthorizations failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Lists all not consumed <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a> objects for the configured deviceId.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getNonConsumedTransactionsList:failure:" title="getNonConsumedTransactionsList:failure:"></a>
+	<h3 class="subsubtitle method-title">getNonConsumedTransactionsList:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Lists all not consumed <a href="../Classes/PMTransaction.html">PMTransaction</a> objects for the configured deviceId.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getNonConsumedTransactionsList:(OnNotConsumedTransactionsSuccess)<em>successBlock</em> failure:(OnNotConsumedTransactionsFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the transactions were listed successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the listing the transactions failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Lists all not consumed <a href="../Classes/PMTransaction.html">PMTransaction</a> objects for the configured deviceId.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getPreauthorizationsList:onFailure:" title="getPreauthorizationsList:onFailure:"></a>
+	<h3 class="subsubtitle method-title">getPreauthorizationsList:onFailure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Lists all preauthorizations for the configured deviceId.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getPreauthorizationsList:(OnPreauthorizationsListSuccess)<em>successBlock</em> onFailure:(OnPreauthorizationsListFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the preauthorizations were listed succesсfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the listing the preauthorizations failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Lists all preauthorizations for the configured deviceId.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getPreauthorzationForId:success:failure:" title="getPreauthorzationForId:success:failure:"></a>
+	<h3 class="subsubtitle method-title">getPreauthorzationForId:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a specific <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getPreauthorzationForId:(NSString *)<em>preauthorizationId</em> success:(OnPreauthorizationSuccess)<em>successBlock</em> failure:(OnPreauthorizationFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the preauthorization is get successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>transactionId</em></dt>
+			<dd><p>the id of the transaction.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the preauthorization getting failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get a specific <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getTransactionForId:success:failure:" title="getTransactionForId:success:failure:"></a>
+	<h3 class="subsubtitle method-title">getTransactionForId:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get a specific <a href="../Classes/PMTransaction.html">PMTransaction</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getTransactionForId:(NSString *)<em>transactionId</em> success:(OnTransactionSuccess)<em>successBlock</em> failure:(OnTransactionFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>transactionId</em></dt>
+			<dd><p>the id of the transaction.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the transaction is get successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the transaction getting failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get a specific <a href="../Classes/PMTransaction.html">PMTransaction</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getTransactionsList:failure:" title="getTransactionsList:failure:"></a>
+	<h3 class="subsubtitle method-title">getTransactionsList:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Lists all transactions for the configured deviceId.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getTransactionsList:(OnTransactionsListSuccess)<em>successBlock</em> failure:(OnTransactionFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the transactions were listed successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the listing the transactions failed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Lists all transactions for the configured deviceId.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithTestMode:merchantPublicKey:newDeviceId:init:" title="initWithTestMode:merchantPublicKey:newDeviceId:init:"></a>
+	<h3 class="subsubtitle method-title">initWithTestMode:merchantPublicKey:newDeviceId:init:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes the SDK. This should always be the first call you make, when you use the SDK.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)initWithTestMode:(BOOL)<em>testmode</em> merchantPublicKey:(NSString *)<em>merchantPublicKey</em> newDeviceId:(NSString *)<em>newDeviceId</em> init:(OnInit)<em>onInit</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>merchantPublicKey</em></dt>
+			<dd><p>your PayMill public key for LIVE or TEST mode, depending on the previous parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newDeviceId</em></dt>
+			<dd><p>an optional deviceID.<br/>
+Note: You cannot specify an arbitrary string. The device ID must have been generated by the SDK, for example with getNewDeviceId() . You can use this parameter to associate end users in your applications with SDK deviceIDs.If you don&rsquo;t specify a device ID, the SDK will generate one and save it for later use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>testMode</em></dt>
+			<dd><p>true for TEST mode, false for LIVE mode.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>init</em></dt>
+			<dd><p>block function of type OnInit that will be called on success or failure</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes the SDK. This should always be the first call you make, when you use the SDK.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithTestMode:merchantPublicKey:newDeviceId:init:success:failure:success:failure:" title="initWithTestMode:merchantPublicKey:newDeviceId:init:success:failure:success:failure:"></a>
+	<h3 class="subsubtitle method-title">initWithTestMode:merchantPublicKey:newDeviceId:init:success:failure:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes the SDK. This should always be the first call you make, when you use the SDK.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)initWithTestMode:(BOOL)<em>testmode</em> merchantPublicKey:(NSString *)<em>merchantPublicKey</em> newDeviceId:(NSString *)<em>newDeviceId</em> init:(OnInit)<em>onInit</em> success:(OnNotConsumedTransactionsSuccess)<em>successTranBlock</em> failure:(OnNotConsumedTransactionsFailure)<em>failureTranBlock</em> success:(OnNotConsumedPreauthorizationsSuccess)<em>successPreauthBlock</em> failure:(OnNotConsumedPreauthorizationsFailure)<em>failurePreauthBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>merchantPublicKey</em></dt>
+			<dd><p>your PayMill public key for LIVE or TEST mode, depending on the previous parameter.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newDeviceId</em></dt>
+			<dd><p>an optional deviceID.<br/>
+Note: You cannot specify an arbitrary string. The device ID must have been generated by the SDK, for example with getNewDeviceId() . You can use this parameter to associate end users in your applications with SDK deviceIDs.If you don&rsquo;t specify a device ID, the SDK will generate one and save it for later use.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successTranBlock</em></dt>
+			<dd><p>optional block callback for getting all not consumed PMTrаnsaction objects. The block will be called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureTranBlock</em></dt>
+			<dd><p>optional block callback that will be called on failure when getting all not consumed PMTrаnsaction objects.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successPreauthBlock</em></dt>
+			<dd><p>optional block callback for getting all not consumed <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a> objects. The block will be called on success.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failurePreauthBlock</em></dt>
+			<dd><p>optional block callback that will be called on failure when getting all not consumed <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a> objects.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>testMode</em></dt>
+			<dd><p>true for TEST mode, false for LIVE mode.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>init</em></dt>
+			<dd><p>block callback that will be called on success or failure</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes the SDK. This should always be the first call you make, when you use the SDK.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isInit" title="isInit"></a>
+	<h3 class="subsubtitle method-title">isInit</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns YES, if the SDK was initialized, NO otherwise.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)isInit</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns YES, if the SDK was initialized, NO otherwise.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/preauthorizationWithMethod:parameters:consumable:success:failure:" title="preauthorizationWithMethod:parameters:consumable:success:failure:"></a>
+	<h3 class="subsubtitle method-title">preauthorizationWithMethod:parameters:consumable:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.<br/>
+This is a convenience method, which generates a token in the background.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)preauthorizationWithMethod:(id&lt;PMPaymentMethod&gt;)<em>method</em> parameters:(PMPaymentParams *)<em>params</em> consumable:(BOOL)<em>consumable</em> success:(OnPreauthorizationSuccess)<em>successBlock</em> failure:(OnPreauthorizationFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p><a href="../Protocols/PMPaymentMethod.html">PMPaymentMethod</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>consumable</em></dt>
+			<dd><p>true if you want to consume the preauthorization later, false otherwise.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the preauthorization is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the preauthorization creation failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p><a href="../Classes/PMPaymentParams.html">PMPaymentParams</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.<br/>
+This is a convenience method, which generates a token in the background.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/preauthorizationWithToken:parameters:consumable:success:failure:" title="preauthorizationWithToken:parameters:consumable:success:failure:"></a>
+	<h3 class="subsubtitle method-title">preauthorizationWithToken:parameters:consumable:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)preauthorizationWithToken:(NSString *)<em>token</em> parameters:(PMPaymentParams *)<em>params</em> consumable:(BOOL)<em>consumable</em> success:(OnPreauthorizationSuccess)<em>successBlock</em> failure:(OnPreauthorizationFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>token</em></dt>
+			<dd><p>a previously generated token.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>consumable</em></dt>
+			<dd><p>true if you want to consume the preauthorization later, false otherwise.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the preauthorization is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the preauthorization creation failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p><a href="../Classes/PMPaymentParams.html">PMPaymentParams</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/transactionWithMethod:parameters:consumable:success:failure:" title="transactionWithMethod:parameters:consumable:success:failure:"></a>
+	<h3 class="subsubtitle method-title">transactionWithMethod:parameters:consumable:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.<br/>
+This is a convenience method, which generates a token in the background.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)transactionWithMethod:(id&lt;PMPaymentMethod&gt;)<em>method</em> parameters:(PMPaymentParams *)<em>params</em> consumable:(BOOL)<em>consumable</em> success:(OnTransactionSuccess)<em>successBlock</em> failure:(OnTransactionFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p><a href="../Protocols/PMPaymentMethod.html">PMPaymentMethod</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>consumable</em></dt>
+			<dd><p>true if you want to consume the preauthorization later, false otherwise.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the transaction is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the transaction creation failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p><a href="../Classes/PMPaymentParams.html">PMPaymentParams</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.<br/>
+This is a convenience method, which generates a token in the background.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/transactionWithToken:parameters:consumable:success:failure:" title="transactionWithToken:parameters:consumable:success:failure:"></a>
+	<h3 class="subsubtitle method-title">transactionWithToken:parameters:consumable:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)transactionWithToken:(NSString *)<em>token</em> parameters:(PMPaymentParams *)<em>params</em> consumable:(BOOL)<em>consumable</em> success:(OnTransactionSuccess)<em>successBlock</em> failure:(OnTransactionFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>token</em></dt>
+			<dd><p>a previously generated token.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>consumable</em></dt>
+			<dd><p>true if you want to consume the preauthorization later, false otherwise.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the transaction is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the transaction creation failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p><a href="../Classes/PMPaymentParams.html">PMPaymentParams</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Paymill GmbH. All rights reserved. (Last updated: 2013-10-18)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
