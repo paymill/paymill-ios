@@ -35,14 +35,14 @@ iOS 5.0 or later.
 
 ## Working with the SDK
 
-### PMMethod, PMParams and PMFactory
+### PMPayment, PMParams and PMFactory
 
 
-A [PMPaymentMethod](http://paymill.github.io/paymill-android/docs/sdk/reference/com/paymill/android/factory/PMPaymentMethod.html) object contains the credit card or bank account information of a customer. A [PMPaymentParams](http://paymill.github.io/paymill-android/docs/sdk/reference/com/paymill/android/factory/PMPaymentParams.html) object contains the parameters of a payment - amount, currency, description. Both must always be created with the [PMFactory](http://paymill.github.io/paymill-android/docs/sdk/reference/com/paymill/android/factory/PMFactory.html)class.
+A [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayment.html) object contains the credit card or bank account information of a customer. A [PMPaymentParams](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentParams.html) object contains the parameters of a payment - amount, currency, description. Both must always be created with the [PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMFactory.html) class.
 
 ### Generate a token
 
-Create [PMPaymentMethod](http://paymill.github.io/paymill-android/docs/sdk/reference/com/paymill/android/factory/PMPaymentMethod.html) and [PMPaymentParams](http://paymill.github.io/paymill-android/docs/sdk/reference/com/paymill/android/factory/PMPaymentParams.html), add listeners and call [PMManager generateTokenWithMethod:parameters:success:failure:](http://paymill.github.io/paymill-android/docs/sdk/reference/com/paymill/android/service/PMManager.html#generateToken%28android.content.Context,%20com.paymill.android.factory.PMPaymentMethod,%20com.paymill.android.factory.PMPaymentParams,%20com.paymill.android.service.PMService.ServiceMode,%20java.lang.String%29) with your PAYMILL public key and mode.
+Create [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayment.html)  and [PMPaymentParams](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentParams.html), add listeners and call [PMManager generateTokenWithMethod](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html#//api/name/generateTokenWithPublicKey:testMode:method:parameters:success:failure:) with your PAYMILL public key and mode.
 
 ``` 
  //init with PAYMILL public key  
@@ -74,7 +74,7 @@ Create [PMPaymentMethod](http://paymill.github.io/paymill-android/docs/sdk/refer
 ```
 ### Create a transaction
 
-To create transactions and preauthorizations directly from the SDK you first need to install the Mobile App. In the code you will have to initialize the SDK, by calling [PMManger initWithTestMode:merchantPublicKey:newDeviceId:init:](http://paymill.github.io/paymill-android/docs/sdk//reference/com/paymill/android/service/PMManager.html#init(android.content.Context, com.paymill.android.service.PMService.ServiceMode, java.lang.String, com.paymill.android.listener.PMBackgroundListener, java.lang.String) method with your PAYMILL public key and mode.
+To create transactions and preauthorizations directly from the SDK you first need to install the Mobile App. In the code you will have to initialize the SDK, by calling [PMManger initWithTestMode](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html#//api/name/initWithTestMode:merchantPublicKey:newDeviceId:init:) method with your PAYMILL public key and mode.
 
 ``` 
  //init with PAYMILL public key  
@@ -107,6 +107,10 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 
 ## Release notes
+
+### 1.0.1
+* typos in headers and appledoc fixed
+* linkage issue fixed
 
 ### 1.0
 + First live release.
