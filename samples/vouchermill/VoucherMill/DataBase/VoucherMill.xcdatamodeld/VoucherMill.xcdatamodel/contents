@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E3067" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="OfflineVoucher" representedClassName="OfflineVoucher" syncable="YES">
+        <attribute name="amount" attributeType="String" syncable="YES"/>
+        <attribute name="currency" attributeType="String" syncable="YES"/>
+        <attribute name="descript" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="OfflineVoucher" positionX="-54" positionY="-18" width="128" height="88"/>
+    </elements>
+</model>
