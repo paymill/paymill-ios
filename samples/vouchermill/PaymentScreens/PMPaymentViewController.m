@@ -88,7 +88,7 @@ static OnCompletionFailure OnFailureBlock;
 @synthesize navigationBar;
 @synthesize progress;
 @synthesize paymentParams;
-@synthesize publicKey, accountStr, cancelButton, codeStr, dataArray, ddAccountStr, ddCodeStr, definesPresentationContext, editedField, expMonthStr, expPickerView, expYearStr, isDirectDebitSelected, keyBar, modalPresentationStyle, modalTransitionStyle, modalViewController, nameStr, style, settings, recognizedCC, sectionCC, activeTextField;
+@synthesize publicKey, accountStr, cancelButton, codeStr, dataArray, ddAccountStr, ddCodeStr, definesPresentationContext, editedField, expMonthStr, expPickerView, expYearStr, isDirectDebitSelected, keyBar, modalPresentationStyle, modalTransitionStyle, modalViewController, nameStr, style, settings, recognizedCC, sectionCC, activeTextField, ddNameStr;
 
 
 /**************************************/
@@ -526,18 +526,20 @@ static OnCompletionFailure OnFailureBlock;
         cell.backgroundColor = [UIColor clearColor];
     }
     
-    UITextField* textField = [cell.contentView.subviews objectAtIndex:0];
+    UITextField *textField = [cell.contentView.subviews objectAtIndex:0];
     
     //Holder Name:
     if( [indexPath section] == 0 ) {
         textField.placeholder = isDirectDebitSelected ? NSLocalizedString(@"account holder", @"account holder") : NSLocalizedString(@"credit card holder", @"credit card holder");
         textField.keyboardType = UIKeyboardTypeNamePhonePad;
         
-		//if prefill-data is given and 
-        if(!nameStr &&![nameStr isEqualToString:@""]){
-            textField.text = nameStr;
+		if(!isDirectDebitSelected) {
+			textField.text = nameStr;
 		}
-		
+		else {
+			textField.text = ddNameStr;
+		}
+			
 		textField.tag = isDirectDebitSelected ? ACCOUNT_HOLDER : CARD_ACCOUNT_HOLDER ;
     }
     
@@ -573,16 +575,11 @@ static OnCompletionFailure OnFailureBlock;
 			}
 
 			textField.text = [self stringByGrouping:accountStr By:recognizedCC];
-			
+			NSLog(@"CC text: %@",textField.text);
+		}
+		
+		textField.tag = isDirectDebitSelected ? ACCOUNT_NUMBER : CARD_NUMBER;
 	}
-        
-	if (isDirectDebitSelected) {
-		textField.tag = ACCOUNT_NUMBER;
-	}
-	else {
-		textField.tag = CARD_NUMBER;
-    }
-}
     // Bank Code / CVV
     if((isDirectDebitSelected && [indexPath section] == 2) || (!isDirectDebitSelected && [indexPath section] == 3)) {
         textField.placeholder = isDirectDebitSelected ? NSLocalizedString(@"bank code", @"bank code")
@@ -590,11 +587,11 @@ static OnCompletionFailure OnFailureBlock;
         
         textField.keyboardType = UIKeyboardTypeNumberPad;
         
-        if(!isDirectDebitSelected && ![codeStr isEqualToString:@""]){
+        if(!isDirectDebitSelected){
             textField.text = codeStr;
         }
-		else {
-			textField.text = @"";
+		else if(isDirectDebitSelected) {
+			textField.text = ddCodeStr;
 		}
 
         textField.tag = isDirectDebitSelected ? BANK_CODE : CVV;
@@ -608,11 +605,12 @@ static OnCompletionFailure OnFailureBlock;
         if(expMonthStr && ![expMonthStr isEqualToString:@""]){
             textField.text = [NSString stringWithFormat:@"%@/%@", expMonthStr, expYearStr];
         }
+		else {
+			textField.text = @"";
+		}
         textField.tag = EXP_DATE;
     }
-	else {
-		textField.text = @"";
-	}
+	
             
     return cell;
 }
@@ -835,18 +833,20 @@ static OnCompletionFailure OnFailureBlock;
 
 -(void)paymentTypeSegSelected:(id)sender
 {
-    if([(UISegmentedControl *)sender selectedSegmentIndex]) {
-        isDirectDebitSelected = YES;
+	if([sender isKindOfClass:[UISegmentedControl class]]){
+		if([(UISegmentedControl *)sender selectedSegmentIndex]) {
+			isDirectDebitSelected = YES;
+		}
+		else {
+			isDirectDebitSelected = NO;
+		}
+		
+		if(sectionCC) {
+			sectionCC.hidden = isDirectDebitSelected;
+		}
+		
+		[self.tableView reloadData];
 	}
-    else {
-        isDirectDebitSelected = NO;
-	}
-    
-    if(sectionCC) {
-        sectionCC.hidden = isDirectDebitSelected;
-	}
-	
-    [self.tableView reloadData];
 }
 
 /**************************************/
@@ -861,10 +861,11 @@ static OnCompletionFailure OnFailureBlock;
 {
     switch (textField.tag) {
         case ACCOUNT_HOLDER:
+			ddAccountStr = textField.text;
+			break;
         case CARD_ACCOUNT_HOLDER:
             nameStr = textField.text;
             break;
-            
         case ACCOUNT_NUMBER:
             ddAccountStr = [textField.text stringByReplacingOccurrencesOfString:@" " withString:@""];
             break;
@@ -877,7 +878,6 @@ static OnCompletionFailure OnFailureBlock;
         case CVV:
             codeStr = textField.text;
             break;
-            
         case EXP_DATE:
             expMonthStr = [self.pickerMonthArray objectAtIndex:[self.expPickerView selectedRowInComponent:0]];
             expYearStr  = [self.pickerYearArray objectAtIndex:[self.expPickerView selectedRowInComponent:1]];
@@ -896,7 +896,10 @@ static OnCompletionFailure OnFailureBlock;
     {
         textField.inputView = self.expPickerView;
     }
-    
+    else if(textField.tag == BANK_CODE)
+	{
+		textField.inputView = nil;
+	}
     textField.inputView.hidden = false;
     
     
@@ -905,8 +908,9 @@ static OnCompletionFailure OnFailureBlock;
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-    if(textField.tag == EXP_DATE)
+    if(textField.tag == EXP_DATE) {
         textField.text = [NSString stringWithFormat:@"%@/%@", [self.pickerMonthArray objectAtIndex:[self.expPickerView selectedRowInComponent:0]], [self.pickerYearArray objectAtIndex:[self.expPickerView selectedRowInComponent:1]]];
+	}
     
     return YES;
 }
