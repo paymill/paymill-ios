@@ -575,7 +575,6 @@ static OnCompletionFailure OnFailureBlock;
 			}
 
 			textField.text = [self stringByGrouping:accountStr By:recognizedCC];
-			NSLog(@"CC text: %@",textField.text);
 		}
 		
 		textField.tag = isDirectDebitSelected ? ACCOUNT_NUMBER : CARD_NUMBER;
