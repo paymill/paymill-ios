@@ -108,6 +108,15 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 ## Release notes
 
+### 1.0.2
+
+
+
+* bridge error response fixed
+* credit card holder issue fixed
+* appledoc improved
+
+
 ### 1.0.1
 * typos in headers and appledoc fixed
 * linkage issue fixed
