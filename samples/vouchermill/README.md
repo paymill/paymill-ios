@@ -1,9 +1,9 @@
 # VoucherMill
-The PAYMILL Android SDK Sample / Demo App
+The PAYMILL iOS SDK Sample / Demo App
 
-<a href="https://play.google.com/store/apps/details?id=com.paymill.android.samples.vouchermill">
-  <img alt="Get it on Google Play"
-       src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
+<a href="https://itunes.apple.com/us/app/vouchermill">
+  <img alt="Get it on the App Store"
+       src="https://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/app-store-icon.png" />
 </a>
 
 ## Using the payment screens
@@ -12,86 +12,74 @@ The PAYMILL Android SDK Sample / Demo App
 ### Installation
 
 
-To use the payment screens you need to copy the whole package `com.paymill.android.payment`, as well as all resources from the `res/` folder that start with the prefix `pm_` into your project.
+To use the payment screens you need to copy the whole `PaymentScreens` directory into your project.
 
-Your manifest should include following declarations:
-
-```
-   <!-- Copy this into your project's manifest if you use our payment activity -->
-   <activity
-       android:name="com.paymill.android.payment.PaymentActivity"
-        android:theme="@style/Holo.Theme.Light.NoActionBar" >
-   </activity>
-
-   <!-- Always copy this to your project's manifest, as it is needed by the SDK -->
-   <service android:name="com.paymill.android.service.PMService" >
-   </service>
-```
+You should make sure that all included images are added to your project's `Bundle Resources`.
 
 
 ### Styling the payment screens
-
-
-#### Change only colors
-If you like the layout of the payment screens and you simply want to change the colors, you can set them from the pm_styles.xml file.
-#### Change layout
-If you also want to change the layouts of the fragments you can change the pm_credit_card_fragment.xml and pm_elv_fragment.xml
-#### Reuse Fragments
-If you want to use the fragments in your own activity, you have to create them with the `instance` method specifying a valid [Settings](http://paymill.github.io/paymill-android/docs/samples/vouchermill/reference/com/paymill/android/payment/PaymentActivity.Settings.html) object. You also have to implement the `startRequest()` callback, that will receive the `PMPaymentMethod` object.
-#### Reuse validation logic.
-Use the [CreditCardValidator](http://paymill.github.io/paymill-android/docs/samples/vouchermill/reference/com/paymill/android/payment/CreditCardValidator.html) and [CardTypeParser](http://paymill.github.io/paymill-android/docs/samples/vouchermill/reference/com/paymill/android/payment/CardTypeParser) classes.
+If you like the layout of the payment screens and you simply want to change the colors, you can set them using the [PMStyle](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMStyle.html) class.
 
 ### Work with the PaymentActivity
 
 
-API Docs for the PaymentActivity are available [here](http://paymill.github.io/paymill-android/docs/samples/vouchermill/) .
+API Docs for the PaymentActivity are available [here](http://paymill.github.io/paymill-ios/docs/sdk/) .
 
 - Create the `PMPaymentParams` object that describes the amount, currency and description. Note, that you need to specify one, even if only generate a token.
 
 ```
-PMPaymentParams params = PMFactory.genPaymentParams("EUR", 100, null);
+PMError *error;
+PMPaymentParams *pmParams = [PMFactory genPaymentParamsWithCurrency:@"EUR" amount:100 description:@"Description" error:&error];  
 ```
 
-- Create and configure a [Settings](http://paymill.github.io/paymill-android/docs/samples/vouchermill/reference/com/paymill/android/payment/PaymentActivity.Settings.html) object.
+- Create and configure a [PMSettings](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMSettings.html) object.
 
 ```
-Settings settings= new Settings(); // all cc types enabled
-settings.disableCreditCardType(CardType.AmericanExpress); // disable American Express
+//set payment view settings
+PMSettings pmSettings= [[PMSettings alloc] init];
+pmSettings.paymentType = TOKEN;
+pmSettings.cardTypes = [NSArray arrayWithObjects:@"American Express", @"Visa", nil];//switch on American Expres and Visa
+pmSettings.directDebitCountry = @"DE"; //switch on direct debit for Germany
+pmSettings.isTestMode = YES;
+pmSettings.consumable = YES;
 ```
-- Call one of the [Factory](http://paymill.github.io/paymill-android/docs/samples/vouchermill/reference/com/paymill/android/payment/PaymentActivity.Factory.html) methods to create an Intent and start the PaymentActivity.
+- Call the [PMPaymentViewController]http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentViewController.html) method to create it.
 
 ```
-Intent i = PaymentActivity.Factory.getTokenIntent(this, params,
-				settings, ServiceMode.TEST, "yourpublickey");
-startActivityForResult(i, PaymentActivity.REQUEST_CODE);
+id paymentViewController = [PMPaymentViewController alloc] initWithParams:pmParams publicKey:publicKey settings:pmSetings style:pmStyle 
+			success:^(id) {
+			//handle success
+			} failure:^(PMError *) {
+			//handle error
+			}];
 ```
-
-- In your `onActivityResult()` method, call `getResultFrom()` to retrieve the Result. If the method returns, the callback is not from the PaymentActivity.
+- Push or present the view controller modally. 
 ___
 Complete example:
 
 ```
-public void test() {
-		PMPaymentParams params = PMFactory.genPaymentParams("EUR", 100, null);
-		Settings settings = new Settings(); // all cc types enabled
-		// e.g. disable a credit card type
-		settings.disableCreditCardType(CardType.AmericanExpress); 
-		Intent i = PaymentActivity.Factory.getTokenIntent(this, params,
-				settings, ServiceMode.TEST, "yourpublickey");
-		startActivityForResult(i, PaymentActivity.REQUEST_CODE);
-}
-
-protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	PaymentActivity.Result result = PaymentActivity.Factory.getResultFrom(
-			requestCode, resultCode, data);
-	if (result == null) {
-		// this is not the result we were looking for
-		// if you wait for results from other activites, check here...
-		return;
-	} else {
-		//work with the result
-		Log.d("PAYMILL", "token"+result.getResultToken());
-	}
+-(void)test {
+   //create payment params	 
+   PMError *error;
+   PMPaymentParams *pmParams = [PMFactory genPaymentParamsWithCurrency:@"EUR" amount:100 description:@"Description" error:&error];
+   //create payment settings
+   PMSettings pmSettings= [[PMSettings alloc] init];
+   pmSettings.paymentType = TOKEN;
+   pmSettings.cardTypes = [NSArray arrayWithObjects:@"American Express", @"Visa", nil];//switch on American Expres and Visa
+   pmSettings.directDebitCountry = @"DE"; //switch on direct debit for Germany
+   pmSettings.isTestMode = YES;
+   pmSettings.consumable = YES;
+   //create the payment view controller
+   id paymentViewController = [PMPaymentViewController alloc] initWithParams:pmParams publicKey:publicKey settings:pmSetings style:pmStyle 
+			success:^(id resObject) {
+			   //handle success
+			   //since the payment type set in the settings is TOKEN, we expect a NSString to come back from PAYMILL
+		           token =  (NSString*)resObject;		
+			} failure:^(PMError *) {
+			   //handle error
+			}];
+   //present the view controller modally				
+   [self presentViewController:paymentViewController animated:YES completion:nil];
 }
 ```
 
@@ -100,7 +88,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 ## Issues
 
 
-If you find a bug, please use the [issue tracker](https://github.com/paymill/paymill-android/issues) to create a ticket.
+If you find a bug, please use the [issue tracker](https://github.com/paymill/paymill-ios/issues) to create a ticket.
 
 ## Developers
 
