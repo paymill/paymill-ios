@@ -20,10 +20,10 @@ You should make sure that all included images are added to your project's `Bundl
 ### Styling the payment screens
 If you like the layout of the payment screens and you simply want to change the colors, you can set them using the [PMStyle](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMStyle.html) class.
 
-### Work with the PaymentActivity
+### Work with the Payment View Controller
 
 
-API Docs for the PaymentActivity are available [here](http://paymill.github.io/paymill-ios/docs/sdk/) .
+API Docs for the Payment View Controller are available [here](http://paymill.github.io/paymill-ios/docs/sdk/) .
 
 - Create the `PMPaymentParams` object that describes the amount, currency and description. Note, that you need to specify one, even if only generate a token.
 
@@ -43,7 +43,7 @@ pmSettings.directDebitCountry = @"DE"; //switch on direct debit for Germany
 pmSettings.isTestMode = YES;
 pmSettings.consumable = YES;
 ```
-- Call the [PMPaymentViewController](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentViewController.html) method to create it.
+- Call the [PMPaymentViewController](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentViewController.html) designated initializer to create it.
 
 ```
 id paymentViewController = [PMPaymentViewController alloc] initWithParams:pmParams publicKey:publicKey settings:pmSetings style:pmStyle 
@@ -54,7 +54,8 @@ id paymentViewController = [PMPaymentViewController alloc] initWithParams:pmPara
 			}];
 ```
 - Push or present the view controller modally. 
-___
+
+
 Complete example:
 
 ```
