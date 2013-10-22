@@ -43,7 +43,7 @@ pmSettings.directDebitCountry = @"DE"; //switch on direct debit for Germany
 pmSettings.isTestMode = YES;
 pmSettings.consumable = YES;
 ```
-- Call the [PMPaymentViewController]http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentViewController.html) method to create it.
+- Call the [PMPaymentViewController](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentViewController.html) method to create it.
 
 ```
 id paymentViewController = [PMPaymentViewController alloc] initWithParams:pmParams publicKey:publicKey settings:pmSetings style:pmStyle 
