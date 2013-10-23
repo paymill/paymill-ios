@@ -27,10 +27,10 @@ iOS 5.0 or later.
 
 ## Installation
 
-- Xcode users add 'PayMillSDK' folder to your project.
-- Cocopods users add this dependency to their `Podfile`:
+- Xcode users add 'PayMillSDK' folder to their project.
+- CocoaPods  users add this dependency to their `Podfile`:
 ```
-  pod 'PayMillSDK',  '~> 1.1.2'
+  pod 'PayMillSDK',  '~> 1.0.2'
 ```
 
 ## Working with the SDK
