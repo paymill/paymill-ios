@@ -36,8 +36,6 @@
 		AB915699180E206900DC2659 /* PMVoucherParams.m in Sources */ = {isa = PBXBuildFile; fileRef = AB915698180E206900DC2659 /* PMVoucherParams.m */; };
 		AB9E0483176A1EED0002AEA9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9E0482176A1EED0002AEA9 /* Security.framework */; };
 		ABB2D2E317C68A7500F084CF /* PMImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB2D2E217C68A7500F084CF /* PMImageViewCell.m */; };
-		ABBE770318113495009361C0 /* PayMillSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ABBE770118113495009361C0 /* PayMillSDK.bundle */; };
-		ABBE770418113495009361C0 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBE770218113495009361C0 /* PayMillSDK.framework */; };
 		ABBEA74E17E03C2C00AB4D15 /* PMVoucherUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA74D17E03C2C00AB4D15 /* PMVoucherUtils.m */; };
 		ABBEA77817E04D7700AB4D15 /* button_backgroundimage.png in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA75017E04D7700AB4D15 /* button_backgroundimage.png */; };
 		ABBEA77917E04D7700AB4D15 /* button_backgroundimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA75117E04D7700AB4D15 /* button_backgroundimage@2x.png */; };
@@ -84,6 +82,8 @@
 		ABCB3FB017C266DC00CF95BE /* PMPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCB3FAC17C266DC00CF95BE /* PMPaymentViewController.m */; };
 		ABCB405317C2C64C00CF95BE /* tyre_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2221C82178CDB2300868F8B /* tyre_big@2x.png */; };
 		ABD7AE451784304700767423 /* PMBuyContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD7AE441784304700767423 /* PMBuyContainerController.m */; };
+		ABEA25BA18311795000CA4E4 /* PayMillSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ABEA25B818311795000CA4E4 /* PayMillSDK.bundle */; };
+		ABEA25BB18311795000CA4E4 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA25B918311795000CA4E4 /* PayMillSDK.framework */; };
 		ABFA3B1D177B30D10048A8AE /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFA3B1C177B30D10048A8AE /* burger.png */; };
 		ABFA3B1F177B31530048A8AE /* tyre.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFA3B1E177B31530048A8AE /* tyre.png */; };
 		ABFA3B21177B318D0048A8AE /* custom.png in Resources */ = {isa = PBXBuildFile; fileRef = ABFA3B20177B318D0048A8AE /* custom.png */; };
@@ -178,8 +178,6 @@
 		AB9E0482176A1EED0002AEA9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		ABB2D2E117C68A7500F084CF /* PMImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMImageViewCell.h; sourceTree = "<group>"; };
 		ABB2D2E217C68A7500F084CF /* PMImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMImageViewCell.m; sourceTree = "<group>"; };
-		ABBE770118113495009361C0 /* PayMillSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PayMillSDK.bundle; sourceTree = "<group>"; };
-		ABBE770218113495009361C0 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayMillSDK.framework; sourceTree = "<group>"; };
 		ABBEA74C17E03C2C00AB4D15 /* PMVoucherUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMVoucherUtils.h; sourceTree = "<group>"; };
 		ABBEA74D17E03C2C00AB4D15 /* PMVoucherUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMVoucherUtils.m; sourceTree = "<group>"; };
 		ABBEA75017E04D7700AB4D15 /* button_backgroundimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_backgroundimage.png; sourceTree = "<group>"; };
@@ -229,6 +227,8 @@
 		ABCB3FAD17C266DC00CF95BE /* PMPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPaymentViewController.h; sourceTree = "<group>"; };
 		ABD7AE431784304700767423 /* PMBuyContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMBuyContainerController.h; sourceTree = "<group>"; };
 		ABD7AE441784304700767423 /* PMBuyContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBuyContainerController.m; sourceTree = "<group>"; };
+		ABEA25B818311795000CA4E4 /* PayMillSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PayMillSDK.bundle; sourceTree = "<group>"; };
+		ABEA25B918311795000CA4E4 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayMillSDK.framework; sourceTree = "<group>"; };
 		ABFA3B1C177B30D10048A8AE /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = burger.png; sourceTree = "<group>"; };
 		ABFA3B1E177B31530048A8AE /* tyre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tyre.png; sourceTree = "<group>"; };
 		ABFA3B20177B318D0048A8AE /* custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = custom.png; sourceTree = "<group>"; };
@@ -301,8 +301,8 @@
 				AB9E0483176A1EED0002AEA9 /* Security.framework in Frameworks */,
 				ABC4AB6816AF081B00353B1B /* UIKit.framework in Frameworks */,
 				ABC4AB6A16AF081B00353B1B /* Foundation.framework in Frameworks */,
+				ABEA25BB18311795000CA4E4 /* PayMillSDK.framework in Frameworks */,
 				ABC4AB6C16AF081B00353B1B /* CoreGraphics.framework in Frameworks */,
-				ABBE770418113495009361C0 /* PayMillSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,15 +506,6 @@
 			path = PaymentScreens;
 			sourceTree = "<group>";
 		};
-		ABBE770018113495009361C0 /* PayMillSDK */ = {
-			isa = PBXGroup;
-			children = (
-				ABBE770118113495009361C0 /* PayMillSDK.bundle */,
-				ABBE770218113495009361C0 /* PayMillSDK.framework */,
-			);
-			path = PayMillSDK;
-			sourceTree = "<group>";
-		};
 		ABBEA74B17E03C1100AB4D15 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,7 +596,7 @@
 		ABC4AB6616AF081B00353B1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ABBE770018113495009361C0 /* PayMillSDK */,
+				ABEA25B718311795000CA4E4 /* PayMillSDK */,
 				7C98B8D3177116F800951CFE /* CoreData.framework */,
 				AB9E0482176A1EED0002AEA9 /* Security.framework */,
 				ABC4AB6716AF081B00353B1B /* UIKit.framework */,
@@ -613,6 +604,15 @@
 				ABC4AB6B16AF081B00353B1B /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABEA25B718311795000CA4E4 /* PayMillSDK */ = {
+			isa = PBXGroup;
+			children = (
+				ABEA25B818311795000CA4E4 /* PayMillSDK.bundle */,
+				ABEA25B918311795000CA4E4 /* PayMillSDK.framework */,
+			);
+			path = PayMillSDK;
 			sourceTree = "<group>";
 		};
 		D256C498177C46C6009262EC /* Details */ = {
@@ -720,6 +720,7 @@
 				D2221C86178CDB2300868F8B /* custom_big@2x.png in Resources */,
 				D2221C87178CDB2300868F8B /* tickets_big.png in Resources */,
 				D2221C88178CDB2300868F8B /* tickets_big@2x.png in Resources */,
+				ABEA25BA18311795000CA4E4 /* PayMillSDK.bundle in Resources */,
 				D2221C89178CDB2300868F8B /* tyre_big.png in Resources */,
 				06D3DFCB17D8BECD004E930D /* PMButtonCell.xib in Resources */,
 				06D3DFCC17D8BECD004E930D /* PMBuyChildCustomCell.xib in Resources */,
@@ -772,7 +773,6 @@
 				D2AEDACD17E214650015A2E5 /* Default.png in Resources */,
 				D2AEDACF17E214740015A2E5 /* Default@2x.png in Resources */,
 				D2AEDAD117E2147E0015A2E5 /* Default-568h@2x.png in Resources */,
-				ABBE770318113495009361C0 /* PayMillSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -892,7 +892,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Emilian Stoilkov (2N5Z56F658)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/PayMillSDK\"",
+					"\\\"$(SRCROOT)/PayMillSDK\\\"",
+					"/Projects/IOS/vouchermill-github/samples/vouchermill/PayMillSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoucherMill/VoucherMill-Prefix.pch";
@@ -909,7 +910,8 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Emilian Stoilkov (2N5Z56F658)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/PayMillSDK\"",
+					"\\\"$(SRCROOT)/PayMillSDK\\\"",
+					"/Projects/IOS/vouchermill-github/samples/vouchermill/PayMillSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoucherMill/VoucherMill-Prefix.pch";
