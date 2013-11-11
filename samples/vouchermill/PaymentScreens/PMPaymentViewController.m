@@ -1186,7 +1186,6 @@ static OnCompletionFailure OnFailureBlock;
     int step = 4;
     for (i = 0; i+step < string.length; i += step)
     {
-        ///
         if (recognizedCC.result == VALID && (((NSNumber *)[recognizedCC.numLength objectAtIndex:0]).intValue == 15 || ((NSNumber *)[recognizedCC.numLength objectAtIndex:0]).intValue == 14))
         {
             if(i == 4)
@@ -1194,7 +1193,6 @@ static OnCompletionFailure OnFailureBlock;
             if(i == 10)
                 step = string.length - i;
         }
-        ///
 
         NSRange r = {i, step};
         

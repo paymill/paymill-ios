@@ -11,7 +11,7 @@
  Error type
  */
 typedef NS_ENUM(NSInteger, PMErrorType){
-	WRONG_PARMETERS, /*You have supplied wrong parameters. You use messeage for details.*/
+	WRONG_PARMETERS, /*You have supplied wrong parameters. Use message property for details.*/
 	HTTP_CONNECTION, /*There was an error while connecting to the PayMill Service.*/
 	API, /*The API returned an unexpected result.*/
 	NOT_INIT, /*You did not initialize the SDK.*/
