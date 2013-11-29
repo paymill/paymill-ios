@@ -124,6 +124,10 @@
 		D270636C17845FF800FF2A59 /* PMLoginTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D270636B17845FF800FF2A59 /* PMLoginTextFieldCell.m */; };
 		D270636F1784604200FF2A59 /* PMLoginSegmentedControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D270636E1784604200FF2A59 /* PMLoginSegmentedControlCell.m */; };
 		D27063721784607C00FF2A59 /* PMLoginButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D27063711784607C00FF2A59 /* PMLoginButtonCell.m */; };
+		D28D8A99183CA5E200022DFC /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D8A95183CA5E200022DFC /* Icon-60.png */; };
+		D28D8A9A183CA5E200022DFC /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D8A96183CA5E200022DFC /* Icon-76.png */; };
+		D28D8A9B183CA5E200022DFC /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D8A97183CA5E200022DFC /* Icon-120.png */; };
+		D28D8A9C183CA5E200022DFC /* Icon-152.png in Resources */ = {isa = PBXBuildFile; fileRef = D28D8A98183CA5E200022DFC /* Icon-152.png */; };
 		D2A37971177DEF45007A6EC0 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A3796F177DEF45007A6EC0 /* logo.png */; };
 		D2A37972177DEF45007A6EC0 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A37970177DEF45007A6EC0 /* logo@2x.png */; };
 		D2AEDACD17E214650015A2E5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2AEDACC17E214650015A2E5 /* Default.png */; };
@@ -281,6 +285,10 @@
 		D27063711784607C00FF2A59 /* PMLoginButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLoginButtonCell.m; sourceTree = "<group>"; };
 		D27063731784D3E400FF2A59 /* divider_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = divider_selected.png; sourceTree = "<group>"; };
 		D27063741784D3E400FF2A59 /* divider_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "divider_selected@2x.png"; sourceTree = "<group>"; };
+		D28D8A95183CA5E200022DFC /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		D28D8A96183CA5E200022DFC /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		D28D8A97183CA5E200022DFC /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120.png"; sourceTree = "<group>"; };
+		D28D8A98183CA5E200022DFC /* Icon-152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-152.png"; sourceTree = "<group>"; };
 		D29396F917839F9800A875A5 /* button_backgroundimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_backgroundimage.png; sourceTree = "<group>"; };
 		D29396FA17839F9800A875A5 /* button_backgroundimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_backgroundimage@2x.png"; sourceTree = "<group>"; };
 		D29396FB17839F9800A875A5 /* selectedbutton_backgroundimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedbutton_backgroundimage.png; sourceTree = "<group>"; };
@@ -411,6 +419,10 @@
 		AB159979177880CC00F3A54F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D28D8A95183CA5E200022DFC /* Icon-60.png */,
+				D28D8A96183CA5E200022DFC /* Icon-76.png */,
+				D28D8A97183CA5E200022DFC /* Icon-120.png */,
+				D28D8A98183CA5E200022DFC /* Icon-152.png */,
 				D2AEDAD017E2147E0015A2E5 /* Default-568h@2x.png */,
 				D2AEDACE17E214740015A2E5 /* Default@2x.png */,
 				D2AEDACC17E214650015A2E5 /* Default.png */,
@@ -773,6 +785,10 @@
 				D2AEDACF17E214740015A2E5 /* Default@2x.png in Resources */,
 				D2AEDAD117E2147E0015A2E5 /* Default-568h@2x.png in Resources */,
 				AB768D2B183BA0740077A8D2 /* PayMillSDK.bundle in Resources */,
+				D28D8A99183CA5E200022DFC /* Icon-60.png in Resources */,
+				D28D8A9A183CA5E200022DFC /* Icon-76.png in Resources */,
+				D28D8A9B183CA5E200022DFC /* Icon-120.png in Resources */,
+				D28D8A9C183CA5E200022DFC /* Icon-152.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,9 +853,13 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/PayMillSDK",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -856,7 +876,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -869,9 +889,10 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Paymill GmbH (KEHMPW35VW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paymill GmbH (KEHMPW35VW)";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/PayMillSDK";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -879,8 +900,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos6.1;
+				PROVISIONING_PROFILE = "FAAB6D9D-5E8A-4F9D-BDC6-C041A7B5F565";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FAAB6D9D-5E8A-4F9D-BDC6-C041A7B5F565";
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -888,8 +910,8 @@
 		ABC4AB8816AF081B00353B1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Emilian Stoilkov (2N5Z56F658)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Emilian Stoilkov (2N5Z56F658)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Emilian Stoilkov (Z295SD3H7R)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Emilian Stoilkov (Z295SD3H7R)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/PayMillSDK\\\"",
@@ -899,6 +921,8 @@
 				GCC_PREFIX_HEADER = "VoucherMill/VoucherMill-Prefix.pch";
 				INFOPLIST_FILE = "VoucherMill/VoucherMill-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -906,8 +930,8 @@
 		ABC4AB8916AF081B00353B1B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Emilian Stoilkov (2N5Z56F658)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Emilian Stoilkov (2N5Z56F658)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Paymill GmbH (KEHMPW35VW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paymill GmbH (KEHMPW35VW)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/PayMillSDK\\\"",
@@ -917,6 +941,8 @@
 				GCC_PREFIX_HEADER = "VoucherMill/VoucherMill-Prefix.pch";
 				INFOPLIST_FILE = "VoucherMill/VoucherMill-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "FAAB6D9D-5E8A-4F9D-BDC6-C041A7B5F565";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FAAB6D9D-5E8A-4F9D-BDC6-C041A7B5F565";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
