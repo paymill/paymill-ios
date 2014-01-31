@@ -915,8 +915,8 @@
 		ABC4AB8816AF081B00353B1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/PayMillSDK",
@@ -925,8 +925,6 @@
 				GCC_PREFIX_HEADER = "VoucherMill/VoucherMill-Prefix.pch";
 				INFOPLIST_FILE = "VoucherMill/VoucherMill-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DACDD613-2640-404A-BC06-EBF8FC1BCCE9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DACDD613-2640-404A-BC06-EBF8FC1BCCE9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -934,8 +932,8 @@
 		ABC4AB8916AF081B00353B1B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/PayMillSDK\\\"",
@@ -945,8 +943,6 @@
 				GCC_PREFIX_HEADER = "VoucherMill/VoucherMill-Prefix.pch";
 				INFOPLIST_FILE = "VoucherMill/VoucherMill-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "DACDD613-2640-404A-BC06-EBF8FC1BCCE9";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DACDD613-2640-404A-BC06-EBF8FC1BCCE9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
