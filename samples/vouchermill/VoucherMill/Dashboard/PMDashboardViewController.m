@@ -171,8 +171,8 @@
 		}
 		[self performSegueWithIdentifier:kONLINEVOUCHERS sender:self];
         
-    } failure:^(PMError *error) {
-		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:error.type errorMessage:error.message];
+    } failure:^(NSError *error) {
+		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:error.code errorMessage:error.localizedDescription];
     }];
 }
 
@@ -206,8 +206,8 @@
 		}
 		[self performSegueWithIdentifier:kNOTCONSUMED sender:self];
         
-    } failure:^(PMError *error) {
-		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:error.type errorMessage:error.message];
+    } failure:^(NSError *error) {
+		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:error.code errorMessage:error.localizedDescription];
     }];
 }
 

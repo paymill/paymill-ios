@@ -23,7 +23,7 @@
  @param error PMError object
  @return PMPaymentMethod successfully created object
  */
-+ (id<PMPaymentMethod>)genCardPaymentWithAccHolder:(NSString*)accHolder cardNumber:(NSString*)cardNumber expiryMonth:(NSString*) expiryMonth expiryYear:(NSString*)expiryYear verification:(NSString*)verification error:(PMError **)error;
++ (id<PMPaymentMethod>)genCardPaymentWithAccHolder:(NSString*)accHolder cardNumber:(NSString*)cardNumber expiryMonth:(NSString*) expiryMonth expiryYear:(NSString*)expiryYear verification:(NSString*)verification error:(NSError **)error;
 /**
  Generates a PaymentMethod from direct debit payment details.
  @param accountNumber account number
@@ -33,7 +33,7 @@
  @param error PMError object
  @return PMPaymentMethod successfully created object
  */
-+ (id<PMPaymentMethod>)genNationalPaymentWithAccNumber:(NSString *)accountNumber accBank:(NSString *)accountBank accHolder:(NSString *)accountHolder accCountry:(NSString *)accountCountry error:(PMError **)error;
++ (id<PMPaymentMethod>)genNationalPaymentWithAccNumber:(NSString *)accountNumber accBank:(NSString *)accountBank accHolder:(NSString *)accountHolder accCountry:(NSString *)accountCountry error:(NSError **)error;
 /**
  Use this method to generate the PaymentParams object, needed for creating transactions, preauthorizations and tokens.
  @param currency Three character ISO 4217 formatted currency code.
@@ -43,5 +43,15 @@
  @param error PMError object
  @return PMPaymentParams successfully created object
  */
-+ (PMPaymentParams*)genPaymentParamsWithCurrency:(NSString*)currency amount:(int)amount description:(NSString*)description error:(PMError **)error;
++ (PMPaymentParams*)genPaymentParamsWithCurrency:(NSString*)currency amount:(int)amount description:(NSString*)description error:(NSError **)error;
+/**
+ Generates a PaymentMethod from direct debit payment details.
+ @param accountNumber account number
+ @param accountBank	bank code
+ @param accountHolder first and second name of the account holder
+ @param accountCountry	ISO 3166-2 formatted country code
+ @param error PMError object
+ @return PMPaymentMethod successfully created object
+ */
++ (id<PMPaymentMethod>)genNationalPaymentWithIban:(NSString *)accountIban andBic:(NSString *)accountBic accHolder:(NSString *)accountHolder error:(NSError **)error;
 @end

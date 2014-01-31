@@ -12,7 +12,7 @@
 
 @interface PMBuyDetailsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) PMError *buyError;
+@property (nonatomic, strong) NSError *buyError;
 @property (nonatomic, strong) PMVoucher *buyVoucher;
 @property (nonatomic, strong) NSString *token;
 @property (nonatomic, weak) IBOutlet UITableView *detailsTable;

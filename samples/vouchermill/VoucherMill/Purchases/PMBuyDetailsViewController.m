@@ -36,38 +36,18 @@
     [self setTitle:@"Voucher Details"];
 	
 	[detailsTable setBackgroundView:nil];
-	
-    if (buyError != nil) {
+	if(buyError) {
 		
-		switch (buyError.type) {
-			case 0:
-				detailLabelTxt = @"WRONG_PARMETERS";
-				break;
-			case 1:
-				detailLabelTxt = @"HTTP_CONNECTION";
-				break;
-			case 2:
-				detailLabelTxt = @"API";
-				break;
-			case 3:
-				detailLabelTxt = @"NOT_INIT";
-				break;
-			case 4:
-				detailLabelTxt = @"INTERNAL";
-				break;
-			default:
-				break;
-		}
-		
-        [resultLabel setBackgroundColor:[UIColor redColor]];
-        [resultLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
-        resultLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        resultLabel.numberOfLines = 0;
-        [resultLabel setText:@"An error occured while trying to process the transaction!"];
-        [resultLabel setTextColor:[UIColor whiteColor]];
-        [resultLabel.layer setMasksToBounds:YES];
-        [resultLabel.layer setBorderWidth:0.0f];
-        [resultLabel.layer setCornerRadius:10.0f];
+		detailLabelTxt = buyError.localizedDescription;
+		[resultLabel setBackgroundColor:[UIColor redColor]];
+		[resultLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
+		resultLabel.lineBreakMode = NSLineBreakByWordWrapping;
+		resultLabel.numberOfLines = 0;
+		[resultLabel setText:@"An error occured while trying to process the transaction!"];
+		[resultLabel setTextColor:[UIColor whiteColor]];
+		[resultLabel.layer setMasksToBounds:YES];
+		[resultLabel.layer setBorderWidth:0.0f];
+		[resultLabel.layer setCornerRadius:10.0f];
 		
     } else if(buyVoucher || token) {
 		
@@ -141,7 +121,7 @@
                 return 44.0f;
                 break;
             case 1:
-                return [PMBuyDetailsErrorMessageCell labelSizeForText:buyError.message
+                return [PMBuyDetailsErrorMessageCell labelSizeForText:buyError.localizedDescription
                                                            maxWidth:123].height + 10.0;
                 break;
             default:
@@ -177,7 +157,7 @@
                 [firstCell setSelectionStyle:UITableViewCellSelectionStyleNone];
                 firstCell.backgroundColor = lightOrangeColor;
                 firstCell.titleText = @"Message";
-                firstCell.cellText = buyError.message;
+                firstCell.cellText = buyError.localizedDescription	;
                 cell = firstCell;
                 break;
             default:

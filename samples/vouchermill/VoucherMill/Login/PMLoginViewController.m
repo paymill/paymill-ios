@@ -191,12 +191,12 @@ static NSString *publicKey = @"4369741839217a7d10cbed5d417715f4";
 		return;
 	}
     if (sender.tag == 1) {
-        [PMManager initWithTestMode:isTestMode merchantPublicKey:publicKeyLogin newDeviceId:nil init:^(BOOL success, PMError *error) {
+        [PMManager initWithTestMode:isTestMode merchantPublicKey:publicKeyLogin newDeviceId:nil init:^(BOOL success, NSError *error) {
         		if(success){
         			[self performSegueWithIdentifier:@"Dashboard" sender:sender];
         		}
         		else {
-        			UIAlertView *notAuthorized = [[UIAlertView alloc] initWithTitle:@"Authorization failed" message:error.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        			UIAlertView *notAuthorized = [[UIAlertView alloc] initWithTitle:@"Authorization failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         			[notAuthorized show];
         		}
         	}];
@@ -217,22 +217,22 @@ static NSString *publicKey = @"4369741839217a7d10cbed5d417715f4";
 }
 
 - (IBAction)testLogIn:(id)sender {
-		[PMManager initWithTestMode:YES merchantPublicKey:publicKey newDeviceId:nil init:^(BOOL success, PMError *error) {
+		[PMManager initWithTestMode:YES merchantPublicKey:publicKey newDeviceId:nil init:^(BOOL success, NSError *error) {
 			if(success){
     			[self performSegueWithIdentifier:@"Dashboard" sender:sender];
 				[PMVoucherParams instance].publicKey = publicKey;
     		}
     		else {
-    			UIAlertView *notAuthorized = [[UIAlertView alloc] initWithTitle:@"Authorization failed" message:error.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    			UIAlertView *notAuthorized = [[UIAlertView alloc] initWithTitle:@"Authorization failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     			[notAuthorized show];
 			}
 		} success:^(NSArray *notConsumedTransactions) {
 			//
-		} failure:^(PMError *error) {
+		} failure:^(NSError *error) {
 			//
 		} success:^(NSArray *notConsumedPreauthorizations) {
 			//
-		} failure:^(PMError *error) {
+		} failure:^(NSError *error) {
 			//
 		}];
 	

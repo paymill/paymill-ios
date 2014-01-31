@@ -95,7 +95,7 @@ static OnCompletionFailure OnFailureBlock;
 #pragma mark - Initialization methods
 /**************************************/
 
--(PMPaymentViewController *)initWithParams:(PMPaymentParams*)pmParams publicKey:(NSString *)pubKey settings:(PMSettings *)pmSettings style:(PMStyle *)pmStyle success:(void (^)(id))success failure:(void (^)(PMError *))failure
+-(PMPaymentViewController *)initWithParams:(PMPaymentParams*)pmParams publicKey:(NSString *)pubKey settings:(PMSettings *)pmSettings style:(PMStyle *)pmStyle success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
     self = [super init];
     if (self) {
@@ -675,7 +675,7 @@ static OnCompletionFailure OnFailureBlock;
         return;
     }
 	
-    PMError *error;
+    NSError *error;
     
     //Create payment parameters
     PMPaymentParams *params = paymentParams;
@@ -693,14 +693,14 @@ static OnCompletionFailure OnFailureBlock;
                 
         if(error)
         {
-            [self showMessage:[NSString stringWithFormat: @"Create payment method error: %d", error.type] text:error.message];
+            [self showMessage:[NSString stringWithFormat: @"Create payment method error: %d", error.code] text:error.localizedDescription];
             return;
         }
         
     }
     else
     {
-        [self showMessage:@"Create payment parameters error: %d" text:error.message];
+        [self showMessage:@"Create payment parameters error: %d" text:error.localizedDescription];
         return;
     }
     
@@ -718,7 +718,7 @@ static OnCompletionFailure OnFailureBlock;
 											   OnSuccessBlock(token);
 										   }];
                                        }
-                                       failure:^(PMError *error) {
+                                       failure:^(NSError *error) {
                                            [self dismissViewControllerAnimated:YES completion:^{
 											   OnFailureBlock(error);
 										   }];
@@ -734,7 +734,7 @@ static OnCompletionFailure OnFailureBlock;
 					OnSuccessBlock(token);
 				}];
 				
-			} failure:^(PMError *error) {
+			} failure:^(NSError *error) {
 				[self dismissViewControllerAnimated:YES completion:^{
 					OnFailureBlock(error);
 				}];
@@ -752,7 +752,7 @@ static OnCompletionFailure OnFailureBlock;
 										}];
                                         
                                      }
-                                     failure:^(PMError *error) {
+                                     failure:^(NSError *error) {
 										[self dismissViewControllerAnimated:YES completion:^{
 											OnFailureBlock(error);
 										}];
@@ -771,7 +771,7 @@ static OnCompletionFailure OnFailureBlock;
 												  OnSuccessBlock(transaction);
 											  }];
                                           }
-                                          failure:^(PMError *error) {
+                                          failure:^(NSError *error) {
 											[self dismissViewControllerAnimated:YES completion:^{
 												OnFailureBlock(error);
 

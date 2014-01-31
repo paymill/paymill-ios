@@ -33,6 +33,6 @@
  @param error PMError object
  @return PMPaymentParams successfully created object
  */
-+ (PMPaymentParams*)paymentParamsWithCurrency:(NSString*)currency amount:(int)amount description:(NSString*)description error:(PMError **)error;
++ (PMPaymentParams*)paymentParamsWithCurrency:(NSString*)currency amount:(int)amount description:(NSString*)description error:(NSError **)error;
 
 @end

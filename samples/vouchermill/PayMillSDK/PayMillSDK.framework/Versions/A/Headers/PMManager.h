@@ -15,39 +15,39 @@
 //Block callbacks
 /*Get non consumed transactions*/
 typedef void (^OnNotConsumedTransactionsSuccess)(NSArray *notConsumedTransactions);
-typedef void (^OnNotConsumedTransactionsFailure)(PMError *error);
+typedef void (^OnNotConsumedTransactionsFailure)(NSError *error);
 /*Get non consumed preauthorizations*/
 typedef void (^OnNotConsumedPreauthorizationsSuccess)(NSArray *notConsumedPreauthorizations);
-typedef void (^OnNotConsumedPreauthorizationsFailure)(PMError *error);
+typedef void (^OnNotConsumedPreauthorizationsFailure)(NSError *error);
 /*Create token*/
 typedef void (^OnTokenSuccess)(NSString* token);
-typedef void (^OnTokenFailure)(PMError *error);
+typedef void (^OnTokenFailure)(NSError *error);
 /*Create Transaction*/
 typedef void (^OnTransactionSuccess)(PMTransaction* transaction);
-typedef void (^OnTransactionFailure)(PMError *error);
+typedef void (^OnTransactionFailure)(NSError *error);
 /*Create Preauthorization*/
 typedef void (^OnPreauthorizationSuccess)(PMTransaction* transaction);
-typedef void (^OnPreauthorizationFailure)(PMError *error);
+typedef void (^OnPreauthorizationFailure)(NSError *error);
 /*Create Payment*/
 typedef void (^OnPaymentSuccess)(PMPayment* payment);
-typedef void (^OnPaymentFailure)(PMError *error);
+typedef void (^OnPaymentFailure)(NSError **error);
 /*Get Transactions*/
 typedef void (^OnTransactionsListSuccess)(NSArray* transactions);
-typedef void (^OnTransactionsListFailure)(PMError *error);
+typedef void (^OnTransactionsListFailure)(NSError *error);
 /*Get Prauthorizations*/
 typedef void (^OnPreauthorizationsListSuccess)(NSArray* preauthorizations);
-typedef void (^OnPreauthorizationsListFailure)(PMError *error);
+typedef void (^OnPreauthorizationsListFailure)(NSError *error);
 /*Get Payments*/
 typedef void (^OnPaymentsListSuccess)(NSArray* payments);
-typedef void (^OnPaymentsListFailure)(PMError *error);
+typedef void (^OnPaymentsListFailure)(NSError *error);
 /*Get new Device Id*/
 typedef void(^OnDeviceIdSucces)(NSString *devicId);
-typedef void(^OnDeviceIdFailure)(PMError *error);
+typedef void(^OnDeviceIdFailure)(NSError *error);
 /*Init*/
-typedef void(^OnInit)(BOOL success, PMError *error);
+typedef void(^OnInit)(BOOL success, NSError *error);
 /*Consume transaction/preauthorization*/
 typedef void(^OnConsumeSuccess)(NSString * id);
-typedef void(^OnConsumeFailure)(PMError * error);
+typedef void(^OnConsumeFailure)(NSError *error);
 /**
  This class is the main entry point for all SDK calls.
  */
@@ -134,11 +134,22 @@ typedef void(^OnConsumeFailure)(PMError * error);
  Creates a new token.
  Learn more about tokens in the PayMill documentation(https://www.paymill.com/en-gb/documentation-3/).
  @param method PMPaymentMethod created with PMFactory.
- @param parameters PMPaymentParams created with PMFactory.
+ @param parameters PMPaymentParams created with PMFactory. It may be nil
  @param success a block callback that is executed when the token is created successfully.
  @param failure a block callback that is executed when the token creation failed.
  */
 +(void) generateTokenWithMethod:(id<PMPaymentMethod>)method parameters:(PMPaymentParams*)params
+						success:(OnTokenSuccess)successBlock
+						failure:(OnTokenFailure)failureBlock;
+/**
+ Creates a new token.
+ Learn more about tokens in the PayMill documentation(https://www.paymill.com/en-gb/documentation-3/).
+ @param method PMPaymentMethod created with PMFactory.
+ @param success a block callback that is executed when the token is created successfully.
+ @param failure a block callback that is executed when the token creation failed.
+ */
+
++(void) generateTokenWithMethod:(id<PMPaymentMethod>)method
 						success:(OnTokenSuccess)successBlock
 						failure:(OnTokenFailure)failureBlock;
 /**
@@ -147,14 +158,34 @@ typedef void(^OnConsumeFailure)(PMError * error);
  Learn more about tokens in the PayMill documentation(https://www.paymill.com/en-gb/documentation-3/).
  @param merchantPublicKey your PayMill public key for LIVE or TEST mode, depending on the previous parameter.
  @param testMode true for TEST mode, false for LIVE mode.
- @param method PMPaymentMethod created with PMFactory.
+ @param method PMPaymentMethod created with PMFactory. It may be nil.
  @param parameters PMPaymentParams created with PMFactory.
  @param success a block callback that is executed when the token is created successfully.
  @param failure a block callback that is executed when the token creation failed.
  */
+
+
 +(void) generateTokenWithPublicKey:(NSString*)merchantPublicKey testMode:(BOOL) testMode method:(id<PMPaymentMethod>)method parameters:(PMPaymentParams*)params
 						success:(OnTokenSuccess)successBlock
 						failure:(OnTokenFailure)failureBlock;
+
+
+/**
+ This is the preferred way to use the SDK.
+ Generate a token using this method and use it in your backend to process transactions, preauthorizations or any other future available trough the PayMill API.
+ Learn more about tokens in the PayMill documentation(https://www.paymill.com/en-gb/documentation-3/).
+ @param merchantPublicKey your PayMill public key for LIVE or TEST mode, depending on the previous parameter.
+ @param testMode true for TEST mode, false for LIVE mode.
+ @param method PMPaymentMethod created with PMFactory. It may be nil.
+ @param parameters PMPaymentParams created with PMFactory.
+ @param success a block callback that is executed when the token is created successfully.
+ @param failure a block callback that is executed when the token creation failed.
+ */
+
+
++(void) generateTokenWithPublicKey:(NSString*)merchantPublicKey testMode:(BOOL) testMode method:(id<PMPaymentMethod>)method
+					success:(OnTokenSuccess)successBlock
+					failure:(OnTokenFailure)failureBlock;
 /**
  Lists all transactions for the configured deviceId.
  @param success a block callback that is executed when the transactions were listed successfully.

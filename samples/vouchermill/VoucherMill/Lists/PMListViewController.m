@@ -176,8 +176,8 @@
 				}
 				items = reservedItems;
 				[theTableView reloadData];
-			} onFailure:^(PMError *error) {
-				[PMVoucherUtils showErrorAlertWithTitle:@"Get Preauthorization failure" errorType:error.type errorMessage:error.message];
+			} onFailure:^(NSError *error) {
+				[PMVoucherUtils showErrorAlertWithTitle:@"Get Preauthorization failure" errorType:error.code errorMessage:error.localizedDescription];
 			}];
 
 		}
@@ -199,8 +199,8 @@
 		}
 		[theTableView reloadData];
 		
-	} failure:^(PMError *error) {
-		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:error.type errorMessage:error.message];
+	} failure:^(NSError *error) {
+		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:error.code errorMessage:error.localizedDescription];
 	}];
 }
 @end

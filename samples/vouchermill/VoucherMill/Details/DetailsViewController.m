@@ -56,7 +56,7 @@
 {
 	[PMManager consumeTransactionForId:theVoucher.transactionId success:^(NSString *id) {
 		[delegate reloadTable];
-	} failure:^(PMError *error) {
+	} failure:^(NSError *error) {
 	}];
 	
 	[self.navigationController popViewControllerAnimated:YES];

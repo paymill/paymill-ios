@@ -65,5 +65,13 @@
  account
  */
 @property(nonatomic, strong) NSString *account;
+/**
+ bic
+ */
+@property(nonatomic, strong) NSString *bic;
+/**
+ iban
+ */
+@property(nonatomic, strong) NSString *iban;
 
 @end

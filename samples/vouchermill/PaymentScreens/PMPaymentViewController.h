@@ -52,7 +52,7 @@ typedef NS_ENUM(NSInteger, PMInputFields)
 
 //Block callbacks
 typedef void(^OnCompletionSuccess)(id);
-typedef void(^OnCompletionFailure)(PMError *);
+typedef void(^OnCompletionFailure)(NSError *);
 
 
 /**
@@ -162,6 +162,6 @@ typedef void(^OnCompletionFailure)(PMError *);
  @param success a block callback that is executed when the requested Paymill operation returns success.
  @param failure a block callback that is executed when the requested Paymill operation returns error.
  */
--(PMPaymentViewController *)initWithParams:(PMPaymentParams*)pmParams publicKey:(NSString *)pubKey settings:(PMSettings *)pmSettings style:(PMStyle *)pmStyle success:(void (^)(id))success failure:(void (^)(PMError *))failure;
+-(PMPaymentViewController *)initWithParams:(PMPaymentParams*)pmParams publicKey:(NSString *)pubKey settings:(PMSettings *)pmSettings style:(PMStyle *)pmStyle success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 @end

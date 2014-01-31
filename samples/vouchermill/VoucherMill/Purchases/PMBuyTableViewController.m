@@ -332,7 +332,7 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 
 - (IBAction)buyAction:(id)sender {
 	
-	PMError *error;
+	NSError *error;
 	PMPaymentParams *params;
 	PMSettings *pmViewSettings;
 	PMPaymentViewController *payViewNav;
@@ -402,7 +402,7 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 			}
 			[self.navigationController presentViewController:navController animated:YES completion:nil];
 			
-        } failure:^(PMError *error) {
+        } failure:^(NSError *error) {
             pmBuyDetailsViewController.buyError = error;
 			[self.navigationController presentViewController:navController animated:YES completion:nil];
 
@@ -414,7 +414,7 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 
 	}
 	else {
-		UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"PM Error: " message:error.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"PM Error: " message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[errorAlert show];
         
 	}
