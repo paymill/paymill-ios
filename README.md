@@ -108,6 +108,13 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 ## Release notes
 
+### 1.1.0
++ Added new method to generate Payments using IBAN and BIC in the [PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMFactory.html).
++ Added new methods to generate token without amount and currency in the
+[PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html).
+*All failure callbacks are now returning NSError instead PMError. Check PMError.h to see returned error codes. 
+* Improved error handling and added additional BRIDGE error type in PMError. You can use this to give the user conrecte information, why his card is rejected.
+
 ### 1.0.3
 
 * PMErrorType documented
