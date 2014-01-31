@@ -63,23 +63,3 @@ FOUNDATION_EXPORT NSString * const PMCCInvalidExp;
 FOUNDATION_EXPORT NSString * const PMCCInvalidExpYear;
 FOUNDATION_EXPORT NSString * const PMCCInvalidExpMonth;
 FOUNDATION_EXPORT NSString * const PMUnknownError;
-
-
-#pragma warning - TODO: Remove everything below once switched to NSError
-@interface PMError : NSObject
-/**
-  error type
- */
-@property (nonatomic) PMErrorType type;
-/**
- error message
- */
-@property (nonatomic, strong) NSString* message;
-/**
- Creates new PMError with a type and empty message.
- @param type error type
- @param message error message
- @return PMError successfully created object.
- */
-//+(PMError*) newPMErrorWithType:(PMErrorType)type message:(NSString*)message;
-@end
