@@ -44,7 +44,7 @@ A [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayment.ht
 
 Create [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayment.html)  and [PMPaymentParams](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentParams.html), add listeners and call [PMManager generateTokenWithMethod](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html#//api/name/generateTokenWithPublicKey:testMode:method:parameters:success:failure:) with your PAYMILL public key and mode.
 
-``` 
+```objective-c
  //init with PAYMILL public key  
  [PMManager initWithTestMode:YES merchantPublicKey:myPublicKey newDeviceId:nil init:^(BOOL success, PMError *error) {  
         if(success) {  
@@ -76,7 +76,7 @@ Create [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayme
 
 To create transactions and preauthorizations directly from the SDK you first need to install the Mobile App. In the code you will have to initialize the SDK, by calling [PMManger initWithTestMode](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html#//api/name/initWithTestMode:merchantPublicKey:newDeviceId:init:) method with your PAYMILL public key and mode.
 
-``` 
+```objective-c
  //init with PAYMILL public key  
  [PMManager initWithTestMode:YES merchantPublicKey:myPublicKey newDeviceId:nil init:^(BOOL success, PMError *error) {  
         if(success) {  
