@@ -28,7 +28,7 @@ API Docs for the Payment View Controller are available [here](http://paymill.git
 - Create the `PMPaymentParams` object that describes the amount, currency and description. Note, that you need to specify one, even if only generate a token.
 
 ```objective-c
-PMError *error;
+NSError *error;
 PMPaymentParams *pmParams = [PMFactory genPaymentParamsWithCurrency:@"EUR" amount:100 description:@"Description" error:&error];  
 ```
 
@@ -49,7 +49,7 @@ pmSettings.consumable = YES;
 id paymentViewController = [PMPaymentViewController alloc] initWithParams:pmParams publicKey:publicKey settings:pmSetings style:pmStyle 
 			success:^(id) {
 			//handle success
-			} failure:^(PMError *) {
+			} failure:^(NSError *) {
 			//handle error
 			}];
 ```
@@ -61,7 +61,7 @@ Complete example:
 ```objective-c
 -(void)test {
    //create payment params	 
-   PMError *error;
+   NSError *error;
    PMPaymentParams *pmParams = [PMFactory genPaymentParamsWithCurrency:@"EUR" amount:100 description:@"Description" error:&error];
    //create payment settings
    PMSettings pmSettings= [[PMSettings alloc] init];
@@ -76,7 +76,7 @@ Complete example:
 			   //handle success
 			   //since the payment type set in the settings is TOKEN, we expect a NSString to come back from PAYMILL
 		           token =  (NSString*)resObject;		
-			} failure:^(PMError *) {
+			} failure:^(NSError *) {
 			   //handle error
 			}];
    //present the view controller modally				

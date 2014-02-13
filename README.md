@@ -46,14 +46,14 @@ Create [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayme
 
 ```objective-c
  //init with PAYMILL public key  
- [PMManager initWithTestMode:YES merchantPublicKey:myPublicKey newDeviceId:nil init:^(BOOL success, PMError *error) {  
+ [PMManager initWithTestMode:YES merchantPublicKey:myPublicKey newDeviceId:nil init:^(BOOL success, NSError *error) {  
         if(success) {  
             // init successfull   
             // start using the SDK  
     }  
     }];
     
- PMError *error;  
+ NSError *error;  
  PMPaymentParams *params;  
  id paymentMethod = [PMFactory genCardPaymentWithAccHolder:@"Max Musterman" cardNumber:@"4711100000000000" expiryMonth:@"12" expiryYear:@"2014"  
  verification:@"333" error:&error];  
@@ -66,7 +66,7 @@ Create [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayme
      [PMManager generateTokenWithMethod:paymentMethod parameters:params success:^(NSString *token) {  
           //token successfully created  
      }  
-     failure:^(PMError *error) {  
+     failure:^(NSError *error) {  
           //token generation failed       
      }];  
  }   
@@ -78,14 +78,14 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 ```objective-c
  //init with PAYMILL public key  
- [PMManager initWithTestMode:YES merchantPublicKey:myPublicKey newDeviceId:nil init:^(BOOL success, PMError *error) {  
+ [PMManager initWithTestMode:YES merchantPublicKey:myPublicKey newDeviceId:nil init:^(BOOL success, NSError *error) {  
         if(success) {  
             // init successfull   
             // start using the SDK  
     }  
     }];
     
- PMError *error;  
+ NSError *error;  
  PMPaymentParams *params;  
  id paymentMethod = [PMFactory genCardPaymentWithAccHolder:@"Max Musterman" cardNumber:@"4711100000000000" expiryMonth:@"12" expiryYear:@"2014"  
  verification:@"333" error:&error];  
@@ -98,7 +98,7 @@ To create transactions and preauthorizations directly from the SDK you first nee
      [PMManager transactionWithMethod:paymentMethod parameters:params consumable:TRUE success:^(PMTransaction *transaction) {  
          // transaction successfully created  
      }  
-     failure:^(PMError *error) {  
+     failure:^(NSError *error) {  
         // transaction creation failed  
      }];  
  }     
