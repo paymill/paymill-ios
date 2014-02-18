@@ -78,6 +78,7 @@
 		
 	}
 
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)didReceiveMemoryWarning

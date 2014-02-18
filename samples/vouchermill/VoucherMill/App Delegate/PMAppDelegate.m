@@ -17,7 +17,17 @@
 	[[UIBarButtonItem appearance] setTintColor:lightOrangeColor];
     [[UIPageControl appearance] setPageIndicatorTintColor:lightOrangeColor];
     
+    if ( [[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] integerValue] >= 7 ) {
+        NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    lightOrangeColor,UITextAttributeTextColor,
+                                    nil];
+        
+        [[UIBarButtonItem appearance] setTitleTextAttributes:attributes
+                                                    forState:UIControlStateNormal];
+    }
+    
     UINavigationController* navCtrl = (UINavigationController*)[self.window rootViewController];
+    navCtrl.navigationBar.translucent = NO;
     navCtrl.view.backgroundColor = [UIColor whiteColor];
     
 	return YES;

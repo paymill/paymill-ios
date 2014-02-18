@@ -25,30 +25,33 @@
     return self;
 }
 
+
+-(void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    [self.loginButton setAutoresizingMask:UIViewAutoresizingNone];
+    UIColor *color = [[UIColor alloc]initWithRed:149/255.0f green:0/255.0f  blue:11/255.0f alpha:1 ];
+    [self.loginButton.titleLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
+    [self.loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.loginButton setBackgroundImage:[UIImage imageNamed:@"button_backgroundimage"] forState:UIControlStateNormal];
+    [self.loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+    [self.loginButton setBackgroundImage:[UIImage imageNamed:@"selectedbutton_backgroundimage"] forState:UIControlStateHighlighted];
+    [self.loginButton.layer setMasksToBounds:YES];
+    [self.loginButton.layer setBorderWidth:2.0f];
+    [self.loginButton.layer setBorderColor:color.CGColor];
+    [self.loginButton.layer setCornerRadius:10.0f];
+}
+
+/**************************************/
+#pragma mark -
+/**************************************/
 -(void)layoutSubviews
 {
     [super layoutSubviews];
     
-    [loginButton setTitle:loginButtonTitle forState:UIControlStateNormal];
-    [loginButton setTag:loginButtonTag];
-    [loginButton setAutoresizingMask:UIViewAutoresizingNone];
-    UIColor *color = [[UIColor alloc]initWithRed:149/255.0f green:0/255.0f  blue:11/255.0f alpha:1 ];
-    [loginButton.titleLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
-    [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [loginButton setBackgroundImage:[UIImage imageNamed:@"button_backgroundimage"] forState:UIControlStateNormal];
-    [loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    [loginButton setBackgroundImage:[UIImage imageNamed:@"selectedbutton_backgroundimage"] forState:UIControlStateHighlighted];
-    [loginButton.layer setMasksToBounds:YES];
-    [loginButton.layer setBorderWidth:2.0f];
-    [loginButton.layer setBorderColor:color.CGColor];
-    [loginButton.layer setCornerRadius:10.0f];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [self.loginButton setTitle:self.loginButtonTitle forState:UIControlStateNormal];
+    [self.loginButton setTag:self.loginButtonTag];
 }
 
 @end

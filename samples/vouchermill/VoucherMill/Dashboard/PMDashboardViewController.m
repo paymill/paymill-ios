@@ -138,13 +138,13 @@
 		PMListViewController *destViewController = segue.destinationViewController;
 		destViewController.items = voucherList;
 		if([segue.identifier isEqualToString:kONLINEVOUCHERS]) {
-			destViewController.segments = [NSArray arrayWithObjects:kBOUGHT, kRESERVED, nil];
+			destViewController.segments = [NSMutableArray arrayWithObjects:kBOUGHT, kRESERVED, nil];
 			destViewController.voucherState = Online;
 		}   else if ([segue.identifier isEqualToString:kNOTCONSUMED]) {
-            destViewController.segments = [NSArray arrayWithObjects:kBOUGHT, nil];
+            destViewController.segments = [NSMutableArray arrayWithObjects:kBOUGHT, nil];
             destViewController.voucherState = NotConsumed;
 		}   else if ([segue.identifier isEqualToString:kOFFLINEVOUCHERS]) {
-            destViewController.segments = [NSArray arrayWithObjects:kBOUGHT, nil];
+            destViewController.segments = [NSMutableArray arrayWithObjects:kBOUGHT, nil];
             destViewController.voucherState = Offline;
 		}
 		

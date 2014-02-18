@@ -8,6 +8,9 @@
 
 #import "PMBuyDetailsErrorMessageCell.h"
 
+/**************************************/
+#pragma mark - Class Extension
+/**************************************/
 @interface PMBuyDetailsErrorMessageCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *cellTitle;
@@ -15,6 +18,9 @@
 
 @end
 
+/**************************************/
+#pragma mark - Class Implementation
+/**************************************/
 @implementation PMBuyDetailsErrorMessageCell
 
 @synthesize titleText, cellText, font;
@@ -30,6 +36,9 @@
     return labelHeightSize;
 }
 
+/**************************************/
+#pragma mark - Init
+/**************************************/
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -39,23 +48,30 @@
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+/**************************************/
+#pragma mark -
+/**************************************/
+- (void)awakeFromNib
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [super awakeFromNib];
+    
+    UIFont* labelFont = [UIFont boldSystemFontOfSize:15.0f];
+    
+    self.cellTitle.font = labelFont;
+    self.cellMessage.font = labelFont;
+    self.cellTitle.textColor = [UIColor whiteColor];
+    self.cellMessage.textColor = [UIColor colorWithRed:149.0/255.0 green:0/255.0 blue:11.0/255.0 alpha:1.0];
 }
 
+/**************************************/
+#pragma mark -
+/**************************************/
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.cellTitle.font = [UIFont boldSystemFontOfSize:15.0f];
-    self.cellTitle.text = self.titleText;
-    self.cellTitle.textColor = [UIColor whiteColor];
     
-    self.cellMessage.font = [UIFont boldSystemFontOfSize:15.0f];
+    self.cellTitle.text = self.titleText;
     self.cellMessage.text = self.cellText;
-    self.cellMessage.textColor = [UIColor colorWithRed:149.0/255.0 green:0/255.0 blue:11.0/255.0 alpha:1.0];
     
     CGRect frame = self.cellMessage.frame;
     frame.size.height = [PMBuyDetailsErrorMessageCell labelSizeForText:self.cellText

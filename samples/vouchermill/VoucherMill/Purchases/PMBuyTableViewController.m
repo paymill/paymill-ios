@@ -86,6 +86,7 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.translucent = NO;
 	//[self.view setNeedsDisplay];
 	// Do any additional setup after loading the view.
     
@@ -400,6 +401,7 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 					   }
 				}];
 			}
+            
 			[self.navigationController presentViewController:navController animated:YES completion:nil];
 			
         } failure:^(NSError *error) {
@@ -410,7 +412,8 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
         
 		//present the view controller modally
          self.isVisible = NO;
-		[self presentViewController:payViewNav animated:YES completion:nil];
+        UINavigationController* navCtrl = [[UINavigationController alloc] initWithRootViewController:payViewNav];
+		[self presentViewController:navCtrl animated:YES completion:nil];
 
 	}
 	else {
@@ -418,7 +421,6 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 		[errorAlert show];
         
 	}
-	
 }
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {

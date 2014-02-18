@@ -117,7 +117,7 @@ static OnCompletionFailure OnFailureBlock;
     //Uncomment to set default Paymill style:
     [self defaultStyle];
     
-	[self createNavBar];
+	//[self createNavBar];
 	[self createNavBarButtons];
     [self createTable];
 	[self createPicker];
@@ -134,6 +134,7 @@ static OnCompletionFailure OnFailureBlock;
     
 	UINavigationBar *bar = [[UINavigationBar alloc] initWithFrame:frame];
 	bar.tintColor = style.navbarColor;
+    bar.translucent = NO;
 	bar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	[bar setBarStyle:UIBarStyleBlackOpaque];
 	[bar setItems:[NSArray arrayWithObject:self.navigationItem]];
@@ -201,6 +202,8 @@ static OnCompletionFailure OnFailureBlock;
 	
 	self.navigationItem.rightBarButtonItem = self.submitButton;
     self.navigationItem.leftBarButtonItem  = self.cancelButton;
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.tintColor = style.navbarColor;
 }
 
 -(void)createKeyBoardToolbar
@@ -515,9 +518,9 @@ static OnCompletionFailure OnFailureBlock;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:CellIdentifier];
-        UITextField* textField = [self textFieldWithFrame:CGRectMake(0.0,
+        UITextField* textField = [self textFieldWithFrame:CGRectMake(10.0,
                                                                      0.0,
-                                                                     CGRectGetWidth(cell.contentView.bounds),
+                                                                     CGRectGetWidth(cell.contentView.bounds) - 20.0,
                                                                      CGRectGetHeight(cell.bounds))];
         [cell.contentView addSubview:textField];
         

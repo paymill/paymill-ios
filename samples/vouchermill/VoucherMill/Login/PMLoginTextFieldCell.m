@@ -27,9 +27,13 @@
     return self;
 }
 
-
--(void)layoutSubviews
+/**************************************/
+#pragma mark -
+/**************************************/
+-(void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     [publicKey setBorderStyle:UITextBorderStyleRoundedRect];
     [publicKey setAutoresizingMask:UIViewAutoresizingNone];
     [publicKey setFont:[UIFont systemFontOfSize:15.0]];
@@ -59,9 +63,11 @@
     publicKey.keyboardType = UIKeyboardAppearanceDefault;
     
     publicKey.keyboardAppearance = UIKeyboardAppearanceDefault;
-    
 }
 
+/**************************************/
+#pragma mark -
+/**************************************/
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
