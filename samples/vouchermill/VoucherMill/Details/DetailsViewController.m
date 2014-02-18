@@ -49,7 +49,8 @@
         arrayOfSections = [[NSMutableArray alloc] initWithObjects:firstSection, thirdSection, nil];
     }
      [self setDetailsList:arrayOfSections];
-    
+ 
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 -(IBAction)consumeAction:(id)sender

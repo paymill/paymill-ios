@@ -25,9 +25,13 @@
     }
     return self;
 }
-
--(void)layoutSubviews
+/**************************************/
+#pragma mark -
+/**************************************/
+- (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     [segmentedControl setAutoresizingMask:UIViewAutoresizingNone];
     UIColor *borderColor = [[UIColor alloc]initWithRed:149/255.0f green:0/255.0f  blue:11/255.0f alpha:1 ];
     UIFont *font = [UIFont boldSystemFontOfSize:20.0f];
@@ -45,6 +49,9 @@
     [segmentedControl.layer setCornerRadius:10.0f];
 }
 
+/**************************************/
+#pragma mark -
+/**************************************/
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

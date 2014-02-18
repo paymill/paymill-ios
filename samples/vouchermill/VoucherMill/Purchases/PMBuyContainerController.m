@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, PMBuyAction)
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = NO;
 	// Do any additional setup after loading the view.
     
     // in case the parent view draws with a custom color or gradient, use a transparent color

@@ -10,6 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Constants.h"
 
+/**************************************/
+#pragma mark - Class Implementation
+/**************************************/
 @implementation PMButtonCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -21,16 +24,12 @@
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+/**************************************/
+#pragma mark -
+/**************************************/
+- (void)awakeFromNib
 {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
+    [super awakeFromNib];
     
     [self.submitButton setTitle:@"Submit" forState:UIControlStateNormal];
     [self.submitButton.titleLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
@@ -42,6 +41,14 @@
     [self.submitButton.layer setBorderWidth:2.0f];
     [self.submitButton.layer setBorderColor:darkOrangeColor.CGColor];
     [self.submitButton.layer setCornerRadius:10.0f];
+}
+
+/**************************************/
+#pragma mark -
+/**************************************/
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
 }
 
 @end

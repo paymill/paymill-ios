@@ -31,8 +31,9 @@
 
 - (void)viewDidLoad
 {
-    NSMutableArray *arrayOfSections;
     [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = NO;
+    NSMutableArray *arrayOfSections;
     [self setTitle:@"Voucher Details"];
 	
 	[detailsTable setBackgroundView:nil];

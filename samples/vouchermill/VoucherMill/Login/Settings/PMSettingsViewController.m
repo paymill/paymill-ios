@@ -46,6 +46,7 @@
     NSDictionary* data = [[NSDictionary alloc] initWithContentsOfFile:path];
     
     ccItems = [data objectForKey:@"Cards"];
+    self.navigationController.navigationBar.translucent = NO;
     
     //ddItems = [NSArray arrayWithObjects:@"Germany", nil];
 }
