@@ -20,7 +20,7 @@
  @param expiryMonth credit card expiry month
  @param expiryYear credit card expiry year
  @param verification credit card verification number
- @param error NSError object
+ @param error PMError object
  @return PMPaymentMethod successfully created object
  */
 + (id<PMPaymentMethod>)genCardPaymentWithAccHolder:(NSString*)accHolder cardNumber:(NSString*)cardNumber expiryMonth:(NSString*) expiryMonth expiryYear:(NSString*)expiryYear verification:(NSString*)verification error:(NSError **)error;
@@ -30,7 +30,7 @@
  @param accountBank	bank code
  @param accountHolder first and second name of the account holder
  @param accountCountry	ISO 3166-2 formatted country code
- @param error NSError object
+ @param error PMError object
  @return PMPaymentMethod successfully created object
  */
 + (id<PMPaymentMethod>)genNationalPaymentWithAccNumber:(NSString *)accountNumber accBank:(NSString *)accountBank accHolder:(NSString *)accountHolder accCountry:(NSString *)accountCountry error:(NSError **)error;
@@ -40,7 +40,7 @@
  @param amount amount (in cents) which will be charged
  @param description	a short description for the transaction (e.g. shopping cart ID) or empty string or null.
  Note: You don't need to supply a description parameter when generating a token
- @param error NSError object
+ @param error PMError object
  @return PMPaymentParams successfully created object
  */
 + (PMPaymentParams*)genPaymentParamsWithCurrency:(NSString*)currency amount:(int)amount description:(NSString*)description error:(NSError **)error;
@@ -50,7 +50,7 @@
  @param accountBank	bank code
  @param accountHolder first and second name of the account holder
  @param accountCountry	ISO 3166-2 formatted country code
- @param error NSError object
+ @param error PMError object
  @return PMPaymentMethod successfully created object
  */
 + (id<PMPaymentMethod>)genNationalPaymentWithIban:(NSString *)accountIban andBic:(NSString *)accountBic accHolder:(NSString *)accountHolder error:(NSError **)error;
