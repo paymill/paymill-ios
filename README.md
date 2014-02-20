@@ -108,7 +108,7 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 ## Release notes
 
-### 1.1.0
+### 2.0.0
 + Added new method to generate Payments using IBAN and BIC in the [PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMFactory.html).
 + Added new methods to generate token without amount and currency in the
 [PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html).
