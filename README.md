@@ -23,14 +23,14 @@ Our open source sample / demo app [VoucherMill](/samples/vouchermill) is availab
 
 ## Requirements
 
-iOS 5.0 or later.
+iOS 6.0 or later.
 
 ## Installation
 
 - Xcode users add 'PayMillSDK' folder to their project.
 - CocoaPods  users add this dependency to their `Podfile`:
 ```
-  pod 'PayMillSDK',  '~> 1.1.0'
+  pod 'PayMillSDK',  '~> 2.0.0'
 ```
 
 ## Working with the SDK
@@ -108,7 +108,7 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 ## Release notes
 
-### 1.1.0
+### 2.0.0
 + Added new method to generate Payments using IBAN and BIC in the [PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMFactory.html).
 + Added new methods to generate token without amount and currency in the
 [PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html).
