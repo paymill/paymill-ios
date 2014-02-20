@@ -42,7 +42,7 @@ A [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayment.ht
 
 ### Generate a token
 
-Create [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayment.html)  and [PMPaymentParams](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentParams.html), add listeners and call [PMManager generateTokenWithMethod](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html#//api/name/generateTokenWithPublicKey:testMode:method:parameters:success:failure:) with your PAYMILL public key and mode.
+Create [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayment.html)  and [PMPaymentParams](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentParams.html) and call [PMManager generateTokenWithMethod](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html#//api/name/generateTokenWithPublicKey:testMode:method:parameters:success:failure:) with your PAYMILL public key and mode.
 
 ```objective-c
  //init with PAYMILL public key  
