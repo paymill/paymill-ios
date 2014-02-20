@@ -23,7 +23,7 @@ Our open source sample / demo app [VoucherMill](/samples/vouchermill) is availab
 
 ## Requirements
 
-iOS 5.0 or later.
+iOS 6.0 or later.
 
 ## Installation
 
