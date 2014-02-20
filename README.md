@@ -113,7 +113,7 @@ To create transactions and preauthorizations directly from the SDK you first nee
 + Added new methods to generate token without amount and currency in the
 [PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html).
 *All failure callbacks are now returning NSError instead PMError. Check PMError.h to see returned error codes. 
-* Improved error handling and added additional BRIDGE error type in PMError. You can use this to give the user conrecte information, why his card is rejected.
+* Improved error handling. BRIDGE error type added in PMError. You can use this to give the user conrecte information, why his card is rejected.
 
 ### 1.0.3
 
