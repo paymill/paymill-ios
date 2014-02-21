@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.ios.source_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/Headers/*.h'
   s.osx.source_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/Headers/*.h'
   s.ios.vendored_library = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/PayMillSDK'
-  s.osx.vendored_library = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/PayMillSDKMac'
+  s.osx.vendored_library = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/libPayMillSDKMac.a'
   s.requires_arc = true
   s.framework =  'Security'
   s.resources    = 'samples/vouchermill/PayMillSDK/PayMillSDK.bundle'
