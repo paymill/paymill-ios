@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.osx.public_header_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/Headers/*.h'
   s.ios.preserve_paths = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/PayMillSDK'
   s.osx.exclude_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/PayMillSDK'
-  s.osx.preserve_paths = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A'
+  s.osx.preserve_paths = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/**'
   s.requires_arc = true
   s.vendored_frameworks = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework'
   s.framework =  'Security'
