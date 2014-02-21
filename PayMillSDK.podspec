@@ -8,10 +8,12 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/paymill/paymill-ios.git", :tag => '2.0.0' }
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.8'
-  s.public_header_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/Headers/*.h'
+  s.ios.public_header_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/Headers/*.h'
+  s.osx.public_header_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/Headers/*.h'
   s.ios.preserve_paths = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/PayMillSDK'
-  s.osx.preserve_paths = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/libPayMillSDKMac.a'
-  s.requires_arc = true	
+  s.osx.exclude_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/PayMillSDK'
+  s.osx.preserve_paths = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A'
+  s.requires_arc = true
   s.vendored_frameworks = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework'
   s.framework =  'Security'
   s.resources    = 'samples/vouchermill/PayMillSDK/PayMillSDK.bundle'
