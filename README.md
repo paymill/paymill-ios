@@ -1,9 +1,9 @@
 ![PAYMILL icon](https://static.paymill.com/r/335f99eb3914d517bf392beb1adaf7cccef786b6/img/logo-download_Light.png)
-# PAYMILL iOS SDK
+# PAYMILL iOS/MacOS SDK
 
-The iOS SDK provides a flexible and easy to integrate payment solution for your iOS applications.
+The iOS/MacOS SDK provides a flexible and easy to integrate payment solution for your iOS/MacOS applications.
 
-## Sample App
+## Sample App for iOS
 
 
 <a href="https://itunes.apple.com/us/app/vouchermill/id757789501">
@@ -30,7 +30,7 @@ iOS 6.0 or later.
 - Xcode users add 'PayMillSDK' folder to their project.
 - CocoaPods  users add this dependency to their `Podfile`:
 ```
-  pod 'PayMillSDK',  '~> 2.0.0'
+  pod 'PayMillSDK',  '~> 2.0.1'
 ```
 
 ## Working with the SDK
@@ -107,6 +107,10 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 
 ## Release notes
+
+###2.0.1
++ MacOS Support
+* Bug fixes
 
 ### 2.0.0
 + Added new method to generate Payments using IBAN and BIC in the [PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMFactory.html).
