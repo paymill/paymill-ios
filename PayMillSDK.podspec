@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://bitbucket.org/QaiWare/paymill-ios-test", :tag => '2.0.1' }
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.8'
-  s.source_files = 'samples/vouchermill/PayMillSDK.framework/Versions/A/Headers/*.h'
+  s.public_header_files = 'samples/vouchermill/PayMillSDK.framework/Versions/A/Headers/*.h'
   s.ios.preserve_paths = 'samples/vouchermill/PayMillSDK.framework'
   s.osx.preserve_paths = 'macos/PayMillSDK.framework'
   s.ios.vendored_frameworks = 'samples/vouchermill/PayMillSDK.framework'
