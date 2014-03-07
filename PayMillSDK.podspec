@@ -10,8 +10,10 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.8'
   s.ios.source_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/Headers/*.h'
   s.osx.source_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/Headers/*.h'
-  s.ios.vendored_library = 'samples/vouchermill/PayMillSDK.framework/Versions/A/PayMillSDK'
-  s.osx.vendored_library = 'macos/PayMillSDK.framework/Versions/A/PayMillSDK'
+  s.ios.preserve_paths = 'samples/vouchermill/PayMillSDK.framework'
+  s.osx.preserve_paths = 'macos/PayMillSDK.framework'
+  s.ios.vendored_frameworks = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework'
+  s.osx.vendored_frameworks = 'macos/PayMillSDK.framework'
   s.requires_arc = true
   s.framework =  'Security'
   s.resources    = 'samples/vouchermill/PayMillSDK/PayMillSDK.bundle'
