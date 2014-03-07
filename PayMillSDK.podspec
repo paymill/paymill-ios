@@ -5,17 +5,15 @@ Pod::Spec.new do |s|
   s.homepage     = "https://www.paymill.com/en-gb/documentation-3/reference/mobile-sdk/"
   s.license      = 'Commercial, :file => License.md'
   s.author       = { "Paymill GmbH" => "support@paymill.de" }
-  s.source       = { :git => "https://github.com/paymill/paymill-ios.git", :tag => '2.0.1' }
+  s.source       = { :git => "https://bitbucket.org/QaiWare/paymill-ios-test", :tag => '2.0.1' }
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.8'
-  s.ios.source_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/Headers/*.h'
-  s.osx.source_files = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework/Versions/A/Headers/*.h'
+  s.source_files = 'samples/vouchermill/PayMillSDK.framework/Versions/A/Headers/*.h'
   s.ios.preserve_paths = 'samples/vouchermill/PayMillSDK.framework'
   s.osx.preserve_paths = 'macos/PayMillSDK.framework'
-  s.ios.vendored_frameworks = 'samples/vouchermill/PayMillSDK/PayMillSDK.framework'
+  s.ios.vendored_frameworks = 'samples/vouchermill/PayMillSDK.framework'
   s.osx.vendored_frameworks = 'macos/PayMillSDK.framework'
   s.requires_arc = true
   s.framework =  'Security'
-  s.resources    = 'samples/vouchermill/PayMillSDK/PayMillSDK.bundle'
   s.xcconfig = { 'OTHER_LDFLAGS' => '-ObjC' }
 end
