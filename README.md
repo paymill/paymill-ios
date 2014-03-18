@@ -12,7 +12,11 @@ The iOS/MacOS SDK provides a flexible and easy to integrate payment solution for
 </a>
 
 Our open source sample / demo app [VoucherMill](/samples/vouchermill) is available for download on the App Store. 
- 
+
+## Tutorial
+
+In the [Honey Store tutorial](https://github.com/paymill/paymill-example-ios-parse-honeystore) we show you how to use the iOS SDK together with your backend, enabling returning (1-click) payments. In addition, we integrated the free [card.io](https://www.card.io/) library for card scanning.
+
 ## Getting started
 
 - Start with the [SDK guide](https://www.paymill.com/en-gb/documentation-3/reference/mobile-sdk/).
