@@ -34,7 +34,7 @@ iOS 6.0 or later.
 - Xcode users add 'PayMillSDK' folder to their project.
 - CocoaPods  users add this dependency to their `Podfile`:
 ```
-  pod 'PayMillSDK',  '~> 2.0.1'
+  pod 'PayMillSDK',  '~> 2.0.2'
 ```
 
 ## Working with the SDK
