@@ -1,9 +1,9 @@
 ![PAYMILL icon](https://static.paymill.com/r/335f99eb3914d517bf392beb1adaf7cccef786b6/img/logo-download_Light.png)
-# PAYMILL iOS SDK
+# PAYMILL iOS/MacOS SDK
 
-The iOS SDK provides a flexible and easy to integrate payment solution for your iOS applications.
+The iOS/MacOS SDK provides a flexible and easy to integrate payment solution for your iOS/MacOS applications.
 
-## Sample App
+## Sample App for iOS
 
 
 <a href="https://itunes.apple.com/us/app/vouchermill/id757789501">
@@ -12,7 +12,11 @@ The iOS SDK provides a flexible and easy to integrate payment solution for your 
 </a>
 
 Our open source sample / demo app [VoucherMill](/samples/vouchermill) is available for download on the App Store. 
- 
+
+## Tutorial
+
+In the [Honey Store tutorial](https://github.com/paymill/paymill-example-ios-parse-honeystore) we show you how to use the iOS SDK together with your backend, enabling returning (1-click) payments. In addition, we integrated the free [card.io](https://www.card.io/) library for card scanning.
+
 ## Getting started
 
 - Start with the [SDK guide](https://www.paymill.com/en-gb/documentation-3/reference/mobile-sdk/).
@@ -30,7 +34,7 @@ iOS 6.0 or later.
 - Xcode users add 'PayMillSDK' folder to their project.
 - CocoaPods  users add this dependency to their `Podfile`:
 ```
-  pod 'PayMillSDK',  '~> 2.0.0'
+  pod 'PayMillSDK',  '~> 2.0.1'
 ```
 
 ## Working with the SDK
@@ -108,13 +112,18 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 ## Release notes
 
+###2.0.1
++ MacOS Support
+* Bug fixes
+
 ### 2.0.0
 + Added new method to generate Payments using IBAN and BIC in the [PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMFactory.html).
 + Added new methods to generate token without amount and currency in the
 [PMFactory](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html).
 * All failure callbacks are now returning NSError instead PMError. Check PMError.h to see returned error codes. 
-* Improved error handling. BRIDGE error type added in PMError. You can use this to give the user conrecte information, why his card is rejected.
+* Improved error handling. BRIDGE error type added in PMError. You can use this to give the user concrete information, why his card is rejected.
 * ARM 64 support
+
 ### 1.0.3
 
 * PMErrorType documented
