@@ -32,7 +32,7 @@
 		AB159988177880CC00F3A54F /* PMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB159974177880CC00F3A54F /* PMLoginViewController.m */; };
 		AB159989177880CC00F3A54F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB159975177880CC00F3A54F /* main.m */; };
 		AB15998C177880CC00F3A54F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB15997C177880CC00F3A54F /* MainStoryboard.storyboard */; };
-		AB60D11318B6FAEB001B0D1B /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB60D11118B6FAEB001B0D1B /* PayMillSDK.framework */; };
+		AB46D12718FEA7B3006AFF32 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB46D12618FEA7B3006AFF32 /* PayMillSDK.framework */; };
 		AB915696180DFCF600DC2659 /* PMCreditCardTypeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AB915695180DFCF600DC2659 /* PMCreditCardTypeParser.m */; };
 		AB915699180E206900DC2659 /* PMVoucherParams.m in Sources */ = {isa = PBXBuildFile; fileRef = AB915698180E206900DC2659 /* PMVoucherParams.m */; };
 		AB9E0483176A1EED0002AEA9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9E0482176A1EED0002AEA9 /* Security.framework */; };
@@ -174,7 +174,7 @@
 		AB15997D177880CC00F3A54F /* VoucherMill-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VoucherMill-Info.plist"; sourceTree = "<group>"; };
 		AB15997E177880CC00F3A54F /* VoucherMill-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VoucherMill-Prefix.pch"; sourceTree = "<group>"; };
 		AB24FB0A1796E5FD0017654D /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		AB60D11118B6FAEB001B0D1B /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayMillSDK.framework; sourceTree = "<group>"; };
+		AB46D12618FEA7B3006AFF32 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayMillSDK.framework; sourceTree = "<group>"; };
 		AB915694180DFCF600DC2659 /* PMCreditCardTypeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCreditCardTypeParser.h; sourceTree = "<group>"; };
 		AB915695180DFCF600DC2659 /* PMCreditCardTypeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCreditCardTypeParser.m; sourceTree = "<group>"; };
 		AB915697180E206900DC2659 /* PMVoucherParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMVoucherParams.h; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 				AB9E0483176A1EED0002AEA9 /* Security.framework in Frameworks */,
 				ABC4AB6816AF081B00353B1B /* UIKit.framework in Frameworks */,
 				ABC4AB6A16AF081B00353B1B /* Foundation.framework in Frameworks */,
-				AB60D11318B6FAEB001B0D1B /* PayMillSDK.framework in Frameworks */,
+				AB46D12718FEA7B3006AFF32 /* PayMillSDK.framework in Frameworks */,
 				ABC4AB6C16AF081B00353B1B /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,14 +476,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		AB60D10F18B6FAEB001B0D1B /* PayMillSDK */ = {
-			isa = PBXGroup;
-			children = (
-				AB60D11118B6FAEB001B0D1B /* PayMillSDK.framework */,
-			);
-			path = PayMillSDK;
-			sourceTree = "<group>";
-		};
 		AB75A0CC177C80B0007144E8 /* Purchases */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,7 +606,7 @@
 		ABC4AB6616AF081B00353B1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AB60D10F18B6FAEB001B0D1B /* PayMillSDK */,
+				AB46D12618FEA7B3006AFF32 /* PayMillSDK.framework */,
 				7C98B8D3177116F800951CFE /* CoreData.framework */,
 				AB9E0482176A1EED0002AEA9 /* Security.framework */,
 				ABC4AB6716AF081B00353B1B /* UIKit.framework */,
@@ -671,11 +663,6 @@
 				CLASSPREFIX = PM;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = Paymill;
-				TargetAttributes = {
-					ABC4AB6216AF081B00353B1B = {
-						DevelopmentTeam = 3Z9ZM4Y28M;
-					};
-				};
 			};
 			buildConfigurationList = ABC4AB5D16AF081B00353B1B /* Build configuration list for PBXProject "VoucherMill" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -854,7 +841,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Emilian Stoilkov (2N5Z56F658)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -875,8 +862,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "2E22EE89-B87F-43DA-8531-3582EAE3EB22";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B878F317-C5B8-4055-9868-8D97914A3A12";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -890,8 +877,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Paymill GmbH (KEHMPW35VW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paymill GmbH (KEHMPW35VW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Emilian Stoilkov (2N5Z56F658)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/PayMillSDK";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -901,8 +888,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
-				PROVISIONING_PROFILE = "FAAB6D9D-5E8A-4F9D-BDC6-C041A7B5F565";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FAAB6D9D-5E8A-4F9D-BDC6-C041A7B5F565";
+				PROVISIONING_PROFILE = "2E22EE89-B87F-43DA-8531-3582EAE3EB22";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B878F317-C5B8-4055-9868-8D97914A3A12";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -911,17 +898,20 @@
 		ABC4AB8816AF081B00353B1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/PayMillSDK",
 					"/Projects/IOS/vouchermill-bitbucket/samples/vouchermill/PayMillSDK",
+					"$(PROJECT_DIR)/PayMillSDK",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoucherMill/VoucherMill-Prefix.pch";
 				INFOPLIST_FILE = "VoucherMill/VoucherMill-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "B878F317-C5B8-4055-9868-8D97914A3A12";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -929,18 +919,21 @@
 		ABC4AB8916AF081B00353B1B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\\\\\"$(SRCROOT)/PayMillSDK\\\\\\\"",
 					"/Projects/IOS/vouchermill-github/samples/vouchermill/PayMillSDK",
 					"/Projects/IOS/vouchermill-bitbucket/samples/vouchermill/PayMillSDK",
+					"$(PROJECT_DIR)/PayMillSDK",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoucherMill/VoucherMill-Prefix.pch";
 				INFOPLIST_FILE = "VoucherMill/VoucherMill-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "B878F317-C5B8-4055-9868-8D97914A3A12";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

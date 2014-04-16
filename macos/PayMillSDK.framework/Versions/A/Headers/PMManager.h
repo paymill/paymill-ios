@@ -28,18 +28,12 @@ typedef void (^OnTransactionFailure)(NSError *error);
 /*Create Preauthorization*/
 typedef void (^OnPreauthorizationSuccess)(PMTransaction* transaction);
 typedef void (^OnPreauthorizationFailure)(NSError *error);
-/*Create Payment*/
-typedef void (^OnPaymentSuccess)(PMPayment* payment);
-typedef void (^OnPaymentFailure)(NSError **error);
 /*Get Transactions*/
 typedef void (^OnTransactionsListSuccess)(NSArray* transactions);
 typedef void (^OnTransactionsListFailure)(NSError *error);
 /*Get Prauthorizations*/
 typedef void (^OnPreauthorizationsListSuccess)(NSArray* preauthorizations);
 typedef void (^OnPreauthorizationsListFailure)(NSError *error);
-/*Get Payments*/
-typedef void (^OnPaymentsListSuccess)(NSArray* payments);
-typedef void (^OnPaymentsListFailure)(NSError *error);
 /*Get new Device Id*/
 typedef void(^OnDeviceIdSucces)(NSString *devicId);
 typedef void(^OnDeviceIdFailure)(NSError *error);
@@ -129,7 +123,6 @@ typedef void(^OnConsumeFailure)(NSError *error);
 +(void) transactionWithToken:(NSString*)token parameters:(PMPaymentParams*)params consumable:(BOOL)consumable
 					 success:(OnTransactionSuccess)successBlock
 					 failure:(OnTransactionFailure)failureBlock;
-
 /**
  Creates a new token.
  Learn more about tokens in the PayMill documentation(https://www.paymill.com/en-gb/documentation-3/).
