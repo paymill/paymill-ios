@@ -123,6 +123,7 @@ To create transactions and preauthorizations directly from the SDK you first nee
 * All failure callbacks are now returning NSError instead PMError. Check PMError.h to see returned error codes. 
 * Improved error handling. BRIDGE error type added in PMError. You can use this to give the user concrete information, why his card is rejected.
 * ARM 64 support
+
 ### 1.0.3
 
 * PMErrorType documented
