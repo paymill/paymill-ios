@@ -112,6 +112,9 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 ## Release notes
 
+###2.0.3
+* Bug fixes
+
 ###2.0.2
 * Mandatory changes in infrastructure
 * Bug fixes
