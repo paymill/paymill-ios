@@ -27,7 +27,7 @@ In the [Honey Store tutorial](https://github.com/paymill/paymill-example-ios-par
 
 ## Requirements
 
-iOS 6.0 or later.
+iOS 6.0 or later / OS X 10.6 or later.
 
 ## Installation
 
