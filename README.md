@@ -27,14 +27,14 @@ In the [Honey Store tutorial](https://github.com/paymill/paymill-example-ios-par
 
 ## Requirements
 
-iOS 6.0 or later.
+iOS 6.0 or later / OS X 10.6 or later.
 
 ## Installation
 
 - Xcode users add 'PayMillSDK' folder to their project.
 - CocoaPods  users add this dependency to their `Podfile`:
 ```
-  pod 'PayMillSDK',  '~> 2.0.1'
+  pod 'PayMillSDK',  '~> 2.0.2'
 ```
 
 ## Working with the SDK
@@ -111,6 +111,10 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 
 ## Release notes
+
+###2.0.2
+* Mandatory changes in infrastructure
+* Bug fixes
 
 ###2.0.1
 + MacOS Support
