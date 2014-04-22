@@ -123,6 +123,7 @@ typedef void(^OnConsumeFailure)(NSError *error);
 +(void) transactionWithToken:(NSString*)token parameters:(PMPaymentParams*)params consumable:(BOOL)consumable
 					 success:(OnTransactionSuccess)successBlock
 					 failure:(OnTransactionFailure)failureBlock;
+
 /**
  Creates a new token.
  Learn more about tokens in the PayMill documentation(https://www.paymill.com/en-gb/documentation-3/).
