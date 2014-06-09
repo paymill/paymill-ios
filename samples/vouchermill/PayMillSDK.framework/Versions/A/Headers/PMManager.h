@@ -28,17 +28,33 @@ typedef void (^OnTransactionFailure)(NSError *error);
 /*Create Preauthorization*/
 typedef void (^OnPreauthorizationSuccess)(PMTransaction* transaction);
 typedef void (^OnPreauthorizationFailure)(NSError *error);
+/*Create Payment*/
+typedef void (^OnPaymentSuccess)(PMPayment* payment);
+typedef void (^OnPaymentFailure)(NSError *error);
 /*Get Transactions*/
 typedef void (^OnTransactionsListSuccess)(NSArray* transactions);
 typedef void (^OnTransactionsListFailure)(NSError *error);
 /*Get Prauthorizations*/
 typedef void (^OnPreauthorizationsListSuccess)(NSArray* preauthorizations);
 typedef void (^OnPreauthorizationsListFailure)(NSError *error);
+/*Get Payments*/
+typedef void (^OnPaymentsListSuccess)(NSArray* payments);
+typedef void (^OnPaymentsListFailure)(NSError *error);
 /*Get new Device Id*/
 typedef void(^OnDeviceIdSucces)(NSString *devicId);
 typedef void(^OnDeviceIdFailure)(NSError *error);
 /*Init*/
 typedef void(^OnInit)(BOOL success, NSError *error);
+/*Reset Payment*/
+typedef void(^OnPaymentsResetSuccess)(BOOL success);
+typedef void(^OnPaymentsResetFailure)(NSError *error);
+/*Delete Payment*/
+typedef void(^OnPaymentDeleteSuccess)(PMPayment* payment);
+typedef void(^OnPaymentDeleteFailure)(NSError *error);
+/*Available payments*/
+typedef void(^OnAvailablePaymentsSuccess)(BOOL success);
+typedef void(^OnAvailablePaymentsFailure)(NSError *error);
+
 /*Consume transaction/preauthorization*/
 typedef void(^OnConsumeSuccess)(NSString * id);
 typedef void(^OnConsumeFailure)(NSError *error);
@@ -123,6 +139,63 @@ typedef void(^OnConsumeFailure)(NSError *error);
 +(void) transactionWithToken:(NSString*)token parameters:(PMPaymentParams*)params consumable:(BOOL)consumable
 					 success:(OnTransactionSuccess)successBlock
 					 failure:(OnTransactionFailure)failureBlock;
+
+/**
+ Creates a new PMTransaction.
+ @param payment a previously generated payment object.
+ @param parameters PMPaymentParams created with PMFactory.
+ @param consumable true if you want to consume the preauthorization later, false otherwise.
+ @param success a block callback that is executed when the transaction is created successfully.
+ @param failure a block callback that is executed when the transaction creation failed.
+ */
++ (void)transactionWithPayment:(PMPayment*)payment
+                    parameters:(PMPaymentParams*)params
+                    consumable:(BOOL)consumable
+                       success:(OnTransactionSuccess)successBlock
+                       failure:(OnTransactionFailure)failureBlock;
+
+/**
+ Creates a new PMPreauthorization.
+ @param payment a previously generated payment object.
+ @param parameters PMPaymentParams created with PMFactory.
+ @param consumable true if you want to consume the preauthorization later, false otherwise.
+ @param success a block callback that is executed when the transaction is created successfully.
+ @param failure a block callback that is executed when the transaction creation failed.
+ */
++ (void)preauthorizationWithPayment:(PMPayment*)payment
+                         parameters:(PMPaymentParams*)params
+                         consumable:(BOOL)consumable
+                            success:(OnPreauthorizationSuccess)successBlock
+                            failure:(OnPreauthorizationFailure)failureBlock;
+
+/**
+ Creates a new PMTransaction with a given payment id.
+ @param paymentId
+ @param parameters PMPaymentParams created with PMFactory.
+ @param consumable true if you want to consume the preauthorization later, false otherwise.
+ @param success a block callback that is executed when the transaction is created successfully.
+ @param failure a block callback that is executed when the transaction creation failed.
+ */
++ (void)transactionWithPaymentId:(NSString*)paymentId
+                      parameters:(PMPaymentParams*)params
+                      consumable:(BOOL)consumable
+                         success:(OnTransactionSuccess)successBlock
+                         failure:(OnTransactionFailure)failureBlock;
+
+
+/**
+ Creates a new PMPreauthorization with a given payment id.
+ @param paymentId
+ @param parameters PMPaymentParams created with PMFactory.
+ @param consumable true if you want to consume the preauthorization later, false otherwise.
+ @param success a block callback that is executed when the transaction is created successfully.
+ @param failure a block callback that is executed when the transaction creation failed.
+ */
++ (void)preauthorizationWithPaymentId:(NSString*)paymentId
+                           parameters:(PMPaymentParams*)params
+                           consumable:(BOOL)consumable
+                              success:(OnPreauthorizationSuccess)successBlock
+                              failure:(OnPreauthorizationFailure)failureBlock;
 
 /**
  Creates a new token.
@@ -278,4 +351,51 @@ typedef void(^OnConsumeFailure)(NSError *error);
  @return the SDK version.
  */
 +(NSString*)SDKVersion;
+
+/**
+ Saves a payment to the Safe Store, secured with the provided password
+ @param payment a payment object which is to be saved
+ @param password the password securing the payments
+ @param successBlock a block callback that is executed when the payment is saved successfully
+ @param failureBlock a block callback that is executed when the payment saving failed
+ */
++ (void)savePayment:(PMPayment*)payment withPassword:(NSString*)password successBlock:(OnPaymentSuccess)successBlock andFailureBlock:(OnPaymentFailure)failureBlock;
+
+/**
+ Lists payments available for the device and the pasword provided in the Safe Store
+ @param password the password securing the payments
+ @param successBlock a block callback that is executed when the payments were listed successfully
+ @param ailureBlock a block callback that is executed when the listing the payments failed
+ */
++ (void)getPaymentsListWithPassword:(NSString*)password successBlock:(OnPaymentsListSuccess)successBlock
+                 andFailureBlock:(OnPaymentsListFailure)failureBlock;
+
+/**
+ Checks whether payments are available for the device
+ @param successBlock a block function of type OnAvailablePaymentsSuccess that will be called on success
+ @param failureBlock a block function of type OnAvailablePaymentsFailure that will be called on failure
+ */
++ (void)arePaymentsAvailableWithSuccessBlock:(OnAvailablePaymentsSuccess)successBlock
+                          andFailureBlock:(OnAvailablePaymentsFailure)failureBlock;
+
+/**
+ Reset the password and payments for the device
+ @param successBlock a block function of type OnPaymentsResetSuccess that will be called on success
+ @param failureBlock a block function of type OnPaymentsResetFailure that will be called on failure
+ */
++ (void)resetPaymentsWithWithSuccessBlock:(OnPaymentsResetSuccess)successBlock
+                          andFailureBlock:(OnPaymentsResetFailure)failureBlock;
+
+/**
+ Delete the given payment object from the Safe Store
+ @param payment a payment object which is to be deleted
+ @param password the password securing the payments
+ @param successBlock a block function of type OnPaymentDeleteSuccess that will be called on success
+ @param failureBlock a block function of type OnPaymentDeleteFailure that will be called on failure
+ */
++ (void)deletePayment:(PMPayment*)payment
+         withPassword:(NSString*)password
+         successBlock:(OnPaymentDeleteSuccess)successBlock
+      andFailureBlock:(OnPaymentDeleteFailure)failureBlock;;
+
 @end

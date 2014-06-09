@@ -16,9 +16,11 @@ FOUNDATION_EXPORT NSString * const PMErrorDomain;
  Error type
  */
 typedef enum PMErrorType{
+    UNKNOWN, /*Initial value*/
 	WRONG_PARMETERS, /*You have supplied wrong parameters. You use message for details.*/
 	HTTP_CONNECTION, /*There was an error while connecting to the PayMill Service.*/
 	API, /*The PAYMILL API returned an unexpected result.*/
+    SAFESTORE, /*proxy specific errors*/
 	BRIDGE, /*The PAYMILL JS-Bridge returned an a payment method related error code. For further code explanations, check */
 	NOT_INIT, /*You did not initialize the SDK.*/
 	INTERNAL, /*This should never happen. If you encounter it, please send email support@paymill.com .*/
@@ -31,8 +33,11 @@ PAYMILL API developers message
 FOUNDATION_EXPORT NSString * const PMErrorMessageKey;
 
 /*
- PAYTMILL BRIDGE will have an PMBridgeErrorCodeKey
- in the userInfo dictionary.  This gives more information about the error type and could be handled to create user messages.
+ PAYMILL SAFESTORE will have an PMSafeStoreErrorCodeKey in the userInfo dictionary.  This gives more information about the error type and could be handled to create user messages.
+ */
+FOUNDATION_EXPORT NSString * const PMSafeStoreErrorCodeKey;
+/*
+ PAYMILL BRIDGE will have an PMBridgeErrorCodeKey in the userInfo dictionary.  This gives more information about the error type and could be handled to create user messages.
  */
 FOUNDATION_EXPORT NSString * const PMBridgeErrorCodeKey;
 
@@ -63,3 +68,10 @@ FOUNDATION_EXPORT NSString * const PMCCInvalidExp;
 FOUNDATION_EXPORT NSString * const PMCCInvalidExpYear;
 FOUNDATION_EXPORT NSString * const PMCCInvalidExpMonth;
 FOUNDATION_EXPORT NSString * const PMUnknownError;
+
+
+/*
+ These are possible values for the PMSafeStoreErrorCodeKey in the userInfo dictionary
+ of an NSError returned by this library. These error keys might be returned when user entered his password incorrectly */
+FOUNDATION_EXPORT NSString * const PMSafeStoreIncorrectPassword;
+FOUNDATION_EXPORT NSString * const PMSafeStoreBlocked;
