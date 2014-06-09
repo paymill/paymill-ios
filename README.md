@@ -112,6 +112,11 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 ## Release notes
 
+###2.1.0
++ Added new methods to create transactions and preauthorizations with a payment object.
++ Added a Safe Store to securely save payment objects with a user password.
++ Added the possibility to turn off or style the foreground notification.
+
 ###2.0.3
 * Bug fixes
 
