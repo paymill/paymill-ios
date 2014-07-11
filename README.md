@@ -34,7 +34,7 @@ iOS 6.0 or later / OS X 10.6 or later.
 - Xcode users add 'PayMillSDK' folder to their project.
 - CocoaPods  users add this dependency to their `Podfile`:
 ```
-  pod 'PayMillSDK',  '~> 2.1.0'
+  pod 'PayMillSDK',  '~> 2.1.1'
 ```
 
 *In cases Cocoapods central repository is not available, you can add folowing line to your `Podfile`:*
@@ -55,31 +55,28 @@ A [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayment.ht
 Create [PMPayment](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPayment.html)  and [PMPaymentParams](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMPaymentParams.html) and call [PMManager generateTokenWithMethod](http://paymill.github.io/paymill-ios/docs/sdk/Classes/PMManager.html#//api/name/generateTokenWithPublicKey:testMode:method:parameters:success:failure:) with your PAYMILL public key and mode.
 
 ```objective-c
- //init with PAYMILL public key  
- [PMManager initWithTestMode:YES merchantPublicKey:myPublicKey newDeviceId:nil init:^(BOOL success, NSError *error) {  
-        if(success) {  
-            // init successfull   
-            // start using the SDK  
-    }  
-    }];
-    
- NSError *error;  
- PMPaymentParams *params;  
- id paymentMethod = [PMFactory genCardPaymentWithAccHolder:@"Max Musterman" cardNumber:@"4711100000000000" expiryMonth:@"12" expiryYear:@"2014"  
- verification:@"333" error:&error];  
-
- if(!error) {  
-     params = [PMFactory genPaymentParamsWithCurrency:@"EUR" amount:100 description:@"Description" error:&error];  
- }
- 
- if(!error) {  
-     [PMManager generateTokenWithMethod:paymentMethod parameters:params success:^(NSString *token) {  
-          //token successfully created  
-     }  
-     failure:^(NSError *error) {  
-          //token generation failed       
-     }];  
- }   
+	NSError *error;
+	PMPaymentParams *params;
+	id paymentMethod = [PMFactory genCardPaymentWithAccHolder:@"Max Musterman" 
+	cardNumber:@"4711100000000000" expiryMonth:@"12" expiryYear:@"2014" 
+	verification:@"333" error:&error];
+	
+	if(!error) {
+		params = [PMFactory genPaymentParamsWithCurrency:@"EUR" amount:100 
+		description:@"Description" error:&error];
+	}
+	
+	if(!error) {
+	    //generate token with PAYMILL public key 
+		[PMManager generateTokenWithPublicKey:myPublicKey testMode:YES 
+		method:paymentMethod parameters:params
+		success:^(NSString *token) {
+			//token successfully created
+		}
+		failure:^(NSError *error) {
+			//token generation failed
+		}];
+	}   
 
 ```
 ### Create a transaction
@@ -117,6 +114,9 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 
 ## Release notes
+
+###2.1.1
+* Bug fixes
 
 ###2.1.0
 + Added new methods to create transactions and preauthorizations with a payment object.
