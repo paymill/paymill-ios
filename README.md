@@ -34,10 +34,16 @@ iOS 6.0 or later / OS X 10.6 or later.
 - Xcode users add 'PayMillSDK' folder to their project.
 - CocoaPods  users add this dependency to their `Podfile`:
 ```
-  pod 'PayMillSDK',  '~> 2.0.3'
+  pod 'PayMillSDK',  '~> 2.1.0'
+```
+
+*In cases Cocoapods central repository is not available, you can add folowing line to your `Podfile`:*
+```
+pod 'PayMillSDK', :git=>'https://github.com/paymill/paymill-ios.git', :branch=>'master', :tag=>'2.1.0'
 ```
 
 ## Working with the SDK
+
 
 ### PMPayment, PMParams and PMFactory
 
