@@ -11,7 +11,7 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">PayMillSDK </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">PayMill SDK </a></h1>
 				<a id="developerHome" href="../index.html">PAYMILL GmbH</a>
 			</div>
 			
@@ -43,9 +43,13 @@
 	
 	<option value="//api/name/SDKVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ SDKVersion</option>
 	
+	<option value="//api/name/arePaymentsAvailableWithSuccessBlock:andFailureBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ arePaymentsAvailableWithSuccessBlock:andFailureBlock:</option>
+	
 	<option value="//api/name/consumePreauthorizationForId:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ consumePreauthorizationForId:success:failure:</option>
 	
 	<option value="//api/name/consumeTransactionForId:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ consumeTransactionForId:success:failure:</option>
+	
+	<option value="//api/name/deletePayment:withPassword:successBlock:andFailureBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ deletePayment:withPassword:successBlock:andFailureBlock:</option>
 	
 	<option value="//api/name/generateTokenWithMethod:parameters:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ generateTokenWithMethod:parameters:success:failure:</option>
 	
@@ -63,6 +67,8 @@
 	
 	<option value="//api/name/getNonConsumedTransactionsList:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getNonConsumedTransactionsList:failure:</option>
 	
+	<option value="//api/name/getPaymentsListWithPassword:successBlock:andFailureBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ getPaymentsListWithPassword:successBlock:andFailureBlock:</option>
+	
 	<option value="//api/name/getPreauthorizationsList:onFailure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getPreauthorizationsList:onFailure:</option>
 	
 	<option value="//api/name/getPreauthorzationForId:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ getPreauthorzationForId:success:failure:</option>
@@ -79,9 +85,19 @@
 	
 	<option value="//api/name/preauthorizationWithMethod:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ preauthorizationWithMethod:parameters:consumable:success:failure:</option>
 	
+	<option value="//api/name/preauthorizationWithPayment:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ preauthorizationWithPayment:parameters:consumable:success:failure:</option>
+	
+	<option value="//api/name/preauthorizationWithPaymentId:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ preauthorizationWithPaymentId:parameters:consumable:success:failure:</option>
+	
 	<option value="//api/name/preauthorizationWithToken:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ preauthorizationWithToken:parameters:consumable:success:failure:</option>
 	
+	<option value="//api/name/resetPaymentsWithWithSuccessBlock:andFailureBlock:">&nbsp;&nbsp;&nbsp;&nbsp;+ resetPaymentsWithWithSuccessBlock:andFailureBlock:</option>
+	
 	<option value="//api/name/transactionWithMethod:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ transactionWithMethod:parameters:consumable:success:failure:</option>
+	
+	<option value="//api/name/transactionWithPayment:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ transactionWithPayment:parameters:consumable:success:failure:</option>
+	
+	<option value="//api/name/transactionWithPaymentId:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ transactionWithPaymentId:parameters:consumable:success:failure:</option>
 	
 	<option value="//api/name/transactionWithToken:parameters:consumable:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;+ transactionWithToken:parameters:consumable:success:failure:</option>
 	
@@ -115,9 +131,13 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/SDKVersion">SDKVersion</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/arePaymentsAvailableWithSuccessBlock:andFailureBlock:">arePaymentsAvailableWithSuccessBlock:andFailureBlock:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/consumePreauthorizationForId:success:failure:">consumePreauthorizationForId:success:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/consumeTransactionForId:success:failure:">consumeTransactionForId:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deletePayment:withPassword:successBlock:andFailureBlock:">deletePayment:withPassword:successBlock:andFailureBlock:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/generateTokenWithMethod:parameters:success:failure:">generateTokenWithMethod:parameters:success:failure:</a></span></li>
 	
@@ -135,6 +155,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getNonConsumedTransactionsList:failure:">getNonConsumedTransactionsList:failure:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getPaymentsListWithPassword:successBlock:andFailureBlock:">getPaymentsListWithPassword:successBlock:andFailureBlock:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getPreauthorizationsList:onFailure:">getPreauthorizationsList:onFailure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getPreauthorzationForId:success:failure:">getPreauthorzationForId:success:failure:</a></span></li>
@@ -151,9 +173,19 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/preauthorizationWithMethod:parameters:consumable:success:failure:">preauthorizationWithMethod:parameters:consumable:success:failure:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/preauthorizationWithPayment:parameters:consumable:success:failure:">preauthorizationWithPayment:parameters:consumable:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/preauthorizationWithPaymentId:parameters:consumable:success:failure:">preauthorizationWithPaymentId:parameters:consumable:success:failure:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/preauthorizationWithToken:parameters:consumable:success:failure:">preauthorizationWithToken:parameters:consumable:success:failure:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resetPaymentsWithWithSuccessBlock:andFailureBlock:">resetPaymentsWithWithSuccessBlock:andFailureBlock:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/transactionWithMethod:parameters:consumable:success:failure:">transactionWithMethod:parameters:consumable:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/transactionWithPayment:parameters:consumable:success:failure:">transactionWithPayment:parameters:consumable:success:failure:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/transactionWithPaymentId:parameters:consumable:success:failure:">transactionWithPaymentId:parameters:consumable:success:failure:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/transactionWithToken:parameters:consumable:success:failure:">transactionWithToken:parameters:consumable:success:failure:</a></span></li>
 	
@@ -253,6 +285,36 @@ This is a convenience method, which generates a token in the background.</p></sp
 	<span class="tooltip">
 		<code><a href="#//api/name/transactionWithToken:parameters:consumable:success:failure:">+&nbsp;transactionWithToken:parameters:consumable:success:failure:</a></code>
 		<span class="tooltip"><p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/transactionWithPayment:parameters:consumable:success:failure:">+&nbsp;transactionWithPayment:parameters:consumable:success:failure:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/preauthorizationWithPayment:parameters:consumable:success:failure:">+&nbsp;preauthorizationWithPayment:parameters:consumable:success:failure:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/transactionWithPaymentId:parameters:consumable:success:failure:">+&nbsp;transactionWithPaymentId:parameters:consumable:success:failure:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a> with a given payment id.<br/>
+@param paymentId</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/preauthorizationWithPaymentId:parameters:consumable:success:failure:">+&nbsp;preauthorizationWithPaymentId:parameters:consumable:success:failure:</a></code>
+		<span class="tooltip"><p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a> with a given payment id.<br/>
+@param paymentId</p></span>
 	</span>
 	
 	
@@ -374,6 +436,34 @@ Learn more about tokens in the PayMill documentation(<a href="https://www.paymil
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getPaymentsListWithPassword:successBlock:andFailureBlock:">+&nbsp;getPaymentsListWithPassword:successBlock:andFailureBlock:</a></code>
+		<span class="tooltip"><p>Lists payments available for the device and the pasword provided in the Safe Store</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/arePaymentsAvailableWithSuccessBlock:andFailureBlock:">+&nbsp;arePaymentsAvailableWithSuccessBlock:andFailureBlock:</a></code>
+		<span class="tooltip"><p>Checks whether payments are available for the device</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/resetPaymentsWithWithSuccessBlock:andFailureBlock:">+&nbsp;resetPaymentsWithWithSuccessBlock:andFailureBlock:</a></code>
+		<span class="tooltip"><p>Reset the password and payments for the device</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deletePayment:withPassword:successBlock:andFailureBlock:">+&nbsp;deletePayment:withPassword:successBlock:andFailureBlock:</a></code>
+		<span class="tooltip"><p>Delete the given payment object from the Safe Store</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -419,6 +509,62 @@ Learn more about tokens in the PayMill documentation(<a href="https://www.paymil
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Returns the current SDK version as string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/arePaymentsAvailableWithSuccessBlock:andFailureBlock:" title="arePaymentsAvailableWithSuccessBlock:andFailureBlock:"></a>
+	<h3 class="subsubtitle method-title">arePaymentsAvailableWithSuccessBlock:andFailureBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Checks whether payments are available for the device</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)arePaymentsAvailableWithSuccessBlock:(OnAvailablePaymentsSuccess)<em>successBlock</em> andFailureBlock:(OnAvailablePaymentsFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>a block function of type OnAvailablePaymentsSuccess that will be called on success</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>a block function of type OnAvailablePaymentsFailure that will be called on failure</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Checks whether payments are available for the device</p>
 	</div>
 	
 	
@@ -541,6 +687,72 @@ Learn more about tokens in the PayMill documentation(<a href="https://www.paymil
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Consume the given transaction. After successful consumption, the transaction will no longer appear in the list of not consumed.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deletePayment:withPassword:successBlock:andFailureBlock:" title="deletePayment:withPassword:successBlock:andFailureBlock:"></a>
+	<h3 class="subsubtitle method-title">deletePayment:withPassword:successBlock:andFailureBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delete the given payment object from the Safe Store</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)deletePayment:(PMPayment *)<em>payment</em> withPassword:(NSString *)<em>password</em> successBlock:(OnPaymentDeleteSuccess)<em>successBlock</em> andFailureBlock:(OnPaymentDeleteFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>payment</em></dt>
+			<dd><p>a payment object which is to be deleted</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>the password securing the payments</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>a block function of type OnPaymentDeleteSuccess that will be called on success</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>a block function of type OnPaymentDeleteFailure that will be called on failure</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Delete the given payment object from the Safe Store</p>
 	</div>
 	
 	
@@ -1063,6 +1275,67 @@ Learn more about tokens in the PayMill documentation(<a href="https://www.paymil
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/getPaymentsListWithPassword:successBlock:andFailureBlock:" title="getPaymentsListWithPassword:successBlock:andFailureBlock:"></a>
+	<h3 class="subsubtitle method-title">getPaymentsListWithPassword:successBlock:andFailureBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Lists payments available for the device and the pasword provided in the Safe Store</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)getPaymentsListWithPassword:(NSString *)<em>password</em> successBlock:(OnPaymentsListSuccess)<em>successBlock</em> andFailureBlock:(OnPaymentsListFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>the password securing the payments</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>a block callback that is executed when the payments were listed successfully</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ailureBlock</em></dt>
+			<dd><p>a block callback that is executed when the listing the payments failed</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Lists payments available for the device and the pasword provided in the Safe Store</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/getPreauthorizationsList:onFailure:" title="getPreauthorizationsList:onFailure:"></a>
 	<h3 class="subsubtitle method-title">getPreauthorizationsList:onFailure:</h3>
 	
@@ -1565,6 +1838,145 @@ This is a convenience method, which generates a token in the background.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/preauthorizationWithPayment:parameters:consumable:success:failure:" title="preauthorizationWithPayment:parameters:consumable:success:failure:"></a>
+	<h3 class="subsubtitle method-title">preauthorizationWithPayment:parameters:consumable:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)preauthorizationWithPayment:(PMPayment *)<em>payment</em> parameters:(PMPaymentParams *)<em>params</em> consumable:(BOOL)<em>consumable</em> success:(OnTransactionSuccess)<em>successBlock</em> failure:(OnTransactionFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>payment</em></dt>
+			<dd><p>a previously generated payment object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>consumable</em></dt>
+			<dd><p>true if you want to consume the preauthorization later, false otherwise.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the transaction is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the transaction creation failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p><a href="../Classes/PMPaymentParams.html">PMPaymentParams</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/preauthorizationWithPaymentId:parameters:consumable:success:failure:" title="preauthorizationWithPaymentId:parameters:consumable:success:failure:"></a>
+	<h3 class="subsubtitle method-title">preauthorizationWithPaymentId:parameters:consumable:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a> with a given payment id.<br/>
+@param paymentId</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)preauthorizationWithPaymentId:(NSString *)<em>paymentId</em> parameters:(PMPaymentParams *)<em>params</em> consumable:(BOOL)<em>consumable</em> success:(OnTransactionSuccess)<em>successBlock</em> failure:(OnTransactionFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>consumable</em></dt>
+			<dd><p>true if you want to consume the preauthorization later, false otherwise.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the transaction is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the transaction creation failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p><a href="../Classes/PMPaymentParams.html">PMPaymentParams</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a> with a given payment id.<br/>
+@param paymentId</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/preauthorizationWithToken:parameters:consumable:success:failure:" title="preauthorizationWithToken:parameters:consumable:success:failure:"></a>
 	<h3 class="subsubtitle method-title">preauthorizationWithToken:parameters:consumable:success:failure:</h3>
 	
@@ -1619,6 +2031,62 @@ This is a convenience method, which generates a token in the background.</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Creates a new <a href="../Classes/PMPreauthorization.html">PMPreauthorization</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/resetPaymentsWithWithSuccessBlock:andFailureBlock:" title="resetPaymentsWithWithSuccessBlock:andFailureBlock:"></a>
+	<h3 class="subsubtitle method-title">resetPaymentsWithWithSuccessBlock:andFailureBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reset the password and payments for the device</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)resetPaymentsWithWithSuccessBlock:(OnPaymentsResetSuccess)<em>successBlock</em> andFailureBlock:(OnPaymentsResetFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>successBlock</em></dt>
+			<dd><p>a block function of type OnPaymentsResetSuccess that will be called on success</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failureBlock</em></dt>
+			<dd><p>a block function of type OnPaymentsResetFailure that will be called on failure</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Reset the password and payments for the device</p>
 	</div>
 	
 	
@@ -1692,6 +2160,145 @@ This is a convenience method, which generates a token in the background.</p>
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.<br/>
 This is a convenience method, which generates a token in the background.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/transactionWithPayment:parameters:consumable:success:failure:" title="transactionWithPayment:parameters:consumable:success:failure:"></a>
+	<h3 class="subsubtitle method-title">transactionWithPayment:parameters:consumable:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)transactionWithPayment:(PMPayment *)<em>payment</em> parameters:(PMPaymentParams *)<em>params</em> consumable:(BOOL)<em>consumable</em> success:(OnTransactionSuccess)<em>successBlock</em> failure:(OnTransactionFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>payment</em></dt>
+			<dd><p>a previously generated payment object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>consumable</em></dt>
+			<dd><p>true if you want to consume the preauthorization later, false otherwise.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the transaction is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the transaction creation failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p><a href="../Classes/PMPaymentParams.html">PMPaymentParams</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">PMManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/transactionWithPaymentId:parameters:consumable:success:failure:" title="transactionWithPaymentId:parameters:consumable:success:failure:"></a>
+	<h3 class="subsubtitle method-title">transactionWithPaymentId:parameters:consumable:success:failure:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a> with a given payment id.<br/>
+@param paymentId</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)transactionWithPaymentId:(NSString *)<em>paymentId</em> parameters:(PMPaymentParams *)<em>params</em> consumable:(BOOL)<em>consumable</em> success:(OnTransactionSuccess)<em>successBlock</em> failure:(OnTransactionFailure)<em>failureBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>consumable</em></dt>
+			<dd><p>true if you want to consume the preauthorization later, false otherwise.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>success</em></dt>
+			<dd><p>a block callback that is executed when the transaction is created successfully.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failure</em></dt>
+			<dd><p>a block callback that is executed when the transaction creation failed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>parameters</em></dt>
+			<dd><p><a href="../Classes/PMPaymentParams.html">PMPaymentParams</a> created with <a href="../Classes/PMFactory.html">PMFactory</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Creates a new <a href="../Classes/PMTransaction.html">PMTransaction</a> with a given payment id.<br/>
+@param paymentId</p>
 	</div>
 	
 	
@@ -1794,7 +2401,7 @@ This is a convenience method, which generates a token in the background.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 PAYMILL GmbH. All rights reserved. (Last updated: 2014-01-31)</span><br />
+						<p><span class="copyright">&copy; 2014 PAYMILL GmbH. All rights reserved. (Last updated: 2014-07-09)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
 						
