@@ -9,14 +9,32 @@
 /* Begin PBXBuildFile section */
 		0602F3B017DF093B00E56C71 /* PMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0602F3AF17DF093B00E56C71 /* PMSettingsViewController.m */; };
 		0608E0B717E063E90088F1C7 /* VoucherMill.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0608E0B517E063E90088F1C7 /* VoucherMill.xcdatamodeld */; };
-		0608E0BA17E064450088F1C7 /* OfflineVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0608E0B917E064450088F1C7 /* OfflineVoucher.m */; };
 		0608E0BD17E064920088F1C7 /* PMDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0608E0BC17E064920088F1C7 /* PMDataBaseManager.m */; };
+		061FAEBA18D9AE77006AB16E /* PMUISupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 061FAEB918D9AE77006AB16E /* PMUISupport.m */; };
+		0632311618BC9F0900668E4A /* PMCreditCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 063230E118BC9F0800668E4A /* PMCreditCardView.m */; };
+		0632311718BC9F0900668E4A /* PMCreditCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 063230E218BC9F0800668E4A /* PMCreditCardView.xib */; };
+		0632311818BC9F0900668E4A /* PMPaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 063230E418BC9F0800668E4A /* PMPaymentView.m */; };
+		0632311918BC9F0900668E4A /* PMDirectDebitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 063230E618BC9F0800668E4A /* PMDirectDebitView.m */; };
+		0632311A18BC9F0900668E4A /* PMDirectDebitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 063230E718BC9F0800668E4A /* PMDirectDebitView.xib */; };
+		0632311C18BC9F0900668E4A /* PMPaymentScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 063230EA18BC9F0900668E4A /* PMPaymentScreen.xib */; };
+		0632311D18BC9F0900668E4A /* PMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 063230EC18BC9F0900668E4A /* PMTextField.m */; };
+
+		068109C918E3817C001B5613 /* PayMillSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 068109C718E3817C001B5613 /* PayMillSDK.bundle */; };
+		068109CA18E3817C001B5613 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068109C818E3817C001B5613 /* PayMillSDK.framework */; };
+		069F83651966E96B00CF5EC8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 069F83641966E96B00CF5EC8 /* MBProgressHUD.m */; };
 		06D3DFCA17D8BECD004E930D /* PMButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D3DFC317D8BECD004E930D /* PMButtonCell.m */; };
 		06D3DFCB17D8BECD004E930D /* PMButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06D3DFC417D8BECD004E930D /* PMButtonCell.xib */; };
 		06D3DFCC17D8BECD004E930D /* PMBuyChildCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06D3DFC517D8BECD004E930D /* PMBuyChildCustomCell.xib */; };
 		06D3DFCD17D8BECD004E930D /* PMBuyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06D3DFC717D8BECD004E930D /* PMBuyTableViewController.m */; };
 		06D3DFCE17D8BECD004E930D /* PMBuyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06D3DFC817D8BECD004E930D /* PMBuyTableViewController.xib */; };
 		06D3DFCF17D8BECD004E930D /* PMImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06D3DFC917D8BECD004E930D /* PMImageViewCell.xib */; };
+		06DF203C18D2FEF100FF7994 /* PMPaymentMethodsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DF203A18D2FEF100FF7994 /* PMPaymentMethodsListViewController.m */; };
+		06DF203D18D2FEF100FF7994 /* PMPaymentMethodsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06DF203B18D2FEF100FF7994 /* PMPaymentMethodsListViewController.xib */; };
+		06DF204018D2FFCD00FF7994 /* PMPaymentMethodsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DF203F18D2FFCD00FF7994 /* PMPaymentMethodsListCell.m */; };
+		06DF204218D2FFE100FF7994 /* PMPaymentMethodsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06DF204118D2FFE100FF7994 /* PMPaymentMethodsListCell.xib */; };
+		06E144C318BCBD4A0097CFCF /* PMPaymentDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E144C218BCBD4A0097CFCF /* PMPaymentDataValidator.m */; };
+		06E2816C1959DE1200180DB0 /* PMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 06E2816B1959DE1200180DB0 /* PMConstants.m */; };
+		06E2E2B118C608920011FA20 /* PMPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06E2E2B018C608920011FA20 /* PMPaymentViewController.xib */; };
 		06FBDFD117E1A35C00BAA1AE /* PMUserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06FBDFD017E1A35C00BAA1AE /* PMUserDefaultsManager.m */; };
 		06FBDFD317E1BE1700BAA1AE /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FBDFD217E1BE1700BAA1AE /* Icon.png */; };
 		06FBDFD517E1BE2400BAA1AE /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 06FBDFD417E1BE2400BAA1AE /* Icon@2x.png */; };
@@ -33,9 +51,12 @@
 		AB159989177880CC00F3A54F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB159975177880CC00F3A54F /* main.m */; };
 		AB15998C177880CC00F3A54F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB15997C177880CC00F3A54F /* MainStoryboard.storyboard */; };
 		AB63B5281945D18200F9F314 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB63B5271945D18200F9F314 /* PayMillSDK.framework */; };
+		AB642ACE1962AF5800ABF384 /* OfflineVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = AB642ACD1962AF5800ABF384 /* OfflineVoucher.m */; };
 		AB915696180DFCF600DC2659 /* PMCreditCardTypeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AB915695180DFCF600DC2659 /* PMCreditCardTypeParser.m */; };
 		AB915699180E206900DC2659 /* PMVoucherParams.m in Sources */ = {isa = PBXBuildFile; fileRef = AB915698180E206900DC2659 /* PMVoucherParams.m */; };
 		AB9E0483176A1EED0002AEA9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9E0482176A1EED0002AEA9 /* Security.framework */; };
+		ABADBF43196157EC00996C5B /* PMSDKSnippets.m in Sources */ = {isa = PBXBuildFile; fileRef = ABADBF42196156E900996C5B /* PMSDKSnippets.m */; };
+		ABADBF46196161C200996C5B /* PMPaymentScreensSnippet.m in Sources */ = {isa = PBXBuildFile; fileRef = ABADBF45196161C200996C5B /* PMPaymentScreensSnippet.m */; };
 		ABB2D2E317C68A7500F084CF /* PMImageViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB2D2E217C68A7500F084CF /* PMImageViewCell.m */; };
 		ABBEA74E17E03C2C00AB4D15 /* PMVoucherUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = ABBEA74D17E03C2C00AB4D15 /* PMVoucherUtils.m */; };
 		ABBEA77817E04D7700AB4D15 /* button_backgroundimage.png in Resources */ = {isa = PBXBuildFile; fileRef = ABBEA75017E04D7700AB4D15 /* button_backgroundimage.png */; };
@@ -138,10 +159,25 @@
 		0602F3AE17DF093B00E56C71 /* PMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMSettingsViewController.h; sourceTree = "<group>"; };
 		0602F3AF17DF093B00E56C71 /* PMSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMSettingsViewController.m; sourceTree = "<group>"; };
 		0608E0B617E063E90088F1C7 /* VoucherMill.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoucherMill.xcdatamodel; sourceTree = "<group>"; };
-		0608E0B817E064450088F1C7 /* OfflineVoucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineVoucher.h; sourceTree = "<group>"; };
-		0608E0B917E064450088F1C7 /* OfflineVoucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineVoucher.m; sourceTree = "<group>"; };
 		0608E0BB17E064920088F1C7 /* PMDataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDataBaseManager.h; sourceTree = "<group>"; };
 		0608E0BC17E064920088F1C7 /* PMDataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDataBaseManager.m; sourceTree = "<group>"; };
+		061FAEB818D9AE77006AB16E /* PMUISupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMUISupport.h; sourceTree = "<group>"; };
+		061FAEB918D9AE77006AB16E /* PMUISupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMUISupport.m; sourceTree = "<group>"; };
+		063230E018BC9F0800668E4A /* PMCreditCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCreditCardView.h; sourceTree = "<group>"; };
+		063230E118BC9F0800668E4A /* PMCreditCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCreditCardView.m; sourceTree = "<group>"; };
+		063230E218BC9F0800668E4A /* PMCreditCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMCreditCardView.xib; sourceTree = "<group>"; };
+		063230E318BC9F0800668E4A /* PMPaymentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPaymentView.h; sourceTree = "<group>"; };
+		063230E418BC9F0800668E4A /* PMPaymentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPaymentView.m; sourceTree = "<group>"; };
+		063230E518BC9F0800668E4A /* PMDirectDebitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDirectDebitView.h; sourceTree = "<group>"; };
+		063230E618BC9F0800668E4A /* PMDirectDebitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDirectDebitView.m; sourceTree = "<group>"; };
+		063230E718BC9F0800668E4A /* PMDirectDebitView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMDirectDebitView.xib; sourceTree = "<group>"; };
+		063230EA18BC9F0900668E4A /* PMPaymentScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPaymentScreen.xib; sourceTree = "<group>"; };
+		063230EB18BC9F0900668E4A /* PMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMTextField.h; sourceTree = "<group>"; };
+		063230EC18BC9F0900668E4A /* PMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMTextField.m; sourceTree = "<group>"; };
+		068109C718E3817C001B5613 /* PayMillSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PayMillSDK.bundle; sourceTree = "<group>"; };
+		068109C818E3817C001B5613 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayMillSDK.framework; sourceTree = "<group>"; };
+		069F83631966E96B00CF5EC8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		069F83641966E96B00CF5EC8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		06D3DFC217D8BECD004E930D /* PMButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMButtonCell.h; sourceTree = "<group>"; };
 		06D3DFC317D8BECD004E930D /* PMButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMButtonCell.m; sourceTree = "<group>"; };
 		06D3DFC417D8BECD004E930D /* PMButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMButtonCell.xib; sourceTree = "<group>"; };
@@ -150,6 +186,17 @@
 		06D3DFC717D8BECD004E930D /* PMBuyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBuyTableViewController.m; sourceTree = "<group>"; };
 		06D3DFC817D8BECD004E930D /* PMBuyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMBuyTableViewController.xib; sourceTree = "<group>"; };
 		06D3DFC917D8BECD004E930D /* PMImageViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMImageViewCell.xib; sourceTree = "<group>"; };
+		06DF203918D2FEF100FF7994 /* PMPaymentMethodsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPaymentMethodsListViewController.h; sourceTree = "<group>"; };
+		06DF203A18D2FEF100FF7994 /* PMPaymentMethodsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPaymentMethodsListViewController.m; sourceTree = "<group>"; };
+		06DF203B18D2FEF100FF7994 /* PMPaymentMethodsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPaymentMethodsListViewController.xib; sourceTree = "<group>"; };
+		06DF203E18D2FFCD00FF7994 /* PMPaymentMethodsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPaymentMethodsListCell.h; sourceTree = "<group>"; };
+		06DF203F18D2FFCD00FF7994 /* PMPaymentMethodsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPaymentMethodsListCell.m; sourceTree = "<group>"; };
+		06DF204118D2FFE100FF7994 /* PMPaymentMethodsListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPaymentMethodsListCell.xib; sourceTree = "<group>"; };
+		06E144C118BCBD4A0097CFCF /* PMPaymentDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPaymentDataValidator.h; sourceTree = "<group>"; };
+		06E144C218BCBD4A0097CFCF /* PMPaymentDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPaymentDataValidator.m; sourceTree = "<group>"; };
+		06E2816A1959DE1200180DB0 /* PMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMConstants.h; sourceTree = "<group>"; };
+		06E2816B1959DE1200180DB0 /* PMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMConstants.m; sourceTree = "<group>"; };
+		06E2E2B018C608920011FA20 /* PMPaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMPaymentViewController.xib; sourceTree = "<group>"; };
 		06FBDFCF17E1A35C00BAA1AE /* PMUserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMUserDefaultsManager.h; sourceTree = "<group>"; };
 		06FBDFD017E1A35C00BAA1AE /* PMUserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMUserDefaultsManager.m; sourceTree = "<group>"; };
 		06FBDFD217E1BE1700BAA1AE /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../Icon.png; sourceTree = "<group>"; };
@@ -175,11 +222,17 @@
 		AB15997E177880CC00F3A54F /* VoucherMill-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VoucherMill-Prefix.pch"; sourceTree = "<group>"; };
 		AB24FB0A1796E5FD0017654D /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		AB63B5271945D18200F9F314 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayMillSDK.framework; sourceTree = "<group>"; };
+		AB642ACC1962AF5800ABF384 /* OfflineVoucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineVoucher.h; sourceTree = "<group>"; };
+		AB642ACD1962AF5800ABF384 /* OfflineVoucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineVoucher.m; sourceTree = "<group>"; };
 		AB915694180DFCF600DC2659 /* PMCreditCardTypeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCreditCardTypeParser.h; sourceTree = "<group>"; };
 		AB915695180DFCF600DC2659 /* PMCreditCardTypeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCreditCardTypeParser.m; sourceTree = "<group>"; };
 		AB915697180E206900DC2659 /* PMVoucherParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMVoucherParams.h; sourceTree = "<group>"; };
 		AB915698180E206900DC2659 /* PMVoucherParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMVoucherParams.m; sourceTree = "<group>"; };
 		AB9E0482176A1EED0002AEA9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		ABADBF41196156E900996C5B /* PMSDKSnippets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMSDKSnippets.h; sourceTree = "<group>"; };
+		ABADBF42196156E900996C5B /* PMSDKSnippets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMSDKSnippets.m; sourceTree = "<group>"; };
+		ABADBF44196161C200996C5B /* PMPaymentScreensSnippet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPaymentScreensSnippet.h; sourceTree = "<group>"; };
+		ABADBF45196161C200996C5B /* PMPaymentScreensSnippet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPaymentScreensSnippet.m; sourceTree = "<group>"; };
 		ABB2D2E117C68A7500F084CF /* PMImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMImageViewCell.h; sourceTree = "<group>"; };
 		ABB2D2E217C68A7500F084CF /* PMImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMImageViewCell.m; sourceTree = "<group>"; };
 		ABBEA74C17E03C2C00AB4D15 /* PMVoucherUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMVoucherUtils.h; sourceTree = "<group>"; };
@@ -327,13 +380,31 @@
 		0608E0B417E061A30088F1C7 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				AB642ACC1962AF5800ABF384 /* OfflineVoucher.h */,
+				AB642ACD1962AF5800ABF384 /* OfflineVoucher.m */,
 				0608E0B517E063E90088F1C7 /* VoucherMill.xcdatamodeld */,
 				0608E0BB17E064920088F1C7 /* PMDataBaseManager.h */,
 				0608E0BC17E064920088F1C7 /* PMDataBaseManager.m */,
-				0608E0B817E064450088F1C7 /* OfflineVoucher.h */,
-				0608E0B917E064450088F1C7 /* OfflineVoucher.m */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		068109C618E3817C001B5613 /* PayMillSDK */ = {
+			isa = PBXGroup;
+			children = (
+				068109C718E3817C001B5613 /* PayMillSDK.bundle */,
+				068109C818E3817C001B5613 /* PayMillSDK.framework */,
+			);
+			path = PayMillSDK;
+			sourceTree = "<group>";
+		};
+		069F83621966E96B00CF5EC8 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				069F83631966E96B00CF5EC8 /* MBProgressHUD.h */,
+				069F83641966E96B00CF5EC8 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		AB15995F177880CC00F3A54F /* VoucherMill */ = {
@@ -506,23 +577,58 @@
 		AB9E0476176768A00002AEA9 /* PaymentScreens */ = {
 			isa = PBXGroup;
 			children = (
+				063230E018BC9F0800668E4A /* PMCreditCardView.h */,
+				063230E118BC9F0800668E4A /* PMCreditCardView.m */,
+				063230E218BC9F0800668E4A /* PMCreditCardView.xib */,
+				063230E318BC9F0800668E4A /* PMPaymentView.h */,
+				063230E418BC9F0800668E4A /* PMPaymentView.m */,
+				063230E518BC9F0800668E4A /* PMDirectDebitView.h */,
+				063230E618BC9F0800668E4A /* PMDirectDebitView.m */,
+				063230E718BC9F0800668E4A /* PMDirectDebitView.xib */,
+				063230EA18BC9F0900668E4A /* PMPaymentScreen.xib */,
+				063230EB18BC9F0900668E4A /* PMTextField.h */,
+				063230EC18BC9F0900668E4A /* PMTextField.m */,
 				ABBEA74F17E04D7700AB4D15 /* Resources */,
-				ABCB3FAC17C266DC00CF95BE /* PMPaymentViewController.m */,
 				ABCB3FAD17C266DC00CF95BE /* PMPaymentViewController.h */,
+				ABCB3FAC17C266DC00CF95BE /* PMPaymentViewController.m */,
+				06E2E2B018C608920011FA20 /* PMPaymentViewController.xib */,
 				06FBE00B17E200A400BAA1AE /* CardsData.plist */,
 				AB915694180DFCF600DC2659 /* PMCreditCardTypeParser.h */,
 				AB915695180DFCF600DC2659 /* PMCreditCardTypeParser.m */,
+				06E144C118BCBD4A0097CFCF /* PMPaymentDataValidator.h */,
+				06E144C218BCBD4A0097CFCF /* PMPaymentDataValidator.m */,
+				06DF203918D2FEF100FF7994 /* PMPaymentMethodsListViewController.h */,
+				06DF203A18D2FEF100FF7994 /* PMPaymentMethodsListViewController.m */,
+				06DF203B18D2FEF100FF7994 /* PMPaymentMethodsListViewController.xib */,
+				06DF203E18D2FFCD00FF7994 /* PMPaymentMethodsListCell.h */,
+				06DF203F18D2FFCD00FF7994 /* PMPaymentMethodsListCell.m */,
+				06DF204118D2FFE100FF7994 /* PMPaymentMethodsListCell.xib */,
 			);
 			path = PaymentScreens;
+			sourceTree = "<group>";
+		};
+		ABADBF401961531600996C5B /* snippets */ = {
+			isa = PBXGroup;
+			children = (
+				ABADBF41196156E900996C5B /* PMSDKSnippets.h */,
+				ABADBF42196156E900996C5B /* PMSDKSnippets.m */,
+				ABADBF44196161C200996C5B /* PMPaymentScreensSnippet.h */,
+				ABADBF45196161C200996C5B /* PMPaymentScreensSnippet.m */,
+			);
+			path = snippets;
 			sourceTree = "<group>";
 		};
 		ABBEA74B17E03C1100AB4D15 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				06E2816A1959DE1200180DB0 /* PMConstants.h */,
+				06E2816B1959DE1200180DB0 /* PMConstants.m */,
 				ABBEA74C17E03C2C00AB4D15 /* PMVoucherUtils.h */,
 				ABBEA74D17E03C2C00AB4D15 /* PMVoucherUtils.m */,
 				06FBDFCF17E1A35C00BAA1AE /* PMUserDefaultsManager.h */,
 				06FBDFD017E1A35C00BAA1AE /* PMUserDefaultsManager.m */,
+				061FAEB818D9AE77006AB16E /* PMUISupport.h */,
+				061FAEB918D9AE77006AB16E /* PMUISupport.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -588,6 +694,7 @@
 		ABC4AB5816AF081B00353B1B = {
 			isa = PBXGroup;
 			children = (
+				ABADBF401961531600996C5B /* snippets */,
 				AB15995F177880CC00F3A54F /* VoucherMill */,
 				AB9E0476176768A00002AEA9 /* PaymentScreens */,
 				ABC4AB6616AF081B00353B1B /* Frameworks */,
@@ -607,6 +714,8 @@
 			isa = PBXGroup;
 			children = (
 				AB63B5271945D18200F9F314 /* PayMillSDK.framework */,
+				069F83621966E96B00CF5EC8 /* MBProgressHUD */,
+				068109C618E3817C001B5613 /* PayMillSDK */,
 				7C98B8D3177116F800951CFE /* CoreData.framework */,
 				AB9E0482176A1EED0002AEA9 /* Security.framework */,
 				ABC4AB6716AF081B00353B1B /* UIKit.framework */,
@@ -714,8 +823,11 @@
 				D2221C6D178CCBDF00868F8B /* offline_vouchers_pressed.png in Resources */,
 				D2221C6E178CCBDF00868F8B /* offline_vouchers_pressed@2x.png in Resources */,
 				D2221C6F178CCBDF00868F8B /* online_vouchers_pressed.png in Resources */,
+				0632311718BC9F0900668E4A /* PMCreditCardView.xib in Resources */,
+				06E2E2B118C608920011FA20 /* PMPaymentViewController.xib in Resources */,
 				D2221C70178CCBDF00868F8B /* online_vouchers_pressed@2x.png in Resources */,
 				D2221C83178CDB2300868F8B /* burger_big.png in Resources */,
+				06DF204218D2FFE100FF7994 /* PMPaymentMethodsListCell.xib in Resources */,
 				D2221C84178CDB2300868F8B /* burger_big@2x.png in Resources */,
 				D2221C85178CDB2300868F8B /* custom_big.png in Resources */,
 				D2221C86178CDB2300868F8B /* custom_big@2x.png in Resources */,
@@ -725,6 +837,7 @@
 				06D3DFCB17D8BECD004E930D /* PMButtonCell.xib in Resources */,
 				06D3DFCC17D8BECD004E930D /* PMBuyChildCustomCell.xib in Resources */,
 				06D3DFCE17D8BECD004E930D /* PMBuyTableViewController.xib in Resources */,
+				0632311A18BC9F0900668E4A /* PMDirectDebitView.xib in Resources */,
 				06D3DFCF17D8BECD004E930D /* PMImageViewCell.xib in Resources */,
 				ABBEA77817E04D7700AB4D15 /* button_backgroundimage.png in Resources */,
 				ABBEA77917E04D7700AB4D15 /* button_backgroundimage@2x.png in Resources */,
@@ -757,6 +870,7 @@
 				ABBEA79417E04D7700AB4D15 /* placeholder.png in Resources */,
 				ABBEA79517E04D7700AB4D15 /* placeholder@2x.png in Resources */,
 				ABBEA79617E04D7700AB4D15 /* unionPay.png in Resources */,
+				06DF203D18D2FEF100FF7994 /* PMPaymentMethodsListViewController.xib in Resources */,
 				ABBEA79717E04D7700AB4D15 /* unionPay@2x.png in Resources */,
 				ABBEA79817E04D7700AB4D15 /* visa-tst.png in Resources */,
 				ABBEA79917E04D7700AB4D15 /* visa.png in Resources */,
@@ -773,6 +887,7 @@
 				D2AEDACD17E214650015A2E5 /* Default.png in Resources */,
 				D2AEDACF17E214740015A2E5 /* Default@2x.png in Resources */,
 				D2AEDAD117E2147E0015A2E5 /* Default-568h@2x.png in Resources */,
+				0632311C18BC9F0900668E4A /* PMPaymentScreen.xib in Resources */,
 				D28D8A99183CA5E200022DFC /* Icon-60.png in Resources */,
 				D28D8A9A183CA5E200022DFC /* Icon-76.png in Resources */,
 				D28D8A9B183CA5E200022DFC /* Icon-120.png in Resources */,
@@ -787,30 +902,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0632311D18BC9F0900668E4A /* PMTextField.m in Sources */,
 				AB15997F177880CC00F3A54F /* PMAppDelegate.m in Sources */,
+				ABADBF46196161C200996C5B /* PMPaymentScreensSnippet.m in Sources */,
 				AB159981177880CC00F3A54F /* PMDashboardViewCell.m in Sources */,
 				AB159982177880CC00F3A54F /* PMDashboardViewController.m in Sources */,
+				061FAEBA18D9AE77006AB16E /* PMUISupport.m in Sources */,
 				AB159987177880CC00F3A54F /* PMListViewController.m in Sources */,
+				069F83651966E96B00CF5EC8 /* MBProgressHUD.m in Sources */,
 				AB159988177880CC00F3A54F /* PMLoginViewController.m in Sources */,
 				AB159989177880CC00F3A54F /* main.m in Sources */,
 				D256C49B177C4720009262EC /* DetailsViewController.m in Sources */,
 				D256C49E177C49B7009262EC /* PMVoucher.m in Sources */,
+				0632311818BC9F0900668E4A /* PMPaymentView.m in Sources */,
 				D259F982178337BF00A6F99F /* PMNavigationController.m in Sources */,
 				ABD7AE451784304700767423 /* PMBuyContainerController.m in Sources */,
+				AB642ACE1962AF5800ABF384 /* OfflineVoucher.m in Sources */,
 				D270636C17845FF800FF2A59 /* PMLoginTextFieldCell.m in Sources */,
+				06E144C318BCBD4A0097CFCF /* PMPaymentDataValidator.m in Sources */,
 				D270636F1784604200FF2A59 /* PMLoginSegmentedControlCell.m in Sources */,
 				D27063721784607C00FF2A59 /* PMLoginButtonCell.m in Sources */,
+				ABADBF43196157EC00996C5B /* PMSDKSnippets.m in Sources */,
 				D265B68D179573A200D2E23F /* PMBuyDetailsErrorMessageCell.m in Sources */,
 				D265B68E179573A200D2E23F /* PMBuyDetailsViewController.m in Sources */,
+				06DF204018D2FFCD00FF7994 /* PMPaymentMethodsListCell.m in Sources */,
 				D26FA45717B3F4BA000858EC /* PMBuyChildCustomCell.m in Sources */,
 				ABCB3FB017C266DC00CF95BE /* PMPaymentViewController.m in Sources */,
 				ABB2D2E317C68A7500F084CF /* PMImageViewCell.m in Sources */,
+				06E2816C1959DE1200180DB0 /* PMConstants.m in Sources */,
 				06D3DFCA17D8BECD004E930D /* PMButtonCell.m in Sources */,
+				0632311618BC9F0900668E4A /* PMCreditCardView.m in Sources */,
 				06D3DFCD17D8BECD004E930D /* PMBuyTableViewController.m in Sources */,
 				0602F3B017DF093B00E56C71 /* PMSettingsViewController.m in Sources */,
+				0632311918BC9F0900668E4A /* PMDirectDebitView.m in Sources */,
 				ABBEA74E17E03C2C00AB4D15 /* PMVoucherUtils.m in Sources */,
 				0608E0B717E063E90088F1C7 /* VoucherMill.xcdatamodeld in Sources */,
-				0608E0BA17E064450088F1C7 /* OfflineVoucher.m in Sources */,
+				06DF203C18D2FEF100FF7994 /* PMPaymentMethodsListViewController.m in Sources */,
 				0608E0BD17E064920088F1C7 /* PMDataBaseManager.m in Sources */,
 				06FBDFD117E1A35C00BAA1AE /* PMUserDefaultsManager.m in Sources */,
 				AB915696180DFCF600DC2659 /* PMCreditCardTypeParser.m in Sources */,
@@ -898,14 +1025,11 @@
 		ABC4AB8816AF081B00353B1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/PayMillSDK",
-					"/Projects/IOS/vouchermill-bitbucket/samples/vouchermill/PayMillSDK",
-					"$(PROJECT_DIR)/PayMillSDK",
-					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoucherMill/VoucherMill-Prefix.pch";
@@ -919,15 +1043,11 @@
 		ABC4AB8916AF081B00353B1B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alexandar Yalnazov (895GSPAZN4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\\\\\"$(SRCROOT)/PayMillSDK\\\\\\\"",
-					"/Projects/IOS/vouchermill-github/samples/vouchermill/PayMillSDK",
-					"/Projects/IOS/vouchermill-bitbucket/samples/vouchermill/PayMillSDK",
-					"$(PROJECT_DIR)/PayMillSDK",
-					"$(PROJECT_DIR)",
+					"$(SRCROOT)/PayMillSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VoucherMill/VoucherMill-Prefix.pch";

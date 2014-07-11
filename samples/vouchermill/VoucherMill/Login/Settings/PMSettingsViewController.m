@@ -71,7 +71,7 @@
     // Return the number of rows in the section.
     switch (section) {
         case 0:
-            return 1;
+            return 2;
             break;
         case 1:
             return ddItems.count;
@@ -94,8 +94,14 @@
     
     switch(indexPath.section) {
         case 0:
-            cell.textLabel.text = @"auto-consume";
-            cell.imageView.image = nil;
+            if (indexPath.row == 0 ) {
+                cell.textLabel.text = @"Safe Store enabled";
+                cell.imageView.image = nil;
+            }
+            else {
+                cell.textLabel.text = @"auto-consume";
+                cell.imageView.image = nil;
+            }
             break;
             
         case 1:

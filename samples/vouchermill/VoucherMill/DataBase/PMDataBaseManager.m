@@ -9,6 +9,7 @@
 #import "PMDataBaseManager.h"
 #import "OfflineVoucher.h"
 #import "Constants.h"
+#import "PMVoucher.h"
 
 @implementation PMDataBaseManager
 
@@ -57,6 +58,7 @@ static PMDataBaseManager* sharedInstance;
 - (void)insertNewOfflineVoucherWithAmount:(NSString*)amount
                                  currency:(NSString*)currency
                               description:(NSString*)description
+							transactionId:(NSString *)transactionId
                      andCompletionHandler:(PMDataCompletionHandler)completionHandler
 {
     NSManagedObjectContext *context = [self managedObjectContext];
@@ -68,13 +70,28 @@ static PMDataBaseManager* sharedInstance;
     voucher.amount = amount;
     voucher.currency = currency;
     voucher.descript = description;
-        
+    voucher.transactionId = transactionId;
+	
     NSError *error;
     if (![context save:&error]) {
     }
     
     PM_SAFE_BLOCK_CALL(completionHandler, error);
 }
+
+/**************************************/
+#pragma mark -
+/**************************************/
+- (void)insertNewOfflineVoucherWithVoucher:(PMVoucher *)voucher
+                     andCompletionHandler:(PMDataCompletionHandler)completionHandler
+{
+	[self insertNewOfflineVoucherWithAmount:voucher.voucherAmount currency:voucher.voucherCurrency description:voucher.voucherDescrpition transactionId:voucher.transactionId andCompletionHandler:completionHandler];
+}
+
+
+/**************************************/
+#pragma mark - findAll
+/**************************************/
 
 - (NSArray*)allOfflineVouchersWithCompletionHandler:(PMDataCompletionHandler)completionHandler
 {
@@ -91,6 +108,37 @@ static PMDataBaseManager* sharedInstance;
     PM_SAFE_BLOCK_CALL(completionHandler, error);
     
     return fetchedObjects;
+}
+/**************************************/
+#pragma mark - findById
+/**************************************/
+-(OfflineVoucher *)findVoucherByTransactionId:(NSString *)transactionId  andCompletionHandler:(PMDataCompletionHandler)completionHandler {
+	NSManagedObjectContext *context = [self managedObjectContext];
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"OfflineVoucher" inManagedObjectContext:context];
+    [fetchRequest setEntity:entity];
+	
+	NSPredicate *voucherPredicate = [NSPredicate predicateWithFormat:@"(transactionId == %@)", transactionId];
+    
+	[fetchRequest setPredicate:voucherPredicate];
+	
+    NSError *error;
+    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    
+	if(fetchedObjects == nil) {
+		PM_SAFE_BLOCK_CALL(completionHandler, error);
+	}
+	// we have not yet saved this transaction
+	else if(fetchedObjects.count == 0) {
+		return nil;
+	}
+	
+    PM_SAFE_BLOCK_CALL(completionHandler, error);
+    
+    return fetchedObjects[0];
+
 }
 
 /**************************************/

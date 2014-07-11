@@ -8,6 +8,13 @@
 #import <Foundation/Foundation.h>
 
 /**
+ NSError object is returned in every unsuccessful asynchronous callback by the SDK. There are several types of this error.
+ A detail message may also exist.
+ All enums and constants below are related to how-to use the NSError message returned from the PAYMILL SDK.
+ */
+
+
+/**
  PAYMILL error domain
  */
 FOUNDATION_EXPORT NSString * const PMErrorDomain;
@@ -15,15 +22,17 @@ FOUNDATION_EXPORT NSString * const PMErrorDomain;
 /**
  Error type
  */
-typedef enum PMErrorType{
-    UNKNOWN, /*Initial value*/
-	WRONG_PARMETERS, /*You have supplied wrong parameters. You use message for details.*/
-	HTTP_CONNECTION, /*There was an error while connecting to the PayMill Service.*/
-	API, /*The PAYMILL API returned an unexpected result.*/
-    SAFESTORE, /*proxy specific errors*/
-	BRIDGE, /*The PAYMILL JS-Bridge returned an a payment method related error code. For further code explanations, check */
-	NOT_INIT, /*You did not initialize the SDK.*/
-	INTERNAL, /*This should never happen. If you encounter it, please send email support@paymill.com .*/
+
+typedef enum PMErrorType : NSInteger
+{
+    UNKNOWN          = 0, /*Initial value*/
+	WRONG_PARMETERS  = 1, /*You have supplied wrong parameters. You use message for details.*/
+	HTTP_CONNECTION  = 2, /*There was an error while connecting to the PayMill Service.*/
+	API              = 3, /*The PAYMILL API returned an unexpected result.*/
+    SAFESTORE        = 4, /*The PAYMILL safe store returned an error. Check the PMSafeStoreErrorCodeKey in the user info dictionary for the specific error. */
+	BRIDGE           = 5, /*The PAYMILL JS-Bridge returned an a payment method related error code. Check the PMBridgeErrorCodeKey in the user info dictionary for the specific error. */
+	NOT_INIT         = 6, /*You did not initialize the SDK.*/
+	INTERNAL         = 7, /*This should never happen. If you encounter it, please send email support@paymill.com .*/
 }PMErrorType;
 
 
@@ -40,12 +49,6 @@ FOUNDATION_EXPORT NSString * const PMSafeStoreErrorCodeKey;
  PAYMILL BRIDGE will have an PMBridgeErrorCodeKey in the userInfo dictionary.  This gives more information about the error type and could be handled to create user messages.
  */
 FOUNDATION_EXPORT NSString * const PMBridgeErrorCodeKey;
-
-/**
- This is the error object that is returned in every unsuccessful asynchronous callback. There are several types of this error. A detail message may also exist.
- */
-
-
 
 /*
  These are possible values for the PMBridgeErrorCodeKey in the userInfo dictionary

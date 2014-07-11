@@ -22,8 +22,8 @@ typedef NS_ENUM(NSInteger, PMCardCheckResult)
 @property (nonatomic, strong) NSString *pattern;
 @property (nonatomic, strong) NSString *subPatterns;
 @property (nonatomic) BOOL luhn;
-@property (nonatomic) int cvcMinLength;
-@property (nonatomic) int cvcMaxLength;
+@property (nonatomic) NSInteger cvcMinLength;
+@property (nonatomic) NSInteger cvcMaxLength;
 @property (nonatomic, strong) NSArray *numLength;
 @property (nonatomic) PMCardCheckResult result;
 @end

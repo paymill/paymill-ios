@@ -12,6 +12,7 @@
 #import "PMVoucher.h"
 #import "Constants.h"
 #import "PMVoucherUtils.h"
+#import "MBProgressHUD.h"
 
 @interface PMListViewController ()
 
@@ -123,7 +124,7 @@
 	cell.imageView.image = vouch.voucherImage;
 	cell.textLabel.text = vouch.voucherDescrpition;
 	cell.textLabel.textColor = darkOrangeColor;
-	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%@", vouch.voucherAmount, vouch.voucherCurrency];
+	cell.detailTextLabel.text = [NSString stringWithFormat:@"%d%@", [vouch.voucherAmount integerValue], vouch.voucherCurrency];
 	cell.detailTextLabel.textColor = darkOrangeColor;
 	
     
@@ -171,14 +172,21 @@
 		if(!reservedItems){
 			reservedItems = [NSMutableArray array];
 			//items = reservedItems;
+            [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+            
 			[PMManager getPreauthorizationsList:^(NSArray *preauthorizations) {
 				for (PMPreauthorization *preauthorization in preauthorizations) {
 					[reservedItems addObject:[PMVoucherUtils voucherFromPMObject:preauthorization]];
 				}
+                
 				items = reservedItems;
+                
+                [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
 				[theTableView reloadData];
 			} onFailure:^(NSError *error) {
-				[PMVoucherUtils showErrorAlertWithTitle:@"Get Preauthorization failure" errorType:error.code errorMessage:error.localizedDescription];
+                [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+                
+				[PMVoucherUtils showErrorAlertWithTitle:@"Get Preauthorization failure" errorType:(int)error.code errorMessage:error.localizedDescription];
 			}];
 
 		}
@@ -192,16 +200,21 @@
 -(void)reloadTable
 {
 	[items removeAllObjects];
+    
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
 	[PMManager getNonConsumedTransactionsList:^(NSArray *notConsumedTransactions) {
 		for (PMTransaction *transaction in notConsumedTransactions) {
 				PMVoucher *voucher = [PMVoucherUtils voucherFromPMObject:transaction];
 				voucher.voucherType = NotConsumed;
 				[items addObject:voucher];
 		}
+        
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
 		[theTableView reloadData];
 		
 	} failure:^(NSError *error) {
-		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:error.code errorMessage:error.localizedDescription];
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:(int)error.code errorMessage:error.localizedDescription];
 	}];
 }
 @end

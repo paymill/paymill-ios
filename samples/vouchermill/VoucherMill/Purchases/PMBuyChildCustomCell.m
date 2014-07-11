@@ -91,7 +91,7 @@
 {
 	UISegmentedControl *segCtlr = (UISegmentedControl *)sender;
 	
-    int newtag = self.tag;
+    int newtag = (int)self.tag;
     if(segCtlr.selectedSegmentIndex == 1) {
         newtag += 1;
 	}

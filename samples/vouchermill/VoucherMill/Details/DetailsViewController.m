@@ -8,6 +8,8 @@
 
 #import "DetailsViewController.h"
 #import <PayMillSDK/PMSDK.h>
+#import "MBProgressHUD.h"
+
 #define kLabelFontSize 14
 #define darkOrangeColor [UIColor colorWithRed:149.0/255.0 green:0/255.0 blue:11.0/255.0 alpha:1.0]
 #define lightOrangeColor [UIColor colorWithRed:239.0/255.0 green:80/255.0 blue:0/255.0 alpha:1.0]
@@ -39,7 +41,7 @@
     [detailsTable setBackgroundColor:[UIColor clearColor]];
     UIColor *color = [[UIColor alloc]initWithRed:149/255.0f green:0/255.0f  blue:11/255.0f alpha:1 ];
     [detailsTable setSeparatorColor:color];
-    NSString *amountCurrency = [NSString stringWithFormat:@"%@%@", theVoucher.voucherAmount, theVoucher.voucherCurrency];
+    NSString *amountCurrency = [NSString stringWithFormat:@"%ld%@", (long)[theVoucher.voucherAmount integerValue], theVoucher.voucherCurrency];
     NSArray *firstSection = [NSArray arrayWithObjects:amountCurrency, theVoucher.voucherCreationDate, theVoucher.voucherDescrpition, theVoucher.voucherStatus, nil];
     NSArray *secondSection = [NSArray arrayWithObjects:theVoucher.voucherCreditCardNumber, theVoucher.voucherCreditCardType, nil];
     NSArray *thirdSection = [NSArray arrayWithObjects:theVoucher.voucherAccount, theVoucher.voucherBankCode, nil];
@@ -55,9 +57,13 @@
 
 -(IBAction)consumeAction:(id)sender
 {
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
 	[PMManager consumeTransactionForId:theVoucher.transactionId success:^(NSString *id) {
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
 		[delegate reloadTable];
 	} failure:^(NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
 	}];
 	
 	[self.navigationController popViewControllerAnimated:YES];
