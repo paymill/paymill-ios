@@ -8,46 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <PayMillSDK/PMSDK.h>
+#import "PMPaymentView.h"
 
-/**
- * The type of credit card that is supported.
- */
-typedef NS_ENUM(NSInteger, PMCardTypes) {
-    ALL,
-    CC_AMEX,
-    CC_DISCOVER,
-    CC_UNIONPAY,
-    CC_DINERSCLUB,
-    CC_INSTAPAYMENT,
-    CC_JCB,
-    CC_LASER,
-    CC_MAESTRO,
-    CC_MASTERCARD,    
-    CC_VISA,
-    CC_INVALID,
-	DD_DE,
-};
-/**
- * The type of payment that should be triggered.
- */
 typedef NS_ENUM(NSInteger, PMPaymentType)
 {
     TOKEN,
     TRANSACTION,
     PREAUTHORIZATION,
     TOKEN_WO_INIT   //GenetareTokenWithPublicKey
-};
-
-typedef NS_ENUM(NSInteger, PMInputFields)
-{
-    NONE,
-    ACCOUNT_HOLDER,
-    ACCOUNT_NUMBER,
-    BANK_CODE,
-    CARD_ACCOUNT_HOLDER,
-    CARD_NUMBER,
-    EXP_DATE,
-    CVV
 };
 
 //Block callbacks
@@ -59,26 +27,33 @@ typedef void(^OnCompletionFailure)(NSError *);
  This class is used to set different settings for screen according to payment requirements
  */
 @interface PMSettings : NSObject
+
 /**
  paymentType
  */
 @property(nonatomic) PMPaymentType paymentType;
+
 /**
- directDebitCountry
+ All credit cards are allowed.
  */
-@property(nonatomic, strong) NSString *directDebitCountry;
++ (id)settingsWithPaymentType:(PMPaymentType)type directDebitCountry:(NSString*)ddCountry testMode:(BOOL)testMode safeStoreEnabled:(BOOL)enabled andConsumable:(BOOL)consumable;
+
 /**
- isTestMode
+ Disables all credit card types
  */
-@property (nonatomic) BOOL isTestMode;
+- (void)disableAllCreditCards;
 /**
- consumable
+ Enables all credit card types
  */
-@property (nonatomic) BOOL consumable;
+- (void)enableAllCreditCards;
 /**
- cardTypes
+ Enables a specific credit card type.
  */
-@property NSArray *cardTypes;
+- (void)enableCreditCardType:(NSString*)cardType;
+/**
+ Disables a credit card type
+ */
+- (void)disableCreditCardType:(NSString*)cardType;
 /**
  Convenience method for pre-filling the payment screens. This is usefull for integrating card scanning services.
  @param accHolder account holder.
@@ -90,78 +65,23 @@ typedef void(^OnCompletionFailure)(NSError *);
 -(void)prefillCreditCardDataWithAccHolder:(NSString*)accHolder cardNumber:(NSString*)cardNumber expiryMonth:(NSString*) expiryMonth expiryYear:(NSString*)expiryYear verification:(NSString*)verification;
 @end
 
-/**
- This class is intended for set style properties to the payment screen.
- */
-@interface PMStyle : NSObject
-/**
- backgroundColor
- */
-@property (nonatomic) UIColor *backgroundColor;
-/**
- navbarColor
- */
-@property (nonatomic) UIColor *navbarColor;
-/**
- inputFieldBackgroundColor
- */
-@property (nonatomic) UIColor *inputFieldBackgroundColor;
-/**
- inputFieldTextColor
- */
-@property (nonatomic) UIColor *inputFieldTextColor;
-/**
- inputFieldTitleColor
- */
-@property (nonatomic) UIColor *inputFieldTitleColor;
-/**
- inputFieldBorderColor
- */
-@property (nonatomic) UIColor *inputFieldBorderColor;
-/**
- inputFieldConfirmColor
- */
-@property (nonatomic) UIColor *inputFieldConfirmColor;
-/**
- inputFieldNonConfirmColor
- */
-@property (nonatomic) UIColor *inputFieldNonConfirmColor;
-/**
- inputFieldWrongColor
- */
-@property (nonatomic) UIColor *inputFieldWrongColor;
-/**
- buttonBackgroundColor
- */
-@property (nonatomic) UIColor *buttonBackgroundColor;
-/**
- buttonTitleColor
- */
-@property (nonatomic) UIColor *buttonTitleColor;
-/**
- segmentColor
- */
-@property (nonatomic) UIColor *segmentColor;
-/**
- modalTransitonStyle
- */
-@property (nonatomic) UIModalTransitionStyle modalTransitonStyle;
 
-@end
+/**************************************/
+#pragma mark -
+/**************************************/
+@interface PMPaymentViewController : UIViewController <UITextFieldDelegate, PMPaymentDataValidatorUIRepresentationDelegate, UIAlertViewDelegate>
 
 /**
- This is PayMill Payment Screen view controller
- */
-@interface PMPaymentViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
-
-/**
- Designated initializer for creating PMPaymentViewController.
+ Designated initializers for creating PMPaymentViewController.
  @param params PMPaymentParams created with PMFactory.
  @param publicKey Paymill merchant public key.
  @param settings Style settings.
  @param success a block callback that is executed when the requested Paymill operation returns success.
  @param failure a block callback that is executed when the requested Paymill operation returns error.
  */
--(PMPaymentViewController *)initWithParams:(PMPaymentParams*)pmParams publicKey:(NSString *)pubKey settings:(PMSettings *)pmSettings style:(PMStyle *)pmStyle success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+- (PMPaymentViewController *)initWithParams:(PMPaymentParams*)pmParams publicKey:(NSString *)pubKey settings:(PMSettings *)pmSettings style:(PMStyle *)pmStyle success:(void (^)(id))success failure:(void (^)(NSError *))failure;
+
+- (PMPaymentViewController *)initWithParams:(PMPaymentParams*)pmParams publicKey:(NSString *)pubKey settings:(PMSettings *)pmSettings success:(void (^)(id))success failure:(void (^)(NSError *))failure;
 
 @end
+

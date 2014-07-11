@@ -19,8 +19,7 @@
 #import "Constants.h"
 #import "PMSettingsViewController.h"
 #import "PMVoucherUtils.h"
-
-static NSString *publicKey = @"4369741839217a7d10cbed5d417715f4";
+#import "MBProgressHUD.h"
 
 @interface PMLoginViewController ()
 
@@ -57,9 +56,9 @@ static NSString *publicKey = @"4369741839217a7d10cbed5d417715f4";
 
 
 - (void) keyboardWillShow:(NSNotification *)note {
-	// move the view up by 30 pts
+	// move the view up by 120 pts
     CGRect frame = self.view.frame;
-    frame.origin.y = -100;
+    frame.origin.y -= 120;
     
     [UIView animateWithDuration:0.3 animations:^{
         self.view.frame = frame;
@@ -70,7 +69,7 @@ static NSString *publicKey = @"4369741839217a7d10cbed5d417715f4";
 	
     // move the view back to the origin
     CGRect frame = self.view.frame;
-    frame.origin.y = 0;
+    frame.origin.y += 120;
     
     [UIView animateWithDuration:0.3 animations:^{
         self.view.frame = frame;
@@ -191,11 +190,14 @@ static NSString *publicKey = @"4369741839217a7d10cbed5d417715f4";
 		return;
 	}
     if (sender.tag == 1) {
+        [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
         [PMManager initWithTestMode:isTestMode merchantPublicKey:publicKeyLogin newDeviceId:nil init:^(BOOL success, NSError *error) {
         		if(success){
+                    [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
         			[self performSegueWithIdentifier:@"Dashboard" sender:sender];
         		}
         		else {
+                    [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
         			UIAlertView *notAuthorized = [[UIAlertView alloc] initWithTitle:@"Authorization failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         			[notAuthorized show];
         		}
@@ -216,37 +218,22 @@ static NSString *publicKey = @"4369741839217a7d10cbed5d417715f4";
     }
 }
 
-- (IBAction)testLogIn:(id)sender {
-		[PMManager initWithTestMode:YES merchantPublicKey:publicKey newDeviceId:nil init:^(BOOL success, NSError *error) {
-			if(success){
-    			[self performSegueWithIdentifier:@"Dashboard" sender:sender];
-				[PMVoucherParams instance].publicKey = publicKey;
-    		}
-    		else {
-    			UIAlertView *notAuthorized = [[UIAlertView alloc] initWithTitle:@"Authorization failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    			[notAuthorized show];
-			}
-		} success:^(NSArray *notConsumedTransactions) {
-			//
-		} failure:^(NSError *error) {
-			//
-		} success:^(NSArray *notConsumedPreauthorizations) {
-			//
-		} failure:^(NSError *error) {
-			//
-		}];
-	
-//    	[PMManager initWithTestMode:YES merchantPublicKey:publicKey newDeviceId:nil init:^(BOOL success, PMError *error) {
-//    		if(success){
-//    			[self performSegueWithIdentifier:@"Dashboard" sender:sender];
-//				[PMVoucherParams instance].publicKey = publicKey;
-//    		}
-//    		else {
-//    			UIAlertView *notAuthorized = [[UIAlertView alloc] initWithTitle:@"Authorization failed" message:error.message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//    			[notAuthorized show];
-//    		}
-//    	}];
+- (IBAction)testLogIn:(id)sender
+{
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     
+    [PMManager initWithTestMode:YES merchantPublicKey:myPublicKey newDeviceId:nil init:^(BOOL success, NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+
+        if( success ) {
+            [self performSegueWithIdentifier:@"Dashboard" sender:sender];
+            [PMVoucherParams instance].publicKey = myPublicKey;
+        }
+        else {
+            UIAlertView *notAuthorized = [[UIAlertView alloc] initWithTitle:@"Authorization failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [notAuthorized show];
+        }
+    }];
 }
 
 - (IBAction)showSettings:(id)sender

@@ -70,7 +70,7 @@
 		
 		else if(buyVoucher) {
 		
-			NSString *amountCurrency = [NSString stringWithFormat:@"%@%@", buyVoucher.voucherAmount, buyVoucher.voucherCurrency];
+			NSString *amountCurrency = [NSString stringWithFormat:@"%ld%@", (long)[buyVoucher.voucherAmount integerValue], buyVoucher.voucherCurrency];
 			NSArray *firstSection = [NSArray arrayWithObjects:amountCurrency, buyVoucher.voucherCreationDate, buyVoucher.voucherDescrpition, buyVoucher.voucherStatus, nil];
 			NSArray *secondSection = [NSArray arrayWithObjects:buyVoucher.voucherCreditCardNumber, buyVoucher.voucherCreditCardType, nil];
 			NSArray *thirdSection = [NSArray arrayWithObjects:buyVoucher.voucherAccount, buyVoucher.voucherBankCode, nil];

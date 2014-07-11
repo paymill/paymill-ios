@@ -22,6 +22,8 @@
 #import "PMVoucherUtils.h"
 #import "PMDataBaseManager.h"
 #import "PMUserDefaultsManager.h"
+#import "PMUISupport.h"
+#import "MBProgressHUD.h"
 
 typedef NS_ENUM(NSInteger, PMCustomVoucherField)
 {
@@ -64,6 +66,7 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 @property (nonatomic) int updateConstratinsCount;
 @property (nonatomic) NSInteger buyActionIndex;
 @property (nonatomic, strong) NSArray *genericVouchers;
+@property (nonatomic, strong) NSString* safeStorePassword;
 
 - (IBAction)buyAction:(id)sender;
 
@@ -263,7 +266,7 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 	}
     else if ([cellIdentifer isEqualToString:buttonVCellIdentifier]) {
         lastCell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifer forIndexPath:indexPath];
-        [lastCell.submitButton addTarget:self action:@selector(buyAction:) forControlEvents:UIControlEventTouchUpInside];
+        [lastCell.submitButton addTarget:self action:@selector(buyAction:) forControlEvents:UIControlEventTouchDown];
 		//[self configureImageViewCell:lastCell forIndexPath:indexPath];
 		cell = lastCell;
     }
@@ -329,10 +332,95 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
     cell.image = voucher.bigImage;	
 }
 
+#pragma mark - PMStyle
+- (PMStyle*)customStyle
+{
+    UIColor *mainColor = [UIColor colorWithRed:239.0/255.0 green:80/255.0 blue:0/255.0 alpha:1.0];
+	PMStyle* style = [PMStyle new];
+    style.backgroundColor = [UIColor whiteColor];
+    style.navbarColor = [UIColor whiteColor];
+    style.inputFieldTextColor = [UIColor darkTextColor];
+    style.inputFieldBackgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.1];
+    style.inputFieldTitleColor = mainColor;
+    style.inputFieldBorderColor = [UIColor colorWithRed:149.0/255.0 green:0/255.0 blue:11.0/255.0 alpha:1.0];
+    style.inputFieldBorderWidth = 2.0;
+    style.inputFieldBorderStyle = UITextBorderStyleRoundedRect;
+    style.inputFieldCornerRadius = 8.0;
+    style.inputFieldConfirmColor = [UIColor darkTextColor];
+    style.inputFieldWrongColor = [UIColor redColor];
+    style.buttonBackgroundColor = mainColor;
+    style.buttonTitleColor = [UIColor whiteColor];
+    style.segmentColor = [UIColor whiteColor];
+    
+    return style;
+}
+
 #pragma mark - Table view delegate
 
-- (IBAction)buyAction:(id)sender {
-	
+- (IBAction)buyAction:(id)sender
+{
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
+    [self showPaymentScreen];
+}
+
+- (BOOL)isSafeStoreEnabled
+{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"Safe Store enabled"] == nil ||
+    [[NSUserDefaults standardUserDefaults] boolForKey:@"Safe Store enabled"];
+}
+
+- (void)configBuyDetailsCtrl:(PMBuyDetailsViewController*)pmBuyDetailsViewController withResultObject:(id)resObject andImage:(UIImage*)bigImage
+{
+    PMVoucherParams *vouchParams = [PMVoucherParams instance];
+    //PMVoucherPresentation *voucherPresi = [genericVouchers objectAtIndex:index];
+    
+    if (vouchParams.action == TOKEN || vouchParams.action == TOKEN_WO_INIT) {
+        pmBuyDetailsViewController.buyVoucher = nil;
+        pmBuyDetailsViewController.token = (NSString*)resObject;
+    }
+    else if(vouchParams.action == TRANSACTION || vouchParams.action == PREAUTHORIZATION) {
+        pmBuyDetailsViewController.buyVoucher.voucherAmount = ((PMTransaction *)resObject).amount;
+        pmBuyDetailsViewController.buyVoucher.voucherStatus = ((PMTransaction *)resObject).status;
+        pmBuyDetailsViewController.buyVoucher.voucherDescrpition = ((PMTransaction *)resObject).description;
+        if(!pmBuyDetailsViewController.buyVoucher.voucherDescrpition) {
+            pmBuyDetailsViewController.buyVoucher.voucherDescrpition = @"N/A";
+        }
+        //convert timestamp to date and save it as string
+        pmBuyDetailsViewController.buyVoucher.voucherCreationDate = [PMVoucherUtils timeStampAsString:((PMTransaction *)resObject).created_at];
+        pmBuyDetailsViewController.buyVoucher.voucherCreditCardNumber = ((PMTransaction *)resObject).payment.last4;
+        pmBuyDetailsViewController.buyVoucher.voucherAccount = ((PMTransaction *)resObject).payment.account;
+        pmBuyDetailsViewController.buyVoucher.voucherCurrency = ((PMTransaction *)resObject).currency;
+        pmBuyDetailsViewController.buyVoucher.voucherBankCode = ((PMTransaction *)resObject).payment.code;
+        //temporarily only
+        pmBuyDetailsViewController.buyVoucher.isCreditCard = YES; 			}
+    
+    PMVoucher *voucher = pmBuyDetailsViewController.buyVoucher;
+    //insert only bought(transactions) vouchers in DB
+    if(vouchParams.action == TRANSACTION) {
+        NSString *transactionId = ((PMTransaction *)resObject).id;
+		if (nil == [[PMDataBaseManager instance] findVoucherByTransactionId:transactionId andCompletionHandler:nil]) {
+			//we haven't saved this transaction yet
+			voucher.transactionId = transactionId;
+			[[PMDataBaseManager instance] insertNewOfflineVoucherWithVoucher:voucher andCompletionHandler:^(NSError *error) {
+				if(error) {
+					[PMVoucherUtils showErrorAlertWithTitle:@"Error inserting offline voucher" errorType:INTERNAL	errorMessage:error.description];
+				}
+				else {
+					//voucher saved, now consume the transaction
+					[PMManager consumeTransactionForId:transactionId success:^(NSString *id) {
+						//
+					} failure:^(NSError *error) {
+						//
+					}];
+				}
+			}];
+		}
+    }
+}
+
+- (void)showPaymentScreen
+{
 	NSError *error;
 	PMPaymentParams *params;
 	PMSettings *pmViewSettings;
@@ -346,14 +434,13 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 	vouchParams.voucherValue = voucherPresi.amount.intValue;
 	vouchParams.currency = voucherPresi.currency;
 	vouchParams.description = voucherPresi.description;
+    
+    BOOL safeStoreEnabled = [self isSafeStoreEnabled];
 	
 	//set payment view settings
-	pmViewSettings = [[PMSettings alloc] init];
-	pmViewSettings.paymentType = vouchParams.action;
-	pmViewSettings.cardTypes = [[PMUserDefaultsManager instance] getActiveCards];
-	pmViewSettings.directDebitCountry = @"DE";
-	pmViewSettings.isTestMode = vouchParams.isTestMode;
-	pmViewSettings.consumable = (![[PMUserDefaultsManager instance] isAutoConsumed]);
+	pmViewSettings = [PMSettings settingsWithPaymentType:vouchParams.action directDebitCountry:@"DE" testMode:vouchParams.isTestMode safeStoreEnabled:safeStoreEnabled andConsumable:(![[PMUserDefaultsManager instance] isAutoConsumed])];
+    //[pmViewSettings disableAllCreditCards];
+    
 	//Create payment parameters
 	params = [PMFactory genPaymentParamsWithCurrency:vouchParams.currency amount:vouchParams.voucherValue description:vouchParams.description error:&error];
 	
@@ -364,62 +451,32 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 	//check for errors
 	if(!error){
 		//create the payment view controller
-        payViewNav = [[PMPaymentViewController alloc] initWithParams:params publicKey:vouchParams.publicKey settings:pmViewSettings style:nil success:^(id resObject) {
+        payViewNav = [[PMPaymentViewController alloc] initWithParams:params
+                                                   publicKey:vouchParams.publicKey
+                                                    settings:pmViewSettings
+                                                       style:[self customStyle]
+					  
+		success:^(id resObject) {
+                                                         [self configBuyDetailsCtrl:pmBuyDetailsViewController withResultObject:resObject andImage:voucherPresi.bigImage];
+                                                         [self.navigationController presentViewController:navController animated:YES completion:nil];
 			
-			PMVoucherParams *vouchParams = [PMVoucherParams instance];
-			//PMVoucherPresentation *voucherPresi = [genericVouchers objectAtIndex:index];
-        
-			if (vouchParams.action == TOKEN || vouchParams.action == TOKEN_WO_INIT) {
-				pmBuyDetailsViewController.buyVoucher = nil;
-				pmBuyDetailsViewController.token = (NSString*)resObject;
-			}
-			else if(vouchParams.action == TRANSACTION || vouchParams.action == PREAUTHORIZATION) {
-				pmBuyDetailsViewController.buyVoucher.voucherAmount = ((PMTransaction *)resObject).amount;
-				pmBuyDetailsViewController.buyVoucher.voucherStatus = ((PMTransaction *)resObject).status;
-				pmBuyDetailsViewController.buyVoucher.voucherDescrpition = ((PMTransaction *)resObject).description;
-				if(!pmBuyDetailsViewController.buyVoucher.voucherDescrpition) {
-					pmBuyDetailsViewController.buyVoucher.voucherDescrpition = @"N/A";
-				}
-				//convert timestamp to date and save it as string
-				pmBuyDetailsViewController.buyVoucher.voucherCreationDate = [PMVoucherUtils timeStampAsString:((PMTransaction *)resObject).created_at];
-				
-				pmBuyDetailsViewController.buyVoucher.voucherBigImage = voucherPresi.bigImage;
-				pmBuyDetailsViewController.buyVoucher.voucherCreditCardNumber = ((PMTransaction *)resObject).payment.last4;
-				pmBuyDetailsViewController.buyVoucher.voucherAccount = ((PMTransaction *)resObject).payment.account;
-				pmBuyDetailsViewController.buyVoucher.voucherCurrency = ((PMTransaction *)resObject).currency;
-				pmBuyDetailsViewController.buyVoucher.voucherBankCode = ((PMTransaction *)resObject).payment.code;
-				//temporarily only
-				pmBuyDetailsViewController.buyVoucher.isCreditCard = YES; 			}
-				
-			    PMVoucher *voucher = pmBuyDetailsViewController.buyVoucher;
-				//insert only bought(transactions) vouchers in DB
-			if(vouchParams.action == TRANSACTION) {
-				   pmBuyDetailsViewController.buyVoucher.transactionId = ((PMTransaction *)resObject).id;
-				   [[PMDataBaseManager instance] insertNewOfflineVoucherWithAmount:voucher.voucherAmount currency:voucher.voucherCurrency description:voucher.voucherDescrpition andCompletionHandler:^(NSError *err) {
-					   if(err) {
-						   [PMVoucherUtils showErrorAlertWithTitle:@"Error inserting offline voucher" errorType:INTERNAL errorMessage:err.description];
-					   }
-				}];
-			}
-            
-			[self.navigationController presentViewController:navController animated:YES completion:nil];
-			
-        } failure:^(NSError *error) {
+        }
+					  
+		failure:^(NSError *error) {
             pmBuyDetailsViewController.buyError = error;
 			[self.navigationController presentViewController:navController animated:YES completion:nil];
-
 		}];
         
 		//present the view controller modally
          self.isVisible = NO;
+        
+       [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
         UINavigationController* navCtrl = [[UINavigationController alloc] initWithRootViewController:payViewNav];
 		[self presentViewController:navCtrl animated:YES completion:nil];
-
 	}
 	else {
 		UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"PM Error: " message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[errorAlert show];
-        
 	}
 }
 
@@ -462,7 +519,12 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    NSCharacterSet* numberSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    NSString* newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    
     if ([string isEqualToString:@""]) {
+        PMVoucherPresentation *voucher = [genericVouchers lastObject];
+        voucher.amount = newString;
         return YES;
     }
     
@@ -476,9 +538,7 @@ static NSString *imageCellIdentifier = @"ImageCellIdentifier";
     }
     
     if ( sprv.tag == 1 ) {
-        NSCharacterSet* numberSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
         if( [string stringByTrimmingCharactersInSet:numberSet].length > 0 ) {
-            NSString* newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
             PMVoucherPresentation *voucher = [genericVouchers lastObject];
             voucher.amount = newString;
             

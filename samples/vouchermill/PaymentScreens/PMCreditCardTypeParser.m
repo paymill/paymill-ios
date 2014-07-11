@@ -55,10 +55,10 @@ static PMCreditCardTypeParser *sharedInstance;
 		NSString *pattern = [ccc valueForKey:@"pattern"];
 		ccCheck.pattern = [self.expressionPatterns objectAtIndex:pattern.intValue];
 		ccCheck.subPatterns = [self.expressionPatterns objectAtIndex:pattern.intValue];
-		ccCheck.cvcMaxLength = [ccc valueForKey:@"cvcMaxLength"];
-		ccCheck.cvcMinLength = [ccc valueForKey:@"cvcMinLength"];
+		ccCheck.cvcMaxLength = [[ccc valueForKey:@"cvcMaxLength"] integerValue];
+		ccCheck.cvcMinLength = [[ccc valueForKey:@"cvcMinLength"] integerValue];
 		ccCheck.numLength = [ccc valueForKey:@"numLength"];
-		ccCheck.luhn = [ccc valueForKey:@"luhn"];
+		ccCheck.luhn = [[ccc valueForKey:@"luhn"] boolValue];
 		
 		[checks addObject:ccCheck];
 	}

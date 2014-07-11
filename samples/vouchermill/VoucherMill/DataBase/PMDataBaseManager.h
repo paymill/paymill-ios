@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OfflineVoucher.h"
+#import "PMVoucher.h"
 
 typedef void (^PMDataCompletionHandler)(NSError* err);
 
@@ -21,8 +23,14 @@ typedef void (^PMDataCompletionHandler)(NSError* err);
 - (void)insertNewOfflineVoucherWithAmount:(NSString*)amount
                                  currency:(NSString*)currency
                               description:(NSString*)description
+							transactionId:(NSString*)transactionId
                      andCompletionHandler:(PMDataCompletionHandler)completionHandler;
 
+- (void)insertNewOfflineVoucherWithVoucher:(PMVoucher *)voucher
+					  andCompletionHandler:(PMDataCompletionHandler)completionHandler;
+
 - (NSArray*)allOfflineVouchersWithCompletionHandler:(PMDataCompletionHandler)completionHandler;
+
+-(OfflineVoucher *)findVoucherByTransactionId:(NSString *)transactionId andCompletionHandler:(PMDataCompletionHandler)completionHandler;
 
 @end

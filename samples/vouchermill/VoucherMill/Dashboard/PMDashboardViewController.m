@@ -22,6 +22,7 @@
 #import "PMVoucherUtils.h"
 #import "PMDataBaseManager.h"
 #import "OfflineVoucher.h"
+#import "MBProgressHUD.h"
 
 @interface PMDashboardViewController ()
 @property (nonatomic, strong) NSMutableArray *voucherList;
@@ -160,6 +161,7 @@
 
 - (void)getTransactionsList
 {
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     [PMManager getTransactionsList:^(NSArray *transactions) {
 		[voucherList removeAllObjects];
         transList = [NSMutableArray arrayWithArray:transactions];
@@ -169,16 +171,22 @@
 			voucher.voucherType = Online;
 			[voucherList addObject:voucher];
 		}
+        
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
 		[self performSegueWithIdentifier:kONLINEVOUCHERS sender:self];
         
     } failure:^(NSError *error) {
-		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:error.code errorMessage:error.localizedDescription];
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:(int)error.code errorMessage:error.localizedDescription];
     }];
 }
 
 -(void)getOfflineList {
 	[voucherList removeAllObjects];
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
 	NSArray* offlineList = [[PMDataBaseManager instance] allOfflineVouchersWithCompletionHandler:^(NSError *err) {
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
 		if(err) {
 			[PMVoucherUtils showErrorAlertWithTitle:@"Error reading offline vouchers" errorType:INTERNAL errorMessage:err.description];
 		}
@@ -195,6 +203,8 @@
 
 -(void)getNotConsumedList
 {
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    
     [PMManager getNonConsumedTransactionsList:^(NSArray *notConsumedTransactions) {
         [voucherList removeAllObjects];
 		transList = [NSMutableArray arrayWithArray:notConsumedTransactions];
@@ -204,10 +214,13 @@
 			voucher.voucherType = NotConsumed;
 			[voucherList addObject:voucher];
 		}
+        
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
 		[self performSegueWithIdentifier:kNOTCONSUMED sender:self];
         
     } failure:^(NSError *error) {
-		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:error.code errorMessage:error.localizedDescription];
+        [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+		[PMVoucherUtils showErrorAlertWithTitle:@"Get transactions failure:" errorType:(int)error.code errorMessage:error.localizedDescription];
     }];
 }
 

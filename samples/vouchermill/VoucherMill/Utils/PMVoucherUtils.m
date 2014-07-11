@@ -36,7 +36,7 @@
 		currency = ((PMPreauthorization *)pmObject).currency;
 		amount = ((PMPreauthorization *)pmObject).amount;
 		status = ((PMPreauthorization *)pmObject).status;
-		createdAt = createdAt = [PMVoucherUtils timeStampAsString:((PMPreauthorization *)pmObject).created_at.intValue];
+		createdAt = [PMVoucherUtils timeStampAsString:((PMPreauthorization *)pmObject).created_at.intValue];
 		creditCardNumber = ((PMPreauthorization *)pmObject).payment.last4;
 		creditCardType = ((PMPreauthorization *)pmObject).payment.card_type;
 		account = ((PMPreauthorization *)pmObject).payment.account;
@@ -117,7 +117,7 @@
 +(void)showErrorAlertWithTitle:(NSString*)title errorType:(PMErrorType)type errorMessage:(NSString*)message {
 	
 	UIAlertView *plistAlert = [[UIAlertView alloc]
-							   initWithTitle:[NSString stringWithFormat:@"%@ %d", title, type]
+							   initWithTitle:[NSString stringWithFormat:@"%@ %ld", title, type]
 							   message:message
 							   delegate:nil
 							   cancelButtonTitle:nil

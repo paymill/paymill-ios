@@ -11,7 +11,7 @@
 #import "PMPaymentViewController.h"
 #import "PMBuyChildCustomCell.h"
 
-@interface PMBuyTableViewController : UITableViewController <UITextFieldDelegate, PMBuyChildCustomCellDelegate>
+@interface PMBuyTableViewController : UITableViewController <UITextFieldDelegate, PMBuyChildCustomCellDelegate, UIAlertViewDelegate>
 
 @property (nonatomic) NSUInteger index;
 @property (nonatomic) PMPaymentType PMAction;
