@@ -34,12 +34,12 @@ iOS 6.0 or later / OS X 10.6 or later.
 - Xcode users add 'PayMillSDK' folder to their project.
 - CocoaPods  users add this dependency to their `Podfile`:
 ```
-  pod 'PayMillSDK',  '~> 2.1.1'
+  pod 'PayMillSDK',  '~> 2.2.0'
 ```
 
 *In cases Cocoapods central repository is not available, you can add folowing line to your `Podfile`:*
 ```
-pod 'PayMillSDK', :git=>'https://github.com/paymill/paymill-ios.git', :branch=>'master', :tag=>'2.1.1'
+pod 'PayMillSDK', :git=>'https://github.com/paymill/paymill-ios.git', :branch=>'master', :tag=>'2.2.0'
 ```
 
 ## Working with the SDK
@@ -114,6 +114,9 @@ To create transactions and preauthorizations directly from the SDK you first nee
 
 
 ## Release notes
+
+###2.2.0
++iOS8 supoort added
 
 ###2.1.1
 * Bug fixes
