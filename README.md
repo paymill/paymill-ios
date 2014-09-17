@@ -39,7 +39,7 @@ iOS 6.0 or later / OS X 10.6 or later.
 
 *In cases Cocoapods central repository is not available, you can add folowing line to your `Podfile`:*
 ```
-pod 'PayMillSDK', :git=>'https://github.com/paymill/paymill-ios.git', :branch=>'master', :tag=>'2.1.0'
+pod 'PayMillSDK', :git=>'https://github.com/paymill/paymill-ios.git', :branch=>'master', :tag=>'2.1.1'
 ```
 
 ## Working with the SDK
@@ -121,7 +121,6 @@ To create transactions and preauthorizations directly from the SDK you first nee
 ###2.1.0
 + Added new methods to create transactions and preauthorizations with a payment object.
 + Added a Safe Store to securely save payment objects with a user password.
-+ Added the possibility to turn off or style the foreground notification.
 
 ###2.0.3
 * Bug fixes
