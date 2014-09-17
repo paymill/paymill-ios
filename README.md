@@ -39,7 +39,7 @@ iOS 6.0 or later / OS X 10.6 or later.
 
 *In cases Cocoapods central repository is not available, you can add folowing line to your `Podfile`:*
 ```
-pod 'PayMillSDK', :git=>'https://github.com/paymill/paymill-ios.git', :branch=>'master', :tag=>'2.1.0'
+pod 'PayMillSDK', :git=>'https://github.com/paymill/paymill-ios.git', :branch=>'master', :tag=>'2.1.1'
 ```
 
 ## Working with the SDK
