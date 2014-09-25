@@ -116,7 +116,7 @@ To create transactions and preauthorizations directly from the SDK you first nee
 ## Release notes
 
 ###2.2.0
-+iOS8 supoort added
++ iOS8 supoort added
 
 ###2.1.1
 * Bug fixes
