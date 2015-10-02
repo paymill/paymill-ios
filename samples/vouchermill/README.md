@@ -1,10 +1,4 @@
 # VoucherMill
-The PAYMILL iOS SDK Sample / Demo App
-
-<a href="https://itunes.apple.com/hk/app/vouchermill/id757789501?mt=8">
-  <img alt="Get it on the App Store"
-       src="https://devimages.apple.com.edgekey.net/app-store/marketing/guidelines/images/app-store-icon.png" />
-</a>
 
 ## Using the payment screens
 
