@@ -47,8 +47,8 @@
 		AB159988177880CC00F3A54F /* PMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB159974177880CC00F3A54F /* PMLoginViewController.m */; };
 		AB159989177880CC00F3A54F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB159975177880CC00F3A54F /* main.m */; };
 		AB15998C177880CC00F3A54F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB15997C177880CC00F3A54F /* MainStoryboard.storyboard */; };
-		AB540B4E19C991800025F953 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB540B4D19C991800025F953 /* PayMillSDK.framework */; };
 		AB642ACE1962AF5800ABF384 /* OfflineVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = AB642ACD1962AF5800ABF384 /* OfflineVoucher.m */; };
+		AB7524621BC8139100E2F715 /* PayMillSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7524611BC8139100E2F715 /* PayMillSDK.framework */; settings = {ASSET_TAGS = (); }; };
 		AB915696180DFCF600DC2659 /* PMCreditCardTypeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AB915695180DFCF600DC2659 /* PMCreditCardTypeParser.m */; };
 		AB915699180E206900DC2659 /* PMVoucherParams.m in Sources */ = {isa = PBXBuildFile; fileRef = AB915698180E206900DC2659 /* PMVoucherParams.m */; };
 		AB9E0483176A1EED0002AEA9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9E0482176A1EED0002AEA9 /* Security.framework */; };
@@ -216,9 +216,9 @@
 		AB15997D177880CC00F3A54F /* VoucherMill-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VoucherMill-Info.plist"; sourceTree = "<group>"; };
 		AB15997E177880CC00F3A54F /* VoucherMill-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VoucherMill-Prefix.pch"; sourceTree = "<group>"; };
 		AB24FB0A1796E5FD0017654D /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		AB540B4D19C991800025F953 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayMillSDK.framework; sourceTree = "<group>"; };
 		AB642ACC1962AF5800ABF384 /* OfflineVoucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineVoucher.h; sourceTree = "<group>"; };
 		AB642ACD1962AF5800ABF384 /* OfflineVoucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfflineVoucher.m; sourceTree = "<group>"; };
+		AB7524611BC8139100E2F715 /* PayMillSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PayMillSDK.framework; sourceTree = "<group>"; };
 		AB915694180DFCF600DC2659 /* PMCreditCardTypeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCreditCardTypeParser.h; sourceTree = "<group>"; };
 		AB915695180DFCF600DC2659 /* PMCreditCardTypeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCreditCardTypeParser.m; sourceTree = "<group>"; };
 		AB915697180E206900DC2659 /* PMVoucherParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMVoucherParams.h; sourceTree = "<group>"; };
@@ -355,7 +355,7 @@
 				AB9E0483176A1EED0002AEA9 /* Security.framework in Frameworks */,
 				ABC4AB6816AF081B00353B1B /* UIKit.framework in Frameworks */,
 				ABC4AB6A16AF081B00353B1B /* Foundation.framework in Frameworks */,
-				AB540B4E19C991800025F953 /* PayMillSDK.framework in Frameworks */,
+				AB7524621BC8139100E2F715 /* PayMillSDK.framework in Frameworks */,
 				ABC4AB6C16AF081B00353B1B /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,10 +533,10 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		AB540B4C19C991800025F953 /* PayMillSDK */ = {
+		AB7524601BC8139100E2F715 /* PayMillSDK */ = {
 			isa = PBXGroup;
 			children = (
-				AB540B4D19C991800025F953 /* PayMillSDK.framework */,
+				AB7524611BC8139100E2F715 /* PayMillSDK.framework */,
 			);
 			path = PayMillSDK;
 			sourceTree = "<group>";
@@ -707,7 +707,7 @@
 		ABC4AB6616AF081B00353B1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AB540B4C19C991800025F953 /* PayMillSDK */,
+				AB7524601BC8139100E2F715 /* PayMillSDK */,
 				069F83621966E96B00CF5EC8 /* MBProgressHUD */,
 				7C98B8D3177116F800951CFE /* CoreData.framework */,
 				AB9E0482176A1EED0002AEA9 /* Security.framework */,
