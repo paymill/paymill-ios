@@ -23,7 +23,7 @@ FOUNDATION_EXPORT NSString * const PMErrorDomain;
  Error type
  */
 
-typedef enum PMErrorType : NSInteger
+typedef NS_ENUM(NSInteger, PMErrorType)
 {
     UNKNOWN          = 0, /*Initial value*/
 	WRONG_PARMETERS  = 1, /*You have supplied wrong parameters. You use message for details.*/
@@ -33,7 +33,7 @@ typedef enum PMErrorType : NSInteger
 	BRIDGE           = 5, /*The PAYMILL JS-Bridge returned an a payment method related error code. Check the PMBridgeErrorCodeKey in the user info dictionary for the specific error. */
 	NOT_INIT         = 6, /*You did not initialize the SDK.*/
 	INTERNAL         = 7, /*This should never happen. If you encounter it, please send email support@paymill.com .*/
-}PMErrorType;
+};
 
 
 /*
